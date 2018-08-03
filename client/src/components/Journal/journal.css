@@ -1,0 +1,32 @@
+hr {
+    margin: 0;
+}
+textarea {
+    resize: none;
+}
+.form-control {
+    border: 0;
+}
+.form-control:focus {
+    box-shadow: none;
+}
+
+.form-group {
+    margin-bottom: 0;
+}
+#entry-name {
+    margin-bottom: 0;
+}
+#entry-body {
+    margin: 10px 0;
+}
+.btn-primary {
+    background-color: #2800B2;
+    color: #fff;
+    border-radius: 0;
+    margin: 12px;
+    padding: 10px 15px;
+}
+.btn-primary:hover {
+    background-color: #6E44FF;
+}
