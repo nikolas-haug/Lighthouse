@@ -4,5 +4,5 @@ var CommentSchema = new mongoose.Schema({
     body: String,
     likes: [],
     }); 
-    UserSchema.plugin(passportLocalMongoose); 
+    CommentSchema.plugin(passportLocalMongoose); 
     module.exports = mongoose.model("Comment", CommentSchema);

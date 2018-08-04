@@ -9,5 +9,5 @@ var EntrySchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId, 
         ref: "Comments" }] 
     }); 
-    UserSchema.plugin(passportLocalMongoose); 
-    module.exports = mongoose.model("User", UserSchema);
+    EntrySchema.plugin(passportLocalMongoose); 
+    module.exports = mongoose.model("Entry", EntrySchema);
