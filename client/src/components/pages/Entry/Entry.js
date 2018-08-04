@@ -1,5 +1,9 @@
 import React from 'react'
 import Textarea from 'react-textarea-autosize';
+<<<<<<< HEAD:client/src/components/Journal/Entry.js
+=======
+
+>>>>>>> cdb63b9ca3b098d8777b0aa4523e15779b64e60e:client/src/components/pages/Entry/Entry.js
 import './entry.css'
 
 const Entry = (props) => {
