@@ -1,13 +1,14 @@
 import React from 'react'
-import './landing.css'
-const Landing = (props) => {
+import './login.css'
+
+const Login = (props) => {
     return (
-        <div className="landing-wrapper">
-            <div className="landing-block login-block">
+        <div className="login-wrapper">
+            <div className="login-block">
                 <form>
-                    <h3>Login</h3>
+                    <h3 className="login-title">Login</h3>
                     <div className="form-group">
-                        <input type="text" className="form-control" id="lgoin-username" placeholder="Enter your username" />
+                        <input type="text" className="form-control" id="login-username" placeholder="Enter your username" />
                     </div>
                     <hr />
                     <div className="form-group">
@@ -17,8 +18,8 @@ const Landing = (props) => {
                     <button type="submit" className="btn btn-primary">Submit</button>
                 </form>
             </div>
-            <div className="landing-block landing-info">
-                <h3>About Us</h3>
+            <div className="about-block">
+                <h3>About LightHouse</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora provident illum minus quia obcaecati eos culpa nostrum numquam quibusdam harum vero consectetur necessitatibus aspernatur qui veritatis quod, sint voluptatibus iure.</p>
 
             </div>
@@ -28,4 +29,4 @@ const Landing = (props) => {
 
 }
 
-export default Landing;
+export default Login;
