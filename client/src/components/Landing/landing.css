@@ -1,0 +1,17 @@
+hr {
+    margin-bottom: 5px;
+}
+.landing-block {
+    width: 30%;
+    margin: 50px;
+    display: inline-block;
+}
+.login-block {
+    border-right: 1px solid rgba(0,0,0,.1);
+    padding-right: 10%;
+    padding-bottom: 50px;
+    margin-bottom: 0;
+}
+.landing-info {
+    margin-top: 20px;
+}
