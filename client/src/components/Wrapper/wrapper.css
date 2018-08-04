@@ -2,18 +2,37 @@
 h1 {
     margin: 0;
 }
-
+nav {
+    float: right;
+    margin: 16px;
+}
+.fa {
+    margin-right: 20px;
+    font-size: 25px;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    cursor: pointer;
+}
+.fa:hover {
+    color: #EFD700;
+}
 .header {
     background-color: #2800B2;
     color: #fff;
     padding: 15px 0;
 }
-.logo {
+.header-wrapper {
     max-width: 1280px;
     margin: 0 auto;
+}
+.logo {
+    display: inline-block;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    cursor: pointer;
+}
+.logo:hover {
+    color: #EFD700;
 
 }
-
 .content {
     max-width: 1280px;
     margin: 20px auto;
