@@ -1,8 +1,8 @@
 import React from "react";
 
-const Profile = () => (
+const Journal = () => (
   <div>
-    <h1>Profile Page</h1>
+    <h1>Journal Page</h1>
     <p>
       Donec a volutpat quam. Curabitur nec varius justo, sed rutrum ligula. Curabitur pellentesque
       turpis sit amet eros iaculis, a mollis arcu dictum. Ut vel ante eget massa ornare placerat.
@@ -18,4 +18,4 @@ const Profile = () => (
   </div>
 );
 
-export default Profile;
+export default Journal;
