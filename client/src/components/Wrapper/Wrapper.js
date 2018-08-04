@@ -2,7 +2,7 @@ import React from 'react'
 import './wrapper.css'
 
 const Header = (props) => (
-    <div className="wrapper">
+    <div>
         <header className="header">
             <div className="logo">
                 <h1>LightHouse</h1>
