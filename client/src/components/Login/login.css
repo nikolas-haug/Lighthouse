@@ -1,0 +1,23 @@
+hr {
+    margin-bottom: 15px;
+}
+.login-block {
+    width: 30%;
+    margin: 50px;
+    display: inline-block;
+    border-right: 1px solid rgba(0,0,0,.1);
+    padding-right: 10%;
+    padding-bottom: 50px;
+    margin-bottom: 0;
+}
+.about-block {
+    width: 30%;
+    display: inline-block;
+    margin: 50px;
+}
+.landing-info {
+    margin-top: 20px;
+}
+.login-title {
+    margin-bottom: 10px;
+}

@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import Entry from './components/Journal/Entry'
 import Wrapper from './components/Wrapper/Wrapper'
-import Landing from './components/Landing/Landing'
+import Login from './components/Login/Login'
 
 class App extends Component {
   render() {
     return (
       <Wrapper>
-        <Landing />
+        <Login />
       </Wrapper>
     );
   }
