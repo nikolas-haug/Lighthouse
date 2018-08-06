@@ -1,7 +1,11 @@
 import React from 'react'
+import { Link } from "react-router-dom";
+import About from '../Sections/About'
 import './login.css'
 
 const Login = (props) => {
+    // console.log(props)
+
     return (
         <div className="login-wrapper">
             <div className="login-block">
@@ -16,13 +20,10 @@ const Login = (props) => {
                     </div>
                     <hr />
                     <button type="submit" className="btn btn-primary">Submit</button>
+                    <Link to={"/signup"} className="btn btn-primary">Sign Up</Link>
                 </form>
             </div>
-            <div className="about-block">
-                <h3>About LightHouse</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora provident illum minus quia obcaecati eos culpa nostrum numquam quibusdam harum vero consectetur necessitatibus aspernatur qui veritatis quod, sint voluptatibus iure.</p>
-
-            </div>
+                <About />
         </div>
     )
 

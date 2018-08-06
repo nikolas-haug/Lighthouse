@@ -1,9 +1,18 @@
+require('dotenv').config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
+const LocalStrategy = require("passport-local");
+const passport = require('passport');
+const User = require('./models/User');
+const cors = require('cors');
+const index = require('./routes/index');
+const entry = require('./routes/entry');
+const comments = require('./routes/comments');
+
+
 // const path = require("path");
 const PORT = process.env.PORT || 3001;
-
 const app = express();
 
 // Define middleware here
@@ -12,8 +21,33 @@ app.use(bodyParser.json());
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
+app.use(cors());
 // Serve files created by create-react-app.
 app.use(express.static("client/build"));
+
+//PASSPORT CONFIGURATION
+app.use(require("express-session")({
+  secret: "coding is the real bomb!",
+  resave: false,
+  saveUninitialized: true
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(new LocalStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
+//Track the current user
+app.use(function (req, res, next) {
+  res.locals.currentUser = req.user;
+  next();
+});
+
+//Set up app to use routes
+app.use(index);
+app.use(entry);
+app.use(comments);
+
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
