@@ -2,9 +2,8 @@ import React from 'react';
 import { Component } from 'react';
 import Login from '../Login/Login'
 import Signup from '../Signup/Signup';
+import Logout from '../Logout/Logout';
 import API from '../../../API/messenger';
-// import About from '../Sections/About'
-// import Wrapper from '../../Wrapper/Wrapper'
 
 
 class Landing extends Component {
@@ -16,7 +15,7 @@ class Landing extends Component {
                 username: ''
             }
         };
-        //Fires when the search form is submitted
+        //Fires when the signup form is submitted
         this.handleUserSignup = (newUser) => {
             // Takes the submitted data and pass it over to the API module
             API.sendNewUserInfo(newUser).then(res => {
@@ -32,7 +31,7 @@ class Landing extends Component {
                         }
                     })
                     // Redirect the user to search page
-                    this.props.history.push('/');
+                    this.props.history.push('/entry');
                 } else {
                     //If fails stay on sign up page
                     this.props.history.push('/signup');
@@ -41,45 +40,45 @@ class Landing extends Component {
         }
 
 
-        //Fires when the search form is submitted
-        this.handleUserLogin = (preciousUser) => {
-        //     // Takes the submitted data and pass it over to the API module
-        //     API.sendPreviousUserData(preciousUser).then(res => {
-        //         //If sign in is success
-        //         if (res.data.username) {
-        //             //Store user info
-        //             localStorage.setItem('user', res.data.username)
-        //             localStorage.setItem('id', res.data._id)
-        //             // Set the state with the results from the search
-        //             this.setState({
-        //                 user: {
-        //                     id: res.data._id,
-        //                     username: localStorage.getItem('user')
-        //                 }
-        //             })
-        //             //Redirect to search page
-        //             this.props.history.push('/search');
-        //         } else {
-        //             //If sign in fails, stay on ligin
-        //             this.props.history.push('/login');
-        //         }
-        //     }).catch(err => console.log(err));
+        //Fires when the login form is submitted
+        this.handleUserLogin = (user) => {
+            // Takes the submitted data and pass it over to the API module
+            API.sendPreviousUserData(user).then(res => {
+                //If sign in is success
+                if (res.data.username) {
+                    //Store user info
+                    localStorage.setItem('user', res.data.username)
+                    localStorage.setItem('id', res.data._id)
+                    // Set the state with the results from the search
+                    this.setState({
+                        user: {
+                            id: res.data._id,
+                            username: localStorage.getItem('user')
+                        }
+                    })
+                    //Redirect to search page
+                    this.props.history.push('/entry');
+                } else {
+                    //If sign in fails, stay on ligin
+                    this.props.history.push('/');
+                }
+            }).catch(err => console.log(err));
 
         }
 
-        //This method handle user signout
-        // this.handleUserSignout= (action) => {
-        //     //If the user action is positive
-        //     if(action === "positive"){
-        //     //clear user data from storage
-        //     localStorage.clear();
-        //     //Redirect user to home page
-        //     this.props.history.push('/');
-        //     }else{
-        //     //call
-        //     this.props.history.push('/search');
-        //     }
-        // }
+        // This method handle user signout
+        this.handleUserLogout= (action) => {
+            //If the user action is positive
+            if(action === "logout"){
+            //clear user data from storage
+            localStorage.clear();
+            //Redirect user to home page
+            this.props.history.push('/');
+            }else{
+            //Just for testing we will redirect here
+            this.props.history.push('/services');
+            }
+        }
 
     }
 
@@ -90,7 +89,8 @@ class Landing extends Component {
             {this.props.match.path === '/signup'?
                 <Signup handleUserSignup={this.handleUserSignup}/>:
                 this.props.match.path === '/'?
-                <Login handleUserLogin={this.handleUserLogin}/>:''}
+                <Login handleUserLogin={this.handleUserLogin}/>:
+                <Logout handleUserLogout={this.handleUserLogout}/>}
             </div>
          );
     }
