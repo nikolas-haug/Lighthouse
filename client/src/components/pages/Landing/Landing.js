@@ -79,7 +79,10 @@ class Landing extends Component {
             this.props.history.push('/services');
             }
         }
+
     }
+
+
     render() { 
         return ( 
             <div> 
