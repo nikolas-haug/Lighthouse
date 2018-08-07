@@ -8,7 +8,6 @@ import '../Login/login.css'
 class Login extends Component {
     constructor(props) {
         super(props);
-        this.state = {}
 
         //handle the login form submission    
         this.handleSubmit = event => {

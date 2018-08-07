@@ -6,9 +6,7 @@ import '../Login/login.css'
 class Signup extends Component {
     constructor(props) {
         super(props);
-        this.state = {}
-
-    
+      
         this.handleSubmit = event => {
             event.preventDefault();
             let data = event.target;

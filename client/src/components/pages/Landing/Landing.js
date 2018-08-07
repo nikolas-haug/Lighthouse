@@ -5,7 +5,6 @@ import Signup from '../Signup/Signup';
 import Logout from '../Logout/Logout';
 import API from '../../../API/messenger';
 
-
 class Landing extends Component {
     constructor(props) {
         super(props);
@@ -81,8 +80,6 @@ class Landing extends Component {
         }
 
     }
-
-
     render() { 
         return ( 
             <div> 
