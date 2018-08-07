@@ -31,9 +31,12 @@ router.post("/signup", (req, res) => {
     
 
 //Login route
-router.post("/signin", function(req, res){
-    
-})
+router.post("/signin", passport.authenticate("local"), (req, res) => {
+    res.json({
+        _id: req.user._id,
+        username: req.user.username
+    });
+});
 
 //Login route
 router.get("/signout", function(req, res){
