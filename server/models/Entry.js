@@ -1,5 +1,4 @@
 var mongoose = require("mongoose"); 
-var passportLocalMongoose = require("passport-local-mongoose"); 
 var EntrySchema = new mongoose.Schema({  
     title: String, 
     text: String,
@@ -9,5 +8,5 @@ var EntrySchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId, 
         ref: "Comments" }] 
     }); 
-    EntrySchema.plugin(passportLocalMongoose); 
+
     module.exports = mongoose.model("Entry", EntrySchema);
