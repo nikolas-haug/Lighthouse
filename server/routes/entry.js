@@ -4,7 +4,6 @@ var Entry = require("../models/Entry");
 var router = express.Router();
 
 
-// 
 
 //Route to get all of the journal entries
 router.get("/journal", function (req, res) {
@@ -12,12 +11,10 @@ router.get("/journal", function (req, res) {
         console.log(entries);
         res.json(entries)
     })
-
 })
 
 //Route to post new entries
-router.post("/journal", function (req, res) {
-    console.log(req.body);
+router.post("/journal/:userid", function (req, res) {
     Entry.create(req.body, function(err, entry){
         if (err) {
             console.log(err)
