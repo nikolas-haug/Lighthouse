@@ -18,10 +18,13 @@ const App = () => (
       <div style={Styles}>
         <Route exact path="/" component={Landing} />
         <Route exact path="/signup" component={Landing} />
-        <Route exact path="/entry" component={Entry} />
+        <Route exact path="/logout" component={Landing} />
+        <Route exact path="/entries" component={Entry} />
+        <Route exact path="/new_entry" component={Entry} />
+        <Route exact path="/edit_entry" component={Entry} />
         <Route exact path="/journal" component={Journal} />
         <Route exact path="/services" component={Services} />
-        <Route exact path="/logout" component={Landing} />
+       
       </div>
       </Wrapper>
     </Router>
