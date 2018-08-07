@@ -1,9 +1,8 @@
-hr {
-    margin: 0;
+.entry-form {
+    margin-left: 20px;
+    margin-right: 20px;
 }
-textarea {
-    resize: none;
-}
+
 .form-control {
     border: 0;
 }
@@ -14,19 +13,11 @@ textarea {
 .form-group {
     margin-bottom: 0;
 }
-#entry-name {
-    margin-bottom: 0;
-}
-#entry-body {
-    margin: 10px 0;
-}
-.btn-primary {
+
+Button {
     background-color: #2800B2;
     color: #fff;
-    border-radius: 0;
-    margin: 12px;
-    padding: 10px 15px;
 }
-.btn-primary:hover {
+Button:hover {
     background-color: #6E44FF;
 }
