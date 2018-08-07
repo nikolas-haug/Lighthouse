@@ -17,7 +17,6 @@ class NewEntry  extends Component {
       event.preventDefault();
       let data = event.target;
       let newEntry = {
-          _id:45,
           title: data.title.value,
           text: data.text.value
       };
