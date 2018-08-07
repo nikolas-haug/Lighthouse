@@ -2,13 +2,12 @@ import React from 'react'
 import { Component } from 'react';
 import { Link } from "react-router-dom";
 
-import About from '../Sections/About'
+import About from '../../Sections/About'
 import '../Login/login.css'
 
 class Login extends Component {
     constructor(props) {
         super(props);
-        this.state = {}
 
         //handle the login form submission    
         this.handleSubmit = event => {

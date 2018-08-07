@@ -1,14 +1,12 @@
 import React from 'react'
 import { Component } from 'react';
-import About from '../Sections/About'
+import About from '../../Sections/About'
 import '../Login/login.css'
 
 class Signup extends Component {
     constructor(props) {
         super(props);
-        this.state = {}
-
-    
+      
         this.handleSubmit = event => {
             event.preventDefault();
             let data = event.target;
