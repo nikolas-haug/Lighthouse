@@ -4,46 +4,14 @@ var Entry = require("../models/Entry");
 var router = express.Router();
 
 
-const entries = [
-    {
-    _id:1,
-    title:"this is a title.",
-    text:"this is a text and it is longer than the title. You can see for sure."
-},
-    {
-    _id:2,
-    title:"this is a title.",
-    text:"this is a text and it is longer than the title. You can see for sure."
-},
-    {
-    _id:3,
-    title:"this is a title.",
-    text:"this is a text and it is longer than the title. You can see for sure."
-},
-    {
-    _id:4,
-    title:"this is a title.",
-    text:"this is a text and it is longer than the title. You can see for sure."
-},
-    {
-    _id:5,
-    title:"this is a title.",
-    text:"this is a text and it is longer than the title. You can see for sure."
-},
-    {
-    _id:6,
-    title:"this is a title.",
-    text:"this is a text and it is longer than the title. You can see for sure."
-},
-    {
-    _id:7,
-    title:"this is a title.",
-    text:"this is a text and it is longer than the title. You can see for sure."
-}
-];
+// 
+
 //Route to get all of the journal entries
 router.get("/journal", function (req, res) {
-    res.json(entries)
+    Entry.find({}, function(err, entries){
+        console.log(entries);
+        res.json(entries)
+    })
 
 })
 
