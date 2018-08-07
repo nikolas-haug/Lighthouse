@@ -1,6 +1,8 @@
 hr {
     margin-bottom: 15px;
+    margin-top: 0;
 }
+
 .login-block {
     vertical-align: top;
     width: 30%;

@@ -38,8 +38,8 @@ class Login extends Component {
                         <input type="password" name="password" className="form-control" id="login-password" placeholder="Enter your password" />
                     </div>
                     <hr />
-                    <button type="submit" className="btn btn-primary">Submit</button>
-                    <Link to={"/signup"} className="btn btn-primary">Sign Up</Link>
+                    <button type="submit" className="btn btn-primary">Login</button>
+                    <Link to={"/signup"} className="btn btn-primary">Register</Link>
                 </form>
             </div>
                 <About />
