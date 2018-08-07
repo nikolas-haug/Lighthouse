@@ -96,7 +96,7 @@ class Entry extends Component {
                             entries={this.state.entries}
                             />}
             </div>
-         );
+        );
     }
 }
 
