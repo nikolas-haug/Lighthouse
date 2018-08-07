@@ -1,6 +1,6 @@
 var passport = require("passport");
 var express = require("express");
-var Comments = require("./models/Comments");
+var Comments = require("../models/Comments");
 var router = express.Router();
 
 
@@ -18,3 +18,6 @@ router.put("/comments/:entryid", function(req, res){
 router.delete("/comments/:entryid", function(req, res){
     
 })
+
+
+module.exports = router;

@@ -1,6 +1,6 @@
 var passport = require("passport");
 var express = require("express");
-var Entry = require("./models/Entry");
+var Entry = require("../models/Entry");
 var router = express.Router();
 
 //Route to get all of the journal entries
@@ -12,6 +12,9 @@ router.get("/journal", function(req, res){
 router.post("/journal", function(req, res){
     
 })
+
+
+module.exports = router;
 
 //Route to edit existing entries
 router.put("/journal/:entryid", function(req, res){
