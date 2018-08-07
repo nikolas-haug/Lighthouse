@@ -1,8 +1,8 @@
 import React from 'react';
 import { Component } from 'react';
-import Login from '../Login/Login'
-import Signup from '../Signup/Signup';
-import Logout from '../Logout/Logout';
+import Login from './Login/Login'
+import Signup from './Signup/Signup';
+import Logout from './Logout/Logout';
 import API from '../../../API/messenger';
 
 class Landing extends Component {
