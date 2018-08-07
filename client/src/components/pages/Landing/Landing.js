@@ -32,7 +32,7 @@ class Landing extends Component {
                         }
                     })
                     // Redirect the user to entry page for now
-                    this.props.history.push('/entry');
+                    this.props.history.push('/new_entry');
                 } else {
                     //If fails stay on sign up page
                     this.props.history.push('/signup');
