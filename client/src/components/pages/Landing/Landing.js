@@ -20,17 +20,17 @@ class Landing extends Component {
             // Takes the submitted data and pass it over to the API module
             API.sendNewUserInfo(newUser).then(res => {
                 if (res.data.username) {
-                    //If we a valid user is return, save the user info to local storage
+                    //If a valid user is return, save the user info to local storage
                     localStorage.setItem('user', res.data.username)
                     localStorage.setItem('id', res.data._id)
-                    // Set the state with the results from the search
+                    // Set the state with the new user info
                     this.setState({
                         user: {
                             id: res.data._id,
                             username: localStorage.getItem('user')
                         }
                     })
-                    // Redirect the user to search page
+                    // Redirect the user to entry page for now
                     this.props.history.push('/entry');
                 } else {
                     //If fails stay on sign up page
@@ -49,24 +49,24 @@ class Landing extends Component {
                     //Store user info
                     localStorage.setItem('user', res.data.username)
                     localStorage.setItem('id', res.data._id)
-                    // Set the state with the results from the search
+                    // Set the state with the user info
                     this.setState({
                         user: {
                             id: res.data._id,
                             username: localStorage.getItem('user')
                         }
                     })
-                    //Redirect to search page
+                    //Redirect to entry page for now
                     this.props.history.push('/entry');
                 } else {
-                    //If sign in fails, stay on ligin
+                    //If sign in fails, stay on login
                     this.props.history.push('/');
                 }
             }).catch(err => console.log(err));
 
         }
 
-        // This method handle user signout
+        // This method handles user signout
         this.handleUserLogout= (action) => {
             //If the user action is positive
             if(action === "logout"){
