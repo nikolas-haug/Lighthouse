@@ -22,7 +22,7 @@ export default {
     },
 
     // Send a user login data to the express signin route 
-    sendNewEntryInfo: function (newEntry) {
-    return axios.post('/journal', newEntry);
+    sendNewEntryInfo: function (newEntry, userid) {
+    return axios.post('/journal/' + userid, newEntry);
       },
 };
