@@ -11,6 +11,7 @@ const Header = (props) => (
                    <a href="/"> <h1>LightHouse</h1></a>
                 </div>
                 <nav>
+                    <a>{localStorage.getItem('user')}</a>
                     <i className="fa fa-users" aria-hidden="true"></i>
                     <i className="fa fa-user" aria-hidden="true"></i>
                     <Link to={'/logout'} className="btn btn-default" aria-hidden="true">Logout</Link>
