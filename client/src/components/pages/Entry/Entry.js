@@ -30,8 +30,9 @@ class Entry extends Component {
         
         //Fires when the signup form is submitted
         this.addNewEntry = (newEntry) => {
+            let userid = localStorage.getItem('id')
             // Takes the submitted data and pass it over to the API module
-            API.sendNewEntryInfo(newEntry).then((res) => {
+            API.sendNewEntryInfo(newEntry, userid).then((res) => {
                 if (res) {
                     this.props.history.push('/entries');
                 }
