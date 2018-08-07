@@ -12,7 +12,8 @@ router.get("/journal", function (req, res) {
 })
 
 //Route to post new entries
-router.post("/journal", function (req, res) {
+router.post("/journal/:userid", function (req, res) {
+    console.log(req.params.userid)
     Entry.create(req.body, function(err, entry){
         if (err) {
             console.log(err)
