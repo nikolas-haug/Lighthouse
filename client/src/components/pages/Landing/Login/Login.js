@@ -1,29 +1,35 @@
 import React from 'react'
 import { Component } from 'react';
-import About from '../Sections/About'
+import { Link } from "react-router-dom";
+
+import About from '../../Sections/About'
 import '../Login/login.css'
 
-class Signup extends Component {
+class Login extends Component {
     constructor(props) {
         super(props);
-      
+
+        //handle the login form submission    
         this.handleSubmit = event => {
+            //prevent that HTML behavor
             event.preventDefault();
+            //Let reduce this to just data
             let data = event.target;
-            let newUser = {
+            //and create an object to hold user info
+            let user = {
                 username: data.username.value,
                 password: data.password.value
             };;
-          this.props.handleUserSignup(newUser);
+            //pass the user data over to this function we brought from landing component
+          this.props.handleUserLogin(user);
           }
     }
     render() {
-        console.log(this.props)
-        return (
+        return(
         <div className="login-wrapper">
             <div className="login-block">
                 <form  onSubmit={this.handleSubmit}> 
-                    <h3 className="login-title">Sign Up</h3>
+                    <h3 className="login-title">Login</h3>
                     <div className="form-group">
                         <input type="text" name="username" className="form-control" id="login-username" placeholder="Enter your username" />
                     </div>
@@ -33,12 +39,14 @@ class Signup extends Component {
                     </div>
                     <hr />
                     <button type="submit" className="btn btn-primary">Submit</button>
+                    <Link to={"/signup"} className="btn btn-primary">Sign Up</Link>
                 </form>
             </div>
-                <About/>
+                <About />
         </div>
     )
 
 }
 }
-export default Signup;
+
+export default Login;
