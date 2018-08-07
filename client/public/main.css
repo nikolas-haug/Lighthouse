@@ -2,7 +2,9 @@ html, body {
   height: 100%;
   margin: 0;
   font-family: 'Josefin Sans', sans-serif;
+  background-color: grey;
 }
+
 .wrapper {
   min-height: 100%;
 

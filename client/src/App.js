@@ -8,6 +8,7 @@ import background from './images/background.jpg';
 import Journal from './components/pages/Journal';
 
 const Styles = {
+  backgroundColor: "grey",
   backgroundImage: `url('${background}')`
 } 
 
