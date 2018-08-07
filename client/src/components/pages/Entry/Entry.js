@@ -1,29 +1,106 @@
-import React from 'react'
-import { Jumbotron, Container, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import React from 'react';
+import { Component } from 'react';
+import ShowEntries from './Show_entries'
+import NewEntry from './New_entry'
+import EditEntry from './Edit_entry';
+import API from '../../../API/messenger';
 
-import './entry.css'
 
-const Entry = (props) => {
-    return (
-      <div className="entry-form">
-        <Jumbotron>
-          <Container>
-          <Form>
-        <FormGroup className="form-group">
-          <Label>Title</Label>
-          <Input type="text" className="form-control" id="entry-name" placeholder="Add a title" />
-        </FormGroup>
-        <FormGroup className="form-group">
-          <Label for="exampleText">Journal Entry</Label>
-          <Input className="form-control" id="entry-body" type="textarea" name="text" placeholder='Write about your day...' />
-        </FormGroup>
+class Entry extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            entries: []
+        };
 
-        <Button color="#2800B2">Submit</Button>
-      </Form>
-          </Container>
-        </Jumbotron>
-      </div>
-    );
-  };
+        this.getAllEntries = () =>{
+            API.getAllEntries().then(res => {
+                // console.log(res.data)
+                if(res.data){
+                // Set the state with the results from the search
+                this.setState({
+                    entries: res.data
+                })}else{
+                    return;
+                }
+            })
+        }
+
+        
+        
+        //Fires when the signup form is submitted
+        this.addNewEntry = (newEntry) => {
+            let userid = localStorage.getItem('id')
+            // Takes the submitted data and pass it over to the API module
+            API.sendNewEntryInfo(newEntry, userid).then((res) => {
+                if (res) {
+                    this.props.history.push('/entries');
+                }
+            }).catch(err => console.log(err));
+        }
+
+
+        //Fires when the login form is submitted
+        // this.handleEditEntry = (user) => {
+        //     // Takes the submitted data and pass it over to the API module
+        //     API.sendPreviousUserData(user).then(res => {
+        //         //If sign in is success
+        //         if (res.data.username) {
+        //             //Store user info
+        //             localStorage.setItem('user', res.data.username)
+        //             localStorage.setItem('id', res.data._id)
+        //             // Set the state with the user info
+        //             this.setState({
+        //                 user: {
+        //                     id: res.data._id,
+        //                     username: localStorage.getItem('user')
+        //                 }
+        //             })
+        //             //Redirect to entry page for now
+        //             this.props.history.push('/entry');
+        //         } else {
+        //             //If sign in fails, stay on login
+        //             this.props.history.push('/');
+        //         }
+        //     }).catch(err => console.log(err));
+
+        // }
+
+        // This method handles user signout
+        // this.handleDeleteEntry= (action) => {
+        //     //If the user action is logout
+        //     if(action === "logout"){
+        //     //clear user data from storage
+        //     localStorage.clear();
+        //     //Redirect user to home page
+        //     this.props.history.push('/');
+        //     }else{
+        //     //Just for testing we will redirect here
+        //     this.props.history.push('/services');
+        //     }
+        // }
+
+    
+
+    }
+
+    render() { 
+        return ( 
+            <div> 
+                {this.props.match.path === '/new_entry'?
+                    <NewEntry addNewEntry={this.addNewEntry}/>:
+                    this.props.match.path === '/edit_entry'?
+                    <EditEntry handleEditEntry={this.handleEditEntry}/>:
+                        <ShowEntries 
+                            handleDeleteEntry={this.handleDeleteEntry} 
+                            getAllEntries={this.getAllEntries}
+                            entries={this.state.entries}
+                            />}
+            </div>
+        );
+    }
+}
+
 
 export default Entry;
+

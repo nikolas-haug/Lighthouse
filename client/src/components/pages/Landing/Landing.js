@@ -5,6 +5,7 @@ import Signup from './Signup/Signup';
 import Logout from './Logout/Logout';
 import API from '../../../API/messenger';
 
+
 class Landing extends Component {
     constructor(props) {
         super(props);
@@ -14,6 +15,7 @@ class Landing extends Component {
                 username: ''
             }
         };
+
         //Fires when the signup form is submitted
         this.handleUserSignup = (newUser) => {
             // Takes the submitted data and pass it over to the API module
@@ -30,7 +32,7 @@ class Landing extends Component {
                         }
                     })
                     // Redirect the user to entry page for now
-                    this.props.history.push('/entry');
+                    this.props.history.push('/new_entry');
                 } else {
                     //If fails stay on sign up page
                     this.props.history.push('/signup');
@@ -67,7 +69,7 @@ class Landing extends Component {
 
         // This method handles user signout
         this.handleUserLogout= (action) => {
-            //If the user action is positive
+            //If the user action is logout
             if(action === "logout"){
             //clear user data from storage
             localStorage.clear();
@@ -83,11 +85,11 @@ class Landing extends Component {
     render() { 
         return ( 
             <div> 
-            {this.props.match.path === '/signup'?
-                <Signup handleUserSignup={this.handleUserSignup}/>:
-                this.props.match.path === '/'?
-                <Login handleUserLogin={this.handleUserLogin}/>:
-                <Logout handleUserLogout={this.handleUserLogout}/>}
+                {this.props.match.path === '/signup'?
+                    <Signup handleUserSignup={this.handleUserSignup}/>:
+                    this.props.match.path === '/'?
+                        <Login handleUserLogin={this.handleUserLogin}/>:
+                            <Logout handleUserLogout={this.handleUserLogout}/>}
             </div>
          );
     }
