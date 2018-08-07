@@ -11,10 +11,10 @@ class Signup extends Component {
     
         this.handleSubmit = event => {
             event.preventDefault();
-            let user = event.target;
+            let data = event.target;
             let newUser = {
-                username: user.username.value,
-                password: user.password.value
+                username: data.username.value,
+                password: data.password.value
             };;
           this.props.handleUserSignup(newUser);
           }
