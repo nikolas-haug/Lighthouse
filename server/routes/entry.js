@@ -49,8 +49,14 @@ router.get("/journal", function (req, res) {
 
 //Route to post new entries
 router.post("/journal", function (req, res) {
-
-
+    Entry.create(req.body, function(err, entry){
+        if (err) {
+            console.log(err)
+        } else {
+            console.log(entry)
+        }
+        res.end();
+    });
 })
 
 
