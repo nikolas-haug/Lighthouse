@@ -102,6 +102,6 @@ li {
     border-radius: 0;
 }
 
-.btn:hover {
-    color: rgb(199, 198, 198);
+#entry-name {
+    font-size: 20px;
 }
