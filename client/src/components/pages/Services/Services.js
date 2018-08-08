@@ -4,6 +4,7 @@ import Input from "./Input";
 import Results from "./Results";
 import API from "../../../API/messenger";
 
+// TO DO - check this package 
 // import { PromiseProvider } from "mongoose";
 
 class Services extends Component {
@@ -11,6 +12,7 @@ class Services extends Component {
   state = {
     keyword: "",
     location: "",
+    USstate: "",
     results: []
   }
 
@@ -20,45 +22,46 @@ class Services extends Component {
     let newState = {};
     newState[event.target.id] = event.target.value;
     this.setState(newState);
+    // console.log(newState);
   }
 
   handleFormSubmit = (event) => {
-    // this.setState({
-    //   keyword: "",
-    //   location: ""
-    // });
+    this.setState({
+      keyword: "",
+      location: "",
+      USstate: ""
+    });
     event.preventDefault();
   };
 
   handleButtonClick = () => {
-    API.getProviders(this.state.keyword, this.state.location).then((res) => {
-
-        // console.log(res.data.data[0]);
+    if(this.state.keyword !== "" && this.state.location !== "") {
+      // after button click, format request params before calling the api
+      API.getProviders(this.state.keyword.trim(), (this.state.location).toLowerCase().trim(), (this.state.USstate).toLowerCase()).then((res) => {
+        // TO DO - refresh the form for next query
         this.setState({
           results: res.data.data,
           keyword: "",
-          location: ""
+          location: "",
+          USstate: ""
         });
 
-        // console.log(this.state.results);
-        
       }).catch((err) => {
         console.log(err);
       });
+    }
   }
 
   render() {
     return (
-
       <div>
-
         <h1>Services</h1>
 
         <form onSubmit={this.handleFormSubmit}>
           <Input handleChange={this.handleInputChange} />
           <Button handleButtonClick={this.handleButtonClick}/>
         </form>
-
+        {/* TO DO - get the results to display on a different page/section with animation transition */}
         <div>
           <Results results={this.state.results}/>
         </div>

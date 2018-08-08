@@ -28,8 +28,9 @@ export default {
 
   // PROVIDERS API MESSENGERS
   //**************************************/
-  getProviders: function (keyword, location) {
-    return axios.get('/api/providers/' + keyword + '/' + location);
-  }
+    // send a query to the betterdoctors api
+    getProviders: function (keyword, location, USstate) {
+      return axios.get('/api/providers/' + keyword + '/' + location + '/' + USstate);
+    }
 
 };
