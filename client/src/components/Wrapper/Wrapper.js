@@ -15,10 +15,10 @@ const Header = props => (
 
     <div className="header-btns">
       <a>{localStorage.getItem("user")}</a>
-      <li><b className="fa fa-users" aria-hidden="true"></b><a><i>Forum</i></a></li>
-      <li><b className="fa fa-user" aria-hidden="true"></b><a><i>Journal</i></a></li>
+      <li><b className="fa fa-users" aria-hidden="true"></b><span><i>Forum</i></span></li>
+      <li><b className="fa fa-user" aria-hidden="true"></b><span><i>Journal</i></span></li>
       <Link to={"/logout"} className="nav-link" aria-hidden="true">
-      <li><b className="fa fa-sign-out" aria-hidden="true"></b><a><i>Sign Out</i></a></li>
+      <li><b className="fa fa-sign-out" aria-hidden="true"></b><span><i>Sign Out</i></span></li>
       </Link>
       <Link to={"/new_entry"} className="nav-link" aria-hidden="true">
         Add Entry
