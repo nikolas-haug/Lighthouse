@@ -9,36 +9,25 @@ body {
 
   /* Equal to height of footer */
   /* But also accounting for potential margin-bottom of last child */
-  margin-bottom: -50px;
+  margin-bottom: -310px;
+}
+.footer,
+.push {
+  height: 350px;
 }
 
 .footer-bs {
   background-color: #3c3d41;
-  padding: 60px 40px;
-  color: rgba(255, 255, 255, 1);
-  margin-bottom: 20px;
-  border-bottom-right-radius: 6px;
-  border-top-left-radius: 0px;
-  border-bottom-left-radius: 6px;
+padding: 60px 40px;
+color: rgba(255,255,255,1.00);
+border-bottom-right-radius: 6px;
+border-top-left-radius: 0px;
+border-bottom-left-radius: 6px;
 }
-.footer-bs .footer-brand,
-.footer-bs .footer-nav,
-.footer-bs .footer-social,
-.footer-bs .footer-ns {
-  padding: 10px 25px;
-}
-.footer-bs .footer-nav,
-.footer-bs .footer-social,
-.footer-bs .footer-ns {
-  border-color: transparent;
-}
-.footer-bs .footer-brand h2 {
-  margin: 0px 0px 10px;
-}
-.footer-bs .footer-brand p {
-  font-size: 12px;
-  color: rgba(255, 255, 255, 0.7);
-}
+.footer-bs .footer-brand, .footer-bs .footer-nav, .footer-bs .footer-social, .footer-bs .footer-ns { padding:10px 25px; }
+.footer-bs .footer-nav, .footer-bs .footer-social, .footer-bs .footer-ns { border-color: transparent; }
+.footer-bs .footer-brand h2 { margin:0px 0px 10px; }
+.footer-bs .footer-brand p { font-size:12px; color:rgba(255,255,255,0.70); }
 
 .footer-bs .footer-nav ul.pages {
   list-style: none;
