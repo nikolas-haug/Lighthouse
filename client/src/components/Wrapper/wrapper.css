@@ -20,7 +20,7 @@ li {
     border-radius: 25px;
     display: inline-block;
 }
-    li a {
+    li span {
         opacity: 0;
         color: #666;
         max-width: 0;
@@ -29,10 +29,10 @@ li {
         transition: max-width 1s ease-out .1s, opacity .6s ease-out .1s, color;
         vertical-align: sub;
     }
-        li a:hover {
+        li span:hover {
             color: #c33;
         }
-        li a i {
+        li span i {
             float:right;
             display: block;
             padding-right: 1em;
@@ -46,7 +46,7 @@ li {
         padding:.125em .375em;
     }
     li:hover {}
-        li:hover a {
+        li:hover span {
             opacity: 1;
             max-width: 150px;
             transition: max-width .8s ease-out .1s, opacity 1s ease-out .1s, color .2s;
