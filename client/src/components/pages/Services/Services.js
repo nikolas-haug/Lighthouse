@@ -13,6 +13,7 @@ class Services extends Component {
     keyword: "",
     location: "",
     USstate: "",
+    specialty: "",
     results: []
   }
 
@@ -22,14 +23,15 @@ class Services extends Component {
     let newState = {};
     newState[event.target.id] = event.target.value;
     this.setState(newState);
-    // console.log(newState);
+    console.log(newState);
   }
 
   handleFormSubmit = (event) => {
     this.setState({
       keyword: "",
       location: "",
-      USstate: ""
+      USstate: "",
+      specialty: ""
     });
     event.preventDefault();
   };
@@ -37,13 +39,14 @@ class Services extends Component {
   handleButtonClick = () => {
     if(this.state.keyword !== "" && this.state.location !== "") {
       // after button click, format request params before calling the api
-      API.getProviders(this.state.keyword.trim(), (this.state.location).toLowerCase().trim(), (this.state.USstate).toLowerCase()).then((res) => {
+      API.getProviders(this.state.keyword.trim(), (this.state.location).toLowerCase().trim(), (this.state.USstate).toLowerCase(), this.state.specialty).then((res) => {
         // TO DO - refresh the form for next query
         this.setState({
           results: res.data.data,
           keyword: "",
           location: "",
-          USstate: ""
+          USstate: "",
+          specialty: ""
         });
 
       }).catch((err) => {

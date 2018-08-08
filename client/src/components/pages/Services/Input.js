@@ -83,6 +83,13 @@ const Input = (props) => {
                     <option value="WY">WY</option>
                 </select>
             </div>
+            <div className="form-group">
+                <label htmlFor="specialty">Type of service/specialty</label>
+                <select id="specialty" name="specialty" onChange={props.handleChange}>
+                    <option value="professional-counselor">Professional counselor</option>
+                    <option value="addiction-psychiatrist">Addiction</option>
+                </select>
+            </div>
         </div>
     )
 }
