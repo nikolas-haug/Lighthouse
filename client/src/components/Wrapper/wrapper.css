@@ -61,3 +61,6 @@ a:hover {
     margin-right: 10px;
     border-radius: 0;
 }
+#entry-name {
+    font-size: 20px;
+}
