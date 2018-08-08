@@ -6,8 +6,7 @@ const About = () => {
     return (
         <div className="about-block">
         <h3>About LightHouse</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora provident illum minus quia obcaecati eos culpa nostrum numquam quibusdam harum vero consectetur necessitatibus aspernatur qui veritatis quod, sint voluptatibus iure.</p>
-
+        <p>Lighthouse is a journaling app tailored to supporting people with mental health issues. Track you progress in your personal journal and head over to the forums to interact with others in similar situation to yourself</p>
     </div>
         
     );

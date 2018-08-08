@@ -4,18 +4,15 @@ import Wrapper from './components/Wrapper/Wrapper'
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Services from "./components/pages/Services/Services";
 import Landing from './components/pages/Landing/Landing';
-import background from './images/background.jpg';
 import Journal from './components/pages/Journal';
 
-const Styles = {
-  backgroundImage: `url('${background}')`
-} 
+
 
 const App = () => (
   
     <Router>
     <Wrapper>
-      <div style={Styles}>
+      <div >
         <Route exact path="/" component={Landing} />
         <Route exact path="/signup" component={Landing} />
         <Route exact path="/logout" component={Landing} />

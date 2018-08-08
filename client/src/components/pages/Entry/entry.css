@@ -1,8 +1,3 @@
-.entry-form {
-    margin-left: 20px;
-    margin-right: 20px;
-}
-
 .form-control {
     border: 0;
 }
@@ -20,4 +15,14 @@ Button {
 }
 Button:hover {
     background-color: #6E44FF;
+}
+textarea {
+    resize: none;
+}
+.jumbotron {
+    background-color: #fff;
+    padding: 2rem 2rem 4rem;
+}
+.btn-save-entry {
+    margin-top: 30px;
 }
