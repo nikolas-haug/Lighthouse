@@ -45,12 +45,7 @@ class NewEntry  extends Component {
           </Form>
             </Container>
           </Jumbotron>
-      </div> );
-        <Button type="submit" className="btn-save-entry" color="#2800B2">Save</Button>
-  </Form>
-      </Container>
-    </Jumbotron>
-  </div> );
+      </div>);
 
   }
 }
