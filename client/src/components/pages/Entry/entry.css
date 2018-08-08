@@ -12,9 +12,11 @@
 Button {
     background-color: #2800B2;
     color: #fff;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+
 }
 Button:hover {
-    background-color: #6E44FF;
+    background-color: #499BFF;
 }
 textarea {
     resize: none;
