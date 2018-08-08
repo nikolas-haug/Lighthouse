@@ -58,7 +58,7 @@ class Landing extends Component {
                         }
                     })
                     //Redirect to entry page for now
-                    this.props.history.push('/entry');
+                    this.props.history.push('/entries');
                 } else {
                     //If sign in fails, stay on login
                     this.props.history.push('/');
