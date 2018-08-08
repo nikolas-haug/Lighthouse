@@ -26,7 +26,8 @@ class Services extends Component {
     messenger.getProviders(this.state.keyword, this.state.location)
       .then((res) => {
 
-        this.setState({results: res.data});
+        // console.log(res)
+        this.setState({results: res.data.data});
         
       }).catch((err) => {
         console.log(err);
@@ -46,7 +47,7 @@ class Services extends Component {
         </form>
 
         <div>
-          <Results />
+          <Results results={this.state.results}/>
         </div>
 
       </div>

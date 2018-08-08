@@ -15,9 +15,9 @@ router.get('/api/providers/:keyword/:location', function(req, res) {
             // console.log(req.ip);
             // console.log(response.data.data[0].practices[0].name);
             // console.log(response.data.data[0].practices[0].visit_address);
-            res.json(response.data);
+            res.json(response);
 
-            console.log(response.data);
+            // console.log(response.data);
         }).catch((err) => {
             console.log(err);
         });
