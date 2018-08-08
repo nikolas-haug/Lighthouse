@@ -2,7 +2,7 @@ import React from 'react';
 import Entry from './components/pages/Entry/Entry'
 import Wrapper from './components/Wrapper/Wrapper'
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import Services from "./components/pages/Services";
+import Services from "./components/pages/Services/Services";
 import Landing from './components/pages/Landing/Landing';
 import Journal from './components/pages/Journal';
 

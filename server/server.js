@@ -10,6 +10,8 @@ const index = require('./routes/index');
 const entry = require('./routes/entry');
 const comments = require('./routes/comments');
 
+const api = require('./routes/api');
+
 
 // const path = require("path");
 const PORT = process.env.PORT || 3001;
@@ -47,6 +49,7 @@ app.use(function (req, res, next) {
 app.use(index);
 app.use(entry);
 app.use(comments);
+app.use(api);
 
 
 // Serve up static assets (usually on heroku)

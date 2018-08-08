@@ -25,4 +25,12 @@ export default {
     sendNewEntryInfo: function (newEntry, userid) {
     return axios.post('/journal/' + userid, newEntry);
       },
+
+  // PROVIDERS API MESSENGERS
+  //**************************************/
+    // send a query to the betterdoctors api
+    getProviders: function (keyword, location, USstate) {
+      return axios.get('/api/providers/' + keyword + '/' + location + '/' + USstate);
+    }
+
 };
