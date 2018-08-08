@@ -1,4 +1,7 @@
 import React from "react";
+import Button from "./Button";
+import Input from "./Input";
+import Results from "./Results";
 
 const Services = () => (
   <div>
@@ -8,6 +11,7 @@ const Services = () => (
       ludus aperiri mea, per in choro dolorem electram. Invidunt reprimique assueverit quo ne,
       eruditi graecis pro ut. Usu ut diceret scaevola evertitur, appareat voluptatibus ad vel.
     </p>
+
   </div>
 );
 

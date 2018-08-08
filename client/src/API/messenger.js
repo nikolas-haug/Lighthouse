@@ -25,4 +25,8 @@ export default {
     sendNewEntryInfo: function (newEntry, userid) {
     return axios.post('/journal/' + userid, newEntry);
       },
+
+  // PROVIDERS API MESSENGERS
+  //**************************************/
+  
 };
