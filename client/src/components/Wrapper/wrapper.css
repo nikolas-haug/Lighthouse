@@ -27,7 +27,7 @@ li {
         display: inline-block;
         text-decoration: none;
         transition: max-width 1s ease-out .1s, opacity .6s ease-out .1s, color;
-        vertical-align: inherit;
+        vertical-align: sub;
     }
         li a:hover {
             color: #c33;
@@ -72,7 +72,7 @@ li {
 }
 
 .logo:hover {
-    color: rgb(0, 140, 255);
+    color: #c33;
 }
 .content {
     max-width: 1280px;
@@ -97,11 +97,17 @@ li {
 }
 
 .btn {
-    background: rgb(0, 140, 255);
+    background-color: #343a40;
     margin-right: 10px;
     border-radius: 0;
 }
-
+.btn-primary {
+    border: none;
+}
+.btn-primary:hover {
+    background-color: #c33;
+    color: #343a40;
+}
 #entry-name {
     font-size: 20px;
 }
