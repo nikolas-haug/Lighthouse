@@ -26,3 +26,12 @@ textarea {
 .btn-save-entry {
     margin-top: 30px;
 }
+#entry-body {
+    margin-bottom: 30px;
+}
+.private-check {
+    display: inline-block;
+}
+#private-square {
+    margin-right: 5px;
+}
