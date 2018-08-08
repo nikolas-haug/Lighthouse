@@ -15,7 +15,7 @@ html, body {
   height: 50px;
 }
 .footer {
-    background-color: #2800B2;
+  background: linear-gradient(rgb(0, 75, 136), rgb(70, 169, 250));
     color: #fff;
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
