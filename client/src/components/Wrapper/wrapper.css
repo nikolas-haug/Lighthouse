@@ -100,7 +100,7 @@ li:hover span {
 }
 
 .btn {
-  background-color: #499BFF;
+  background-color: #343a40;
   margin-right: 10px;
   border-radius: 0;
 }
@@ -108,8 +108,8 @@ li:hover span {
   border: none;
 }
 .btn-primary:hover {
-  background-color: #499BFF;
-  color: #499BFF;
+  background-color: #c33;
+  color: #343a40;
 }
 #entry-name {
   font-size: 20px;
