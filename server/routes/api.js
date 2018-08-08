@@ -15,19 +15,16 @@ router.get('/api/providers/:keyword/:location', function(req, res) {
             // console.log(req.ip);
             // console.log(response.data.data[0].practices[0].name);
             // console.log(response.data.data[0].practices[0].visit_address);
-            res.json(response);
+            // console.log(response.data.data);
+            console.log(response.data);
+            res.json(response.data);
 
-            // console.log(response.data);
+            // console.log(response.data.data);
         }).catch((err) => {
             console.log(err);
         });
 
     console.log("api route connected!");
 });
-
-
-
-
-
 
 module.exports = router;

@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Button from "./Button";
 import Input from "./Input";
 import Results from "./Results";
-import messenger from "../../../API/messenger";
+import API from "../../../API/messenger";
 
 // import { PromiseProvider } from "mongoose";
 
@@ -22,12 +22,25 @@ class Services extends Component {
     this.setState(newState);
   }
 
-  handleButtonClick = () => {
-    messenger.getProviders(this.state.keyword, this.state.location)
-      .then((res) => {
+  handleFormSubmit = (event) => {
+    // this.setState({
+    //   keyword: "",
+    //   location: ""
+    // });
+    event.preventDefault();
+  };
 
-        // console.log(res)
-        this.setState({results: res.data.data});
+  handleButtonClick = () => {
+    API.getProviders(this.state.keyword, this.state.location).then((res) => {
+
+        // console.log(res.data.data[0]);
+        this.setState({
+          results: res.data.data,
+          keyword: "",
+          location: ""
+        });
+
+        // console.log(this.state.results);
         
       }).catch((err) => {
         console.log(err);
