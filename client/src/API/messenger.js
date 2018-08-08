@@ -28,5 +28,8 @@ export default {
 
   // PROVIDERS API MESSENGERS
   //**************************************/
-  
+  getProviders: function (keyword, location) {
+    return axios.get('/api/providers/' + keyword + '/' + location);
+  }
+
 };

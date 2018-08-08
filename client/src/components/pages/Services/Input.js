@@ -9,7 +9,7 @@ const Input = (props) => {
                     type="text"
                     value={props.keyword}
                     className="form-control"
-                    id="keyword-search"
+                    id="keyword"
                     placeholder="keyword"
                     onChange={props.handleChange}
                     required
@@ -19,16 +19,16 @@ const Input = (props) => {
                 <label htmlFor="location">City</label>
                 <input 
                     type="text"
-                    value={props.state}
+                    value={props.location}
                     className="form-control"
-                    id="city-search"
+                    id="location"
                     placeholder="city"
                     onChange={props.handleChange}
                     required
                 /> 
             </div>
 
-            <div className="form-group">
+            {/* <div className="form-group">
             <label htmlFor="state">State</label>
             <select id="state" name="state">
                 <option value="AL">AL</option>
@@ -83,7 +83,7 @@ const Input = (props) => {
                 <option value="WI">WI</option>
                 <option value="WY">WY</option>
             </select>
-            </div>
+            </div> */}
         </div>
     )
 }
