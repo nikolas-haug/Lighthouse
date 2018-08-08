@@ -17,6 +17,7 @@ class NewEntry  extends Component {
       event.preventDefault();
       let data = event.target;
       let newEntry = {
+          private:data.private.checked,
           title: data.title.value,
           text: data.text.value
       };
@@ -36,12 +37,15 @@ class NewEntry  extends Component {
           <Label for="exampleText">Journal Entry</Label>
           <Input className="form-control" id="entry-body" type="textarea" name="text" placeholder='Write about your day...' />
         </FormGroup>
-
-        <Button type="submit" color="#2800B2">Submit</Button>
-  </Form>
-      </Container>
-    </Jumbotron>
-  </div> );
+        <FormGroup className="form-group">
+        <Label for="exampleText"> Please check privacy option </Label>
+        <input type="checkbox" id="private" name="private" value="private"/>
+            </FormGroup>
+              <Button type="submit" color="#2800B2">Submit</Button>
+          </Form>
+            </Container>
+          </Jumbotron>
+      </div> );
   }
 }
  
