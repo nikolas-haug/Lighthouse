@@ -1,6 +1,6 @@
 import React from 'react'
 import { Component } from 'react';
-import { Jumbotron, Container, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { Jumbotron, Container, Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import Textarea from 'react-textarea-autosize';
 
 import './entry.css'

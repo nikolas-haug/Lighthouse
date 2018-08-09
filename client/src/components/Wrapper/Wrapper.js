@@ -40,20 +40,22 @@ const Header = props => (
             <i>Forum</i>
           </span>
         </li>
-        <Link to={"/new_entry"} className="nav-link" aria-hidden="true">
-          Add Entry
-        </Link>
+        {localStorage.getItem("user")? <Link to={"/new_entry"} className="nav-link" aria-hidden="true">
+        Add Entry
+      </Link>:''}
+       
         <Link to={"/entries"} className="nav-link" aria-hidden="true">
           Entries
         </Link>
-        <Link to={"/logout"} className="nav-link" aria-hidden="true">
-          <li>
-            <b className="fa fa-sign-out" aria-hidden="true" />
-            <span>
-              <i>Sign Out</i>
-            </span>
-          </li>
-        </Link>
+        {localStorage.getItem("user")? <Link to={"/logout"} className="nav-link" aria-hidden="true">
+        <li>
+          <b className="fa fa-sign-out" aria-hidden="true" />
+          <span>
+            <i>Sign Out</i>
+          </span>
+        </li>
+      </Link>:''}
+       
       </div>
     </nav>
 
