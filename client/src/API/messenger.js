@@ -16,21 +16,35 @@ export default {
 
   //ENTRIES MESSENGERS
   //**************************************/
-    // Get all entries
-    getAllEntries: function () {
-      return axios.get('/journal');
-    },
+  // Get all entries
+  getAllEntries: function () {
+    return axios.get('/journal');
+  },
 
-    // Send a user login data to the express signin route 
-    sendNewEntryInfo: function (newEntry, userid) {
+  // Send new entry and user data to the express server route 
+  sendNewEntryInfo: function (newEntry, userid) {
     return axios.post('/journal/' + userid, newEntry);
-      },
+  },
+
+
+  // Send entry to be deleted data to the express server route 
+  sendDeleteEntryInfo: function (entry_id) {
+    return axios.delete('/' + entry_id);
+  },
 
   // PROVIDERS API MESSENGERS
   //**************************************/
-    // send a query to the betterdoctors api
-    getProviders: function (keyword, location, USstate) {
-      return axios.get('/api/providers/' + keyword + '/' + location + '/' + USstate);
-    }
+  // send a query to the betterdoctors api
+  getProviders: function (keyword, location, USstate) {
+    return axios.get('/api/providers/' + keyword + '/' + location + '/' + USstate);
+  }
 
 };
+
+
+
+
+
+
+
+

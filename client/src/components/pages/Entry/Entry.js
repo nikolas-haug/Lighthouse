@@ -40,7 +40,6 @@ class Entry extends Component {
         }
 
 
-        //Fires when the login form is submitted
         // this.handleEditEntry = (user) => {
         //     // Takes the submitted data and pass it over to the API module
         //     API.sendPreviousUserData(user).then(res => {
@@ -66,19 +65,12 @@ class Entry extends Component {
 
         // }
 
-        // This method handles user signout
-        // this.handleDeleteEntry= (action) => {
-        //     //If the user action is logout
-        //     if(action === "logout"){
-        //     //clear user data from storage
-        //     localStorage.clear();
-        //     //Redirect user to home page
-        //     this.props.history.push('/');
-        //     }else{
-        //     //Just for testing we will redirect here
-        //     this.props.history.push('/services');
-        //     }
-        // }
+        // This method handles entry deletion
+        this.handleDeleteEntry= (entry_id) => {
+            API.sendDeleteEntryInfo(entry_id).then(() => {
+                this.getAllEntries();
+            }).catch(err => console.log(err));
+        }
 
     
 
@@ -95,7 +87,8 @@ class Entry extends Component {
                             handleDeleteEntry={this.handleDeleteEntry} 
                             getAllEntries={this.getAllEntries}
                             entries={this.state.entries}
-                            />}
+                        />
+                }
             </div>
         );
     }
