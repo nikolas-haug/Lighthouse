@@ -40,7 +40,6 @@ class Entry extends Component {
         }
 
 
-        //Fires when the login form is submitted
         // this.handleEditEntry = (user) => {
         //     // Takes the submitted data and pass it over to the API module
         //     API.sendPreviousUserData(user).then(res => {
