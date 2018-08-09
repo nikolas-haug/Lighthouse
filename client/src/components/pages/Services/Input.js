@@ -29,7 +29,7 @@ const Input = (props) => {
             </div>
             <div className="form-group">
                 <label htmlFor="USstate">State</label>
-                <select id="USstate" name="USstate" onChange={props.handleChange}>
+                <select id="USstate" name="USstate" onChange={props.handleChange} required>
                     <option value="AL">AL</option>
                     <option value="AK">AK</option>
                     <option value="AZ">AZ</option>
@@ -85,7 +85,7 @@ const Input = (props) => {
             </div>
             <div className="form-group">
                 <label htmlFor="specialty">Type of service/specialty</label>
-                <select id="specialty" name="specialty" onChange={props.handleChange}>
+                <select id="specialty" name="specialty" onChange={props.handleChange} required>
                     <option value="professional-counselor">Professional counselor</option>
                     <option value="addiction-psychiatrist">Addiction</option>
                 </select>

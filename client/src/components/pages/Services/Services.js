@@ -13,7 +13,7 @@ class Services extends Component {
     keyword: "",
     location: "",
     USstate: "",
-    specialty: "",
+    specialty: "professional-counselor", // setting default value for the dropdown select
     results: []
   }
 
@@ -37,7 +37,7 @@ class Services extends Component {
   };
 
   handleButtonClick = () => {
-    if(this.state.keyword !== "" && this.state.location !== "") {
+    if(this.state.keyword !== "" && this.state.location !== "" && this.state.USstate !== "") {
       // after button click, format request params before calling the api
       API.getProviders(this.state.keyword.trim(), (this.state.location).toLowerCase().trim(), (this.state.USstate).toLowerCase(), this.state.specialty).then((res) => {
         // TO DO - refresh the form for next query
