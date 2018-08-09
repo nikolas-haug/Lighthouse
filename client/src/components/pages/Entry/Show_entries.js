@@ -35,6 +35,8 @@ class ShowEntries extends Component {
                                 onClick={this.handleAction}>Edit</button> 
                             <button data-id={entry._id} action="delete"
                                 onClick={this.handleAction}>Delete</button>
+                            <button data-id={entry._id} action="comment"
+                                onClick={this.handleAction}>Add Comment</button>
                           </div>    
                       </div>
                       <div id={entry._id+1} className="collapse" aria-labelledby={entry._id} data-parent="#accordionExample">
