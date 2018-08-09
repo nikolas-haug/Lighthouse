@@ -33,11 +33,11 @@ class ShowEntries extends Component {
                           <div> <a className="btn btn-link" type="button" data-toggle="collapse" data-target={"#"+entry._id+1} aria-expanded="true" aria-controls={entry._id+1}>
                           Comments
                           </a>
-                          <button data-id={entry._id} action="edit"
-                                onClick={this.handleAction}>Edit</button> 
-                            <button data-id={entry._id} action="delete"
+                          <button className="entry-btn" data-id={entry._id} action="edit"
+                                onClick={this.handleAction}>Edit Post</button> 
+                            <button className="entry-btn" data-id={entry._id} action="delete"
                                 onClick={this.handleAction}>Delete</button>
-                            <button data-id={entry._id} action="comment"
+                            <button className="entry-btn" data-id={entry._id} action="comment"
                                 onClick={this.handleAction}>Add Comment</button>
                           </div>    
                       </div>
