@@ -45,9 +45,18 @@ router.put("/journal/user/:entryid", function (req, res) {
 
 })
 
-//Route to edit existing entries
-router.delete("/journal/:entryid", function (req, res) {
-
+//Route to delete existing entries
+router.delete("/:entryid", function (req, res) {
+        console.log(req.params.entryid);
+        Entry.findByIdAndRemove(req.params.entryid, function (err){
+            if (err){
+                console.log(err)
+            } else {
+                res.end();
+            }
+        })
+    
+    
 })
 
 
