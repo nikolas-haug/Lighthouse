@@ -18,7 +18,6 @@ class Signup extends Component {
           }
     }
     render() {
-        console.log(this.props)
         return (
         <div className="login-wrapper">
             <div className="login-block">
