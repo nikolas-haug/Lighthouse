@@ -1,20 +1,20 @@
-import React from 'react'
-import {
-    Component
-} from 'react';
+import React from "react";
+import { Component } from "react";
 
 class ShowEntries extends Component {
-    constructor(props) {
-        super(props);
-    this.handleAction = (e)=>{
-        e.preventDefault()
-        let entry_id = e.target.getAttribute('data-id')
-        let action = e.target.getAttribute('action')
-        action==='edit'? console.log("edit"):
-        action==='comment'? console.log("comment"):
-        this.props.handleDeleteEntry(entry_id)
-        }        
-    }
+  constructor(props) {
+    super(props);
+    this.handleAction = e => {
+      e.preventDefault();
+      let entry_id = e.target.getAttribute("data-id");
+      let action = e.target.getAttribute("action");
+      action === "edit"
+        ? console.log("edit")
+        : action === "comment"
+          ? console.log("comment")
+          : this.props.handleDeleteEntry(entry_id);
+    };
+  }
 
     componentDidMount() {
         this.props.getAllEntries()
@@ -58,30 +58,41 @@ class ShowEntries extends Component {
                             <p>
                             Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
 
-                            <p> Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing 
-                            software like Aldus PageMaker including versions of Lorem Ipsum.   </p>
+                      <p>
+                        {" "}
+                        Letraset sheets containing Lorem Ipsum passages, and
+                        more recently with desktop publishing software like
+                        Aldus PageMaker including versions of Lorem Ipsum.{" "}
+                      </p>
 
-                            <p>Why do we use it?
-                            It is a long established fact that a reader will be distracted by the readable content of a page 
-                            when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal 
-                            distribution of letters, as opposed to using 'Content here, content here', making it look like 
-                            readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as 
-                            their default model text, and a search for 'lorem ipsum' will uncover many web sites still in 
-                            their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on 
-                            purpose (injected humour and the like).
-                            </p>
+                      <p>
+                        Why do we use it? It is a long established fact that a
+                        reader will be distracted by the readable content of a
+                        page when looking at its layout. The point of using
+                        Lorem Ipsum is that it has a more-or-less normal
+                        distribution of letters, as opposed to using 'Content
+                        here, content here', making it look like readable
+                        English. Many desktop publishing packages and web page
+                        editors now use Lorem Ipsum as their default model text,
+                        and a search for 'lorem ipsum' will uncover many web
+                        sites still in their infancy. Various versions have
+                        evolved over the years, sometimes by accident, sometimes
+                        on purpose (injected humour and the like).
+                      </p>
 
-                            <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                            </p>
-                        </div>
-                        </div>
-                        </div>
-                    )}
+                      <p>
+                        Lorem Ipsum has been the industry's standard dummy text
+                        ever since the 1500s,
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
-            </div>
-            </div>
-            </div>
-        )
-    }
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
 export default ShowEntries;
