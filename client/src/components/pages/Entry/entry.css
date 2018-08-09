@@ -15,11 +15,19 @@
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
     padding: 4px 6px 1px;
     margin: 0 2px;
+    border: none;
 
 }
-Button:hover {
+.entry-btn:hover {
     background-color: #499BFF;
     color: #343a40;
+    text-decoration: none;
+    border: none;
+}
+.btn {
+    margin-right: 0;
+    vertical-align: baseline;
+    border: none;
 }
 textarea {
     resize: none;
