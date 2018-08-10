@@ -26,7 +26,7 @@ export default {
     return axios.post('/journal/' + userid, newEntry);
   },
   // get entry to be deleted 
-  getEntryToBeDeletedInfo: function (entry_id) {
+  getEntryToBeEditedInfo: function (entry_id) {
     return axios.get('/journal/' + entry_id);
   },
 
