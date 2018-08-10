@@ -37,7 +37,7 @@ li span i {
   font-style: normal;
 }
 li b {
-  color: #499bff;
+  color: #fff;
   line-height: 1;
   font-size: 25px;
   display: inline-block;
@@ -52,6 +52,7 @@ li:hover span {
   opacity: 1;
   max-width: 150px;
   transition: max-width 0.8s ease-out 0.1s, opacity 1s ease-out 0.1s, color 0.2s;
+  color: #007bff;
 }
 
 .fa {
