@@ -127,6 +127,9 @@ button:hover {
   background-color: #499BFF;
   color: #343a40;
 }
+.navbar {
+  padding: 22rem 1rem;
+}
 .navbar-brand {
   font-size: 44px;
 }
