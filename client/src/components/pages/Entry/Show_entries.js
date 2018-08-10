@@ -1,5 +1,6 @@
 import React from "react";
 import { Component } from "react";
+import { Link } from "react-router-dom";
 
 class ShowEntries extends Component {
   constructor(props) {
@@ -8,10 +9,8 @@ class ShowEntries extends Component {
       e.preventDefault();
       let entry_id = e.target.getAttribute("data-id");
       let action = e.target.getAttribute("action");
-      action === "edit"
-        ? this.props.handleEditEntry(entry_id)
-        : action === "comment"
-          ? this.props.handleAddComment(entry_id)
+        action === "comment"?
+            this.props.handleAddComment(entry_id)
           : this.props.handleDeleteEntry(entry_id);
     };
   }
@@ -33,8 +32,7 @@ class ShowEntries extends Component {
                           <div> <button className="btn-link entry-btn" type="button" data-toggle="collapse" data-target={"#"+entry._id+1} aria-expanded="true" aria-controls={entry._id+1}>
                           Comments
                           </button>
-                          <button className="entry-btn" data-id={entry._id} action="edit"
-                                onClick={this.handleAction}>Edit Post</button> 
+                          <Link to={'/edit_entry/'+entry._id} className="entry-btn">Edit Post</Link> 
                             <button className="entry-btn" data-id={entry._id} action="delete"
                                 onClick={this.handleAction}>Delete</button>
                             <button className="entry-btn" data-id={entry._id} action="comment"
