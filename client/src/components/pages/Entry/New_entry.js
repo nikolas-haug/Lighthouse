@@ -18,7 +18,7 @@ class NewEntry extends Component {
       event.preventDefault();
       let data = event.target;
       let newEntry = {
-        private: data.private.checked,
+        public: data.public.checked,
         title: data.title.value,
         text: data.text.value
       };
@@ -39,7 +39,7 @@ class NewEntry extends Component {
             </FormGroup>
             <Button type="submit" color="#2800B2">Submit</Button>
             <FormGroup className="form-group private-check">
-              <input type="checkbox" id="private-square" name="private" />
+              <input type="checkbox" id="private-square" name="public" />
               <Label for="exampleText">Make this entry public</Label>
             </FormGroup>
           </Form>

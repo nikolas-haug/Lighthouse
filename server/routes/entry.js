@@ -8,7 +8,7 @@ var router = express.Router();
 
 //Route to get all of the journal entries
 router.get("/journal", function (req, res) {
-    Entry.find({private: false}, function(err, entries){
+    Entry.find({public: true}, function(err, entries){
         // console.log(entries);
         res.json(entries)
     })
