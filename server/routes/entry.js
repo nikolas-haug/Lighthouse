@@ -42,7 +42,13 @@ router.post("/journal/:userid", function (req, res) {
 
 //Route to edit existing entries
 router.put("/journal/user/:entryid", function (req, res) {
-
+    Entry.findOneAndUpdate(req.params.id, req.body, function(err, entry){
+        if(err){
+            console.log("Not working!");
+        } else {
+            console.log(entry);
+        }
+    });
 })
 
 //Route to delete existing entries

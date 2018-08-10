@@ -40,7 +40,7 @@ class NewEntry extends Component {
             <Button type="submit" color="#2800B2">Submit</Button>
             <FormGroup className="form-group private-check">
               <input type="checkbox" id="private-square" name="private" />
-              <Label for="exampleText">Please check privacy option</Label>
+              <Label for="exampleText">Make this entry public</Label>
             </FormGroup>
           </Form>
         </Container>
