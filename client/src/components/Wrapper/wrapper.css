@@ -132,3 +132,14 @@ li:hover span {
     margin-top: 15px;
   }
 }
+button {
+ background-color: #343a40;
+  color: #fff;
+}
+button:hover {
+  background-color: #499BFF;
+  color: #343a40;
+}
+.navbar-brand {
+  font-size: 44px;
+}

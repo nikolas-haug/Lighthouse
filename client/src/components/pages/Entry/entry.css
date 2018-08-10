@@ -13,13 +13,22 @@
     background-color: #3c3d41;
     color: #fff;
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-    padding: 4px 6px 1px;
+    padding: 6px 6px 3px;
     margin: 0 2px;
+    border: none;
+    font-size: 13px;
 
 }
-Button:hover {
+.entry-btn:hover {
     background-color: #499BFF;
     color: #343a40;
+    text-decoration: none;
+    border: none;
+}
+.btn {
+    margin-right: 0;
+    vertical-align: baseline;
+    border: none;
 }
 textarea {
     resize: none;

@@ -30,7 +30,7 @@ class ShowEntries extends Component {
                         <div className="card-header" id={entry._id}>
                           <div>  <h5>{entry.title}</h5></div>    
                           <div>  <p>{entry.text}</p></div>    
-                          <div> <button className="btn btn-link" type="button" data-toggle="collapse" data-target={"#"+entry._id+1} aria-expanded="true" aria-controls={entry._id+1}>
+                          <div> <button className="btn-link entry-btn" type="button" data-toggle="collapse" data-target={"#"+entry._id+1} aria-expanded="true" aria-controls={entry._id+1}>
                           Comments
                           </button>
                           <button className="entry-btn" data-id={entry._id} action="edit"

@@ -34,17 +34,9 @@ export default {
 
   // PROVIDERS API MESSENGERS
   //**************************************/
-  // send a query to the betterdoctors api
-  getProviders: function (keyword, location, USstate) {
-    return axios.get('/api/providers/' + keyword + '/' + location + '/' + USstate);
-  }
+    // send a query to the betterdoctors api
+    getProviders: function (keyword, location, USstate, specialty) {
+      return axios.get('/api/providers/' + keyword + '/' + location + '/' + USstate + '/' + specialty);
+    }
 
 };
-
-
-
-
-
-
-
-
