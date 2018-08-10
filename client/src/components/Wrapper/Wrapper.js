@@ -16,46 +16,63 @@ const Header = props => (
         data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent"
         aria-expanded="false"
-        aria-label="Toggle navigation">
+        aria-label="Toggle navigation"
+      >
         <span className="navbar-toggler-icon" />
       </button>
 
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav mr-auto" />
-        <li className="nav-item active">
-          <a className="nav-link" href="/">
-            Home <span className="sr-only">(current)</span>
-          </a>
-        </li>
+
+        {/* User Nav-Link */}
         <li>
           <b className="fa fa-user" aria-hidden="true" />
           <span>
-            <i>Journal</i>
+            <i>
+              <a>{localStorage.getItem("user")}</a>
+            </i>
           </span>
         </li>
-        <a>{localStorage.getItem("user")}</a>
+
+        {/* New Entry Nav Link */}
         <li>
-          <b className="fa fa-users" aria-hidden="true" />
-          <span>
-            <i>Forum</i>
-          </span>
+          {localStorage.getItem("user") ? (
+            <Link to={"/new_entry"}>
+              <b className="fa fa-plus-square nav-link" aria-hidden="true" />
+              <span>
+                <i>
+                  <a>New Entry</a>
+                </i>
+              </span>
+            </Link>
+          ) : (
+            ""
+          )}
         </li>
-        {localStorage.getItem("user")? <Link to={"/new_entry"} className="nav-link" aria-hidden="true">
-        Add Entry
-      </Link>:''}
-       
-        <Link to={"/entries"} className="nav-link" aria-hidden="true">
-          Entries
-        </Link>
-        {localStorage.getItem("user")? <Link to={"/logout"} className="nav-link" aria-hidden="true">
+
+        {/* Entries Nav-Link */}
         <li>
-          <b className="fa fa-sign-out" aria-hidden="true" />
-          <span>
-            <i>Sign Out</i>
-          </span>
+          <Link to={"/entries"}>
+            <b className="fa fa-users nav-link" aria-hidden="true" />
+            <span>
+              <i>Forum</i>
+            </span>
+          </Link>
         </li>
-      </Link>:''}
-       
+
+        {/* Sign Out Nav Link */}
+        <li>
+          {localStorage.getItem("user") ? (
+            <Link to={"/logout"} className="nav-link" aria-hidden="true">
+              <b className="fa fa-sign-out" aria-hidden="true" />
+              <span>
+                <i>Sign Out</i>
+              </span>
+            </Link>
+          ) : (
+            ""
+          )}
+        </li>
       </div>
     </nav>
 

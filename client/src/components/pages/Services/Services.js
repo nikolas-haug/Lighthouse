@@ -14,6 +14,7 @@ class Services extends Component {
     keyword: "",
     location: "",
     USstate: "",
+    specialty: "professional-counselor", // setting default value for the dropdown select
     results: []
   }
 
@@ -23,34 +24,26 @@ class Services extends Component {
     let newState = {};
     newState[event.target.id] = event.target.value;
     this.setState(newState);
-    // console.log(newState);
+    console.log(newState);
   }
 
   handleFormSubmit = (event) => {
-    this.setState({
-      keyword: "",
-      location: "",
-      USstate: ""
-    });
     event.preventDefault();
-  };
-
-  handleButtonClick = () => {
-    if(this.state.keyword !== "" && this.state.location !== "") {
+    if(this.state.keyword !== "" && this.state.location !== "" && this.state.USstate !== "") {
       // after button click, format request params before calling the api
-      API.getProviders(this.state.keyword.trim(), (this.state.location).toLowerCase().trim(), (this.state.USstate).toLowerCase()).then((res) => {
+      API.getProviders(this.state.keyword.trim(), (this.state.location).toLowerCase().trim(), (this.state.USstate).toLowerCase(), this.state.specialty).then((res) => {
         // TO DO - refresh the form for next query
         this.setState({
           results: res.data.data,
           keyword: "",
-          location: "",
-          USstate: ""
+          location: ""
         });
-
+        
       }).catch((err) => {
         console.log(err);
       });
     }
+    
   }
 
   render() {
@@ -59,8 +52,8 @@ class Services extends Component {
         <h1>Services</h1>
 
         <form onSubmit={this.handleFormSubmit}>
-          <Input handleChange={this.handleInputChange} />
-          <Button handleButtonClick={this.handleButtonClick}/>
+          <Input handleChange={this.handleInputChange} keyword={this.state.keyword} location={this.state.location}/>
+          <Button />
         </form>
         {/* TO DO - get the results to display on a different page/section with animation transition */}
         <div>

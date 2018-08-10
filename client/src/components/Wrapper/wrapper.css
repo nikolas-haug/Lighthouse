@@ -8,7 +8,7 @@ a {
 }
 
 a:hover {
-  color: inherit;
+  color: #499bff;
   text-decoration: none;
 }
 
@@ -33,7 +33,7 @@ li span:hover {
   color: #fff;
 }
 li span i {
-  float: right;
+  float: left;
   display: block;
   padding-right: 1em;
   font-style: normal;
@@ -45,8 +45,11 @@ li b {
   display: inline-block;
   padding: 0.125em 0.375em;
 }
-li:hover {
+
+.fa-sign-out {
+  color: rgb(136, 136, 136);
 }
+
 li:hover span {
   opacity: 1;
   max-width: 150px;
@@ -60,6 +63,16 @@ li:hover span {
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
     border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   cursor: pointer;
+}
+
+.fa-sign-out {
+  border-left: 1px solid rgb(136, 136, 136);
+  padding-left: 30%;
+  margin-left: 5px;
+}
+
+.nav-link {
+  display: inherit;
 }
 
 .header {

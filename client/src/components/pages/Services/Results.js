@@ -8,8 +8,9 @@ const Results = (props) => {
         <div>
             {props.results.map((provider) => {
                 // TO DO - check if the provider has a valid website, if not display alert message
+                // TO DO - if no results available, display message to user
                 const websiteURL = "no website available" || `${provider.practices[0].website}`
-
+                
                 return (
                     <div key={provider.practices[0].uid}>
                         <h1>{provider.practices[0].name}</h1>
@@ -18,7 +19,7 @@ const Results = (props) => {
                         <h5>{provider.practices[0].visit_address.street}</h5>
                         <h4>{provider.practices[0].visit_address.zip}</h4>
                         <h4>{provider.practices[0].phones[0].number}</h4>
-                        {/* <a href={websiteURL}>`${websiteURL}`</a> */}
+                        <a href={provider.practices[0].website}>{provider.practices[0].website}</a>
                     </div>
                 )  
             })}
