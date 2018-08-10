@@ -40,6 +40,19 @@ router.post("/journal/:userid", function (req, res) {
     
 })
 
+//==============================================
+//Route to get an entry to be edited
+//==============================================
+router.get('/journal/:entry_id', function (req, res) {
+    Entry.findById(req.params.entry_id, function (err, entry) {
+        if (err) {
+            console.log(err);
+        } else {
+            res.json(entry)
+        }
+    });
+});
+
 
 //Route to edit existing entries
 router.put("/journal/:entryid", function (req, res) {
