@@ -13,9 +13,10 @@
     background-color: #3c3d41;
     color: #fff;
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-    padding: 4px 6px 1px;
+    padding: 6px 6px 3px;
     margin: 0 2px;
     border: none;
+    font-size: 13px;
 
 }
 .entry-btn:hover {
