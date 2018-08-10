@@ -3,6 +3,12 @@
     width: 40%;
     margin-right: 40px;
 }
+.state-input {
+ width: 10%;
+}
+.specialty-input {
+    width: 15%;
+}
 .btn-search {
 margin: 20px 0;
 }
