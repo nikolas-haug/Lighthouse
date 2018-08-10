@@ -54,7 +54,7 @@ const Header = props => (
 
         {/* Entries Nav-Link */}
         <li>
-          {localStorage.getItem("entries") ? (
+          {localStorage.getItem("user") ? (
             <Link to={"/entries"}>
               <b className="fa fa-users nav-link" aria-hidden="true" />
               <span>
