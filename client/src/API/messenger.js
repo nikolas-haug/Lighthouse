@@ -25,6 +25,15 @@ export default {
   sendNewEntryInfo: function (newEntry, userid) {
     return axios.post('/journal/' + userid, newEntry);
   },
+  // get entry to be deleted 
+  getEntryToBeDeletedInfo: function (entry_id) {
+    return axios.get('/journal/' + entry_id);
+  },
+
+    // Send entry to be deleted data to the express server route 
+    sendEditedEntryInfo: function (entry_id) {
+      return axios.put('/journal' + entry_id);
+    },
 
 
   // Send entry to be deleted data to the express server route 
