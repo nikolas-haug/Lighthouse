@@ -40,9 +40,7 @@ const Header = props => (
             <Link to={"/new_entry"}>
               <b className="fa fa-plus-square nav-link" aria-hidden="true" />
               <span>
-                <i>
-                  <a>New Entry</a>
-                </i>
+                <i>New Entry</i>
               </span>
             </Link>
           ) : (
