@@ -26,6 +26,7 @@ router.post("/journal/:userid", function (req, res) {
                 if (err) {
                     console.log(err)
                 } else {
+                    console.log(entry._id)
                     user.entries.push(entry);
                     user.save();
                     res.end()
@@ -41,12 +42,15 @@ router.post("/journal/:userid", function (req, res) {
 
 
 //Route to edit existing entries
-router.put("/journal/user/:entryid", function (req, res) {
-    Entry.findOneAndUpdate(req.params.id, req.body, function(err, entry){
+router.put("/journal/:entryid", function (req, res) {
+    Entry.findByIdAndUpdate(req.params.entryid, req.body, function(err, entry){
+        console.log(req.params.entryid);
+        console.log(req.body);
         if(err){
             console.log("Not working!");
         } else {
             console.log(entry);
+            res.end();
         }
     });
 })
