@@ -25,14 +25,18 @@ const Header = props => (
         <ul className="navbar-nav mr-auto" />
 
         {/* User Nav-Link */}
-        <li>
-          <b className="fa fa-user" aria-hidden="true" />
-          <span>
-            <i>
-              <a>{localStorage.getItem("user")}</a>
-            </i>
-          </span>
-        </li>
+        {localStorage.getItem("user") ? (
+          <li>
+            <b className="fa fa-user" aria-hidden="true" />
+            <span>
+              <i>
+                <a>{localStorage.getItem("user")}</a>
+              </i>
+            </span>
+          </li>
+        ) : (
+          <a className="" href="/">Login</a>
+        )}
 
         {/* New Entry Nav Link */}
         <li>
@@ -50,12 +54,16 @@ const Header = props => (
 
         {/* Entries Nav-Link */}
         <li>
-          <Link to={"/entries"}>
-            <b className="fa fa-users nav-link" aria-hidden="true" />
-            <span>
-              <i>Forum</i>
-            </span>
-          </Link>
+          {localStorage.getItem("entries") ? (
+            <Link to={"/entries"}>
+              <b className="fa fa-users nav-link" aria-hidden="true" />
+              <span>
+                <i>Forum</i>
+              </span>
+            </Link>
+          ) : (
+              ""
+          )}
         </li>
 
         {/* Sign Out Nav Link */}
@@ -68,7 +76,7 @@ const Header = props => (
               </span>
             </Link>
           ) : (
-            ""
+            <a className="" href="/">Sign Up</a>
           )}
         </li>
       </div>

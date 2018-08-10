@@ -4,6 +4,8 @@ import Login from "./Login/Login";
 import Signup from "./Signup/Signup";
 import Logout from "./Logout/Logout";
 import API from "../../../API/messenger";
+import Slides from "./Carousel/Carousel"
+
 
 class Landing extends Component {
   constructor(props) {
@@ -82,9 +84,11 @@ class Landing extends Component {
       }
     };
   }
+
   render() {
     return (
-      <div>
+        <div>
+        <Slides/>
         {this.props.match.path === "/signup" ? (
           <Signup handleUserSignup={this.handleUserSignup} />
         ) : this.props.match.path === "/" ? (
