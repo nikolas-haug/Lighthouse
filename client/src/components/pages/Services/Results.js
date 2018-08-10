@@ -10,7 +10,7 @@ const Results = (props) => {
                 // TO DO - check if the provider has a valid website, if not display alert message
                 // TO DO - if no results available, display message to user
                 const websiteURL = "no website available" || `${provider.practices[0].website}`
-
+                
                 return (
                     <div key={provider.practices[0].uid}>
                         <h1>{provider.practices[0].name}</h1>

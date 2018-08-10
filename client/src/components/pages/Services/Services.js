@@ -27,16 +27,7 @@ class Services extends Component {
   }
 
   handleFormSubmit = (event) => {
-    this.setState({
-      keyword: "",
-      location: "",
-      USstate: "",
-      specialty: ""
-    });
     event.preventDefault();
-  };
-
-  handleButtonClick = () => {
     if(this.state.keyword !== "" && this.state.location !== "" && this.state.USstate !== "") {
       // after button click, format request params before calling the api
       API.getProviders(this.state.keyword.trim(), (this.state.location).toLowerCase().trim(), (this.state.USstate).toLowerCase(), this.state.specialty).then((res) => {
@@ -44,15 +35,14 @@ class Services extends Component {
         this.setState({
           results: res.data.data,
           keyword: "",
-          location: "",
-          USstate: "",
-          specialty: ""
+          location: ""
         });
-
+        
       }).catch((err) => {
         console.log(err);
       });
     }
+    
   }
 
   render() {
@@ -61,8 +51,8 @@ class Services extends Component {
         <h1>Services</h1>
 
         <form onSubmit={this.handleFormSubmit}>
-          <Input handleChange={this.handleInputChange} />
-          <Button handleButtonClick={this.handleButtonClick}/>
+          <Input handleChange={this.handleInputChange} keyword={this.state.keyword} location={this.state.location}/>
+          <Button />
         </form>
         {/* TO DO - get the results to display on a different page/section with animation transition */}
         <div>

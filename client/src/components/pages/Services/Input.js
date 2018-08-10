@@ -88,6 +88,16 @@ const Input = (props) => {
                 <select id="specialty" name="specialty" onChange={props.handleChange} required>
                     <option value="professional-counselor">Professional counselor</option>
                     <option value="addiction-psychiatrist">Addiction</option>
+                    <option value="psychiatrist">Professional psychiatrist</option>
+                    <option value="mental-health-nurse-practitioner">Mental health practitioner</option>
+                    <option value="group-psychotherapy-psychologist">Group psychologist</option>
+                    <option value="school-counselor">School counselor</option>
+                    <option value="clinical-psychologist">Clinical psychologist</option>
+                    <option value="mental-health-counselor">Mental health counselor</option>
+                    <option value="art-therapist">Art therapy</option>
+                    <option value="psychiatry-neurology-addiction-medicine">Neurology medicine</option>
+                    <option value="rehabilitation-counselor">Rehabilitation counselor</option>
+                    <option value="rehabilitation-psychologist">Rehabilitation psychologist</option>
                 </select>
             </div>
         </div>
