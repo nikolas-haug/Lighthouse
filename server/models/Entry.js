@@ -2,7 +2,7 @@ var mongoose = require("mongoose");
 var EntrySchema = new mongoose.Schema({  
     title: String, 
     text: String,
-    private: { type: Boolean, default: false },
+    public: { type: Boolean, default: false },
     createdAt: { type: Date, default: Date.now },
     updatedAt: { type: Date, default: Date.now }, 
     comments: [{ 
