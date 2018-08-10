@@ -42,22 +42,22 @@ class Entry extends Component {
 
 
         this.handleEditEntry = (entry_id) => {
-            console.log(entry_id)
             // Takes the submitted data and pass it over to the API module
-            // API.sendEditedEntry(entry_id).then(res => {
-            //     //If sign in is success
-            //     if (res.data) {
-            //         this.setState({
-            //             editedEntry: {}
-            //         })
-            //         //Redirect to entry page for now
-            //         this.props.history.push('/entry');
-            //     } else {
-            //         //If sign in fails, stay on login
-            //         this.props.history.push('/');
-            //     }
-            // }).catch(err => console.log(err));
-
+            API.getEntryToBeDeletedInfo(entry_id).then(res => {
+                //If sign in is success
+                if (res.data) {
+                    this.setState({
+                        editedEntry: res.data
+                    })
+                    console.log(this.state.editedEntry)
+                    // Redirect to ent ry page for now
+                    this.props.history.push('/edit_entry');
+                } 
+                else {
+                    //If sign in fails, stay on login
+                    this.props.history.push('/entries');
+                }
+            }).catch(err => console.log(err));
         }
 
         // This method handles entry deletion
@@ -66,18 +66,16 @@ class Entry extends Component {
                 this.getAllEntries();
             }).catch(err => console.log(err));
         }
-
-    
-
     }
 
-    render() { 
+    render() {
+    
+
+
         return ( 
             <div> 
-                {this.props.match.path === '/new_entry'?
-                    <NewEntry addNewEntry={this.addNewEntry}/>:
-                    this.props.match.path === '/edit_entry'?
-                    <EditEntry handleEditEntry={this.handleEditEntry}/>:
+                {this.props.match.path === '/new_entry'?<NewEntry addNewEntry={this.addNewEntry}/>:
+                    this.props.match.path === '/edit_entry'?<EditEntry handleUpdate={this.handleUpdate}    entry={this.state.editedEntry}/>:
                         <ShowEntries 
                             handleDeleteEntry={this.handleDeleteEntry} 
                             getAllEntries={this.getAllEntries}
