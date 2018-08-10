@@ -79,17 +79,6 @@ li:hover span {
   color: #fff;
 }
 
-.logo {
-  display: left;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
-    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  cursor: pointer;
-  margin-left: 10px;
-}
-
-.logo:hover {
-  color: #fff;
-}
 .content {
   max-width: 1280px;
   margin: 20px auto;
@@ -145,4 +134,9 @@ button:hover {
 }
 .navbar-brand {
   font-size: 44px;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+
+}
+.navbar-dark .navbar-brand:focus, .navbar-dark .navbar-brand:hover {
+  color: #499BFF
 }
