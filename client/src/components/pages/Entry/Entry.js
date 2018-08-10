@@ -42,20 +42,21 @@ class Entry extends Component {
 
 
         this.handleEditEntry = (entry_id) => {
+            console.log(entry_id)
             // Takes the submitted data and pass it over to the API module
-            API.sendEditedEntry(entry_id).then(res => {
-                //If sign in is success
-                if (res.data) {
-                    this.setState({
-                        editedEntry: {}
-                    })
-                    //Redirect to entry page for now
-                    this.props.history.push('/entry');
-                } else {
-                    //If sign in fails, stay on login
-                    this.props.history.push('/');
-                }
-            }).catch(err => console.log(err));
+            // API.sendEditedEntry(entry_id).then(res => {
+            //     //If sign in is success
+            //     if (res.data) {
+            //         this.setState({
+            //             editedEntry: {}
+            //         })
+            //         //Redirect to entry page for now
+            //         this.props.history.push('/entry');
+            //     } else {
+            //         //If sign in fails, stay on login
+            //         this.props.history.push('/');
+            //     }
+            // }).catch(err => console.log(err));
 
         }
 
@@ -80,6 +81,7 @@ class Entry extends Component {
                         <ShowEntries 
                             handleDeleteEntry={this.handleDeleteEntry} 
                             getAllEntries={this.getAllEntries}
+                            handleEditEntry={this.handleEditEntry}
                             entries={this.state.entries}
                         />
                 }

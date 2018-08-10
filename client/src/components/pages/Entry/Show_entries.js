@@ -9,9 +9,9 @@ class ShowEntries extends Component {
       let entry_id = e.target.getAttribute("data-id");
       let action = e.target.getAttribute("action");
       action === "edit"
-        ? console.log("edit")
+        ? this.props.handleEditEntry(entry_id)
         : action === "comment"
-          ? console.log("comment")
+          ? this.props.handleAddComment(entry_id)
           : this.props.handleDeleteEntry(entry_id);
     };
   }
