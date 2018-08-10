@@ -56,8 +56,8 @@ router.get('/journal/:entry_id', function (req, res) {
 
 //Route to edit existing entries
 router.put("/journal/:entryid", function (req, res) {
-    Entry.findByIdAndUpdate(req.params.entryid, req.body, function(err, entry){
-        console.log(req.params.entryid);
+    Entry.findByIdAndUpdate(req.params.entryid, req.body, {new: true}, function(err, entry){
+        //console.log(req.params.entryid);
         console.log(req.body);
         if(err){
             console.log("Not working!");
