@@ -30,7 +30,7 @@ const Input = (props) => {
                     />
                     <hr />
                 </div>
-                <div className="form-group bottom-item">
+                <div className="form-group bottom-item state-input">
                     <label htmlFor="USstate">State</label>
                     <select id="USstate" name="USstate" onChange={props.handleChange}>
                         <option value="AL">AL</option>
@@ -85,24 +85,25 @@ const Input = (props) => {
                         <option value="WI">WI</option>
                         <option value="WY">WY</option>
                     </select>
+
                 </div>
-            </div>
-            <div className="form-group">
-                <label htmlFor="specialty">Type of service/specialty</label>
-                <select id="specialty" name="specialty" onChange={props.handleChange} required>
-                    <option value="professional-counselor">Professional counselor</option>
-                    <option value="addiction-psychiatrist">Addiction</option>
-                    <option value="psychiatrist">Professional psychiatrist</option>
-                    <option value="mental-health-nurse-practitioner">Mental health practitioner</option>
-                    <option value="group-psychotherapy-psychologist">Group psychologist</option>
-                    <option value="school-counselor">School counselor</option>
-                    <option value="clinical-psychologist">Clinical psychologist</option>
-                    <option value="mental-health-counselor">Mental health counselor</option>
-                    <option value="art-therapist">Art therapy</option>
-                    <option value="psychiatry-neurology-addiction-medicine">Neurology medicine</option>
-                    <option value="rehabilitation-counselor">Rehabilitation counselor</option>
-                    <option value="rehabilitation-psychologist">Rehabilitation psychologist</option>
-                </select>
+                <div className="form-group bottom-item specialty-input">
+                    <label htmlFor="specialty">Type of service/specialty</label>
+                    <select id="specialty" name="specialty" onChange={props.handleChange} required>
+                        <option value="professional-counselor">Professional counselor</option>
+                        <option value="addiction-psychiatrist">Addiction</option>
+                        <option value="psychiatrist">Professional psychiatrist</option>
+                        <option value="mental-health-nurse-practitioner">Mental health practitioner</option>
+                        <option value="group-psychotherapy-psychologist">Group psychologist</option>
+                        <option value="school-counselor">School counselor</option>
+                        <option value="clinical-psychologist">Clinical psychologist</option>
+                        <option value="mental-health-counselor">Mental health counselor</option>
+                        <option value="art-therapist">Art therapy</option>
+                        <option value="psychiatry-neurology-addiction-medicine">Neurology medicine</option>
+                        <option value="rehabilitation-counselor">Rehabilitation counselor</option>
+                        <option value="rehabilitation-psychologist">Rehabilitation psychologist</option>
+                    </select>
+                </div>
             </div>
         </div>
     )

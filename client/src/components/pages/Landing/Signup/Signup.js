@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
 import { Component } from 'react';
-import About from '../../Sections/About'
-import '../Login/login.css'
+import About from '../../Sections/About';
+import '../Login/login.css';
 
 class Signup extends Component {
     constructor(props) {
