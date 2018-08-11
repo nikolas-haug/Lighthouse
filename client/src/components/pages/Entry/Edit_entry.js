@@ -16,10 +16,9 @@ class EditEntry extends Component {
         title: '',
         text:''
     }
-
     // this.handleInputChange = this.handleInputChange.bind(this);
     // this.handleCheckboxChange = this.handleCheckboxChange.bind(this);
-  
+
     this.handleEditEntry = () => {
         let entry_id = this.props.match.params.id
         // Takes the submitted data and pass it over to the API module
@@ -31,14 +30,7 @@ class EditEntry extends Component {
                         title: res.data.title,
                         text:res.data.text
                 })
-                console.log(this.state)
-                // Redirect to ent ry page for now
-                // this.props.history.push('/edit_entry');
             } 
-            // else {
-                //If sign in fails, stay on login
-                // this.props.history.push('/entries');
-            // }
         }).catch(err => console.log(err));
     }
 
@@ -55,21 +47,16 @@ class EditEntry extends Component {
       API.sendEditedEntryInfo(entry_id, editedEntry).then((res) => {
           if(res.status === 200){
         //If res is success
-        console.log("It works")
             // Redirect to ent ry page for now
             this.props.history.push('/entries');
           }
-        // else {
-            //If sign in fails, stay on login
-        // }
-    }).catch(err => console.log(err));
-
-    //   this.props.addNewEntry(editedEntry);
+        else {
+            // If sign in fails, stay on login
+            this.props.history.go('back');
+        }
+       }).catch(err => console.log(err));
     }
-
-
   }
-
 
   handleInputChange = (e) => {
     let target = e.target;
@@ -78,26 +65,17 @@ class EditEntry extends Component {
     this.setState({
         [name]:value
     })
-    console.log(this.state)
-
 }
 
 handleCheckboxChange = (e) => {
-    
     this.setState({
         public:e.target.checked
     })
-    console.log(this.state.public)
-
 }
-
-  
 
   componentWillMount() {
     this.handleEditEntry() 
 }
-
-
   render() {
     return (<div className="entry-form">
       <Jumbotron>
@@ -121,7 +99,6 @@ handleCheckboxChange = (e) => {
         </Container>
       </Jumbotron>
     </div>);
-
   }
 }
 

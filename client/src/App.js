@@ -22,7 +22,6 @@ const App = () => (
         <Route exact path="/edit_entry/:id" component={EditEntry} />
         <Route exact path="/journal" component={Journal} />
         <Route exact path="/services" component={Services} />
-       
       </div>
       </Wrapper>
     </Router>
