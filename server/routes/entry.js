@@ -19,6 +19,22 @@ router.get("/journal", function (req, res) {
     })
 })
 
+//==============================================
+//GET ROUTE TO GET ALL ENTRIES FOR INDIVIDUAL USERS
+//==============================================
+router.get("/journal/:userid", function (req, res) {
+    console.log(req.params.userid)
+    Entry.find({ _id: req.params.userid}, function (err, entries) {
+             if (err) {
+                console.log(err)
+             } else {
+                 //Why is 'entries' empty?
+                console.log("Data boi" + entries);
+                res.json(entries) 
+             }
+    })
+})
+
 
 //==============================================
 //POST ROUTE TO CREATE NEW JOURNAL ENTRIES
