@@ -30,3 +30,19 @@
 2018-08-11T18:55:53.700754+00:00 heroku[web.1]: State changed from starting to crashed
 2018-08-11T18:55:55.704288+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=dry-lake-56367.herokuapp.com request_id=2f45d108-0b68-4a19-8a0e-ed94b8b7903f fwd="131.212.249.112" dyno= connect= service= status=503 bytes= protocol=http
 2018-08-11T18:55:56.156841+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=dry-lake-56367.herokuapp.com request_id=8470b6d0-99d8-43bd-b4ef-d30559410290 fwd="131.212.249.112" dyno= connect= service= status=503 bytes= protocol=http
+2018-08-11T18:58:27.000000+00:00 app[api]: Build started by user nikohaug21@gmail.com
+2018-08-11T18:59:51.752779+00:00 heroku[web.1]: State changed from crashed to starting
+2018-08-11T18:59:51.533095+00:00 app[api]: Deploy b59e0122 by user nikohaug21@gmail.com
+2018-08-11T18:59:51.000000+00:00 app[api]: Build succeeded
+2018-08-11T18:59:51.533095+00:00 app[api]: Release v5 created by user nikohaug21@gmail.com
+2018-08-11T19:00:04.160312+00:00 heroku[web.1]: Starting process with command `npm start`
+2018-08-11T19:00:07.148649+00:00 heroku[web.1]: State changed from starting to crashed
+2018-08-11T19:00:07.111702+00:00 heroku[web.1]: Process exited with status 1
+2018-08-11T19:00:07.021191+00:00 app[web.1]: npm ERR! missing script: start
+2018-08-11T19:00:07.027851+00:00 app[web.1]: 
+2018-08-11T19:00:07.028241+00:00 app[web.1]: npm ERR! A complete log of this run can be found in:
+2018-08-11T19:00:07.028790+00:00 app[web.1]: npm ERR!     /app/.npm/_logs/2018-08-11T19_00_07_023Z-debug.log
+2018-08-11T19:00:07.449058+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=dry-lake-56367.herokuapp.com request_id=2e59047c-12bd-46c0-b940-3ab72e226680 fwd="131.212.249.112" dyno= connect= service= status=503 bytes= protocol=http
+2018-08-11T19:00:07.898559+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=dry-lake-56367.herokuapp.com request_id=7bbab192-bbb7-4d51-a16c-f66fc0413c62 fwd="131.212.249.112" dyno= connect= service= status=503 bytes= protocol=http
+2018-08-11T19:00:09.476793+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=dry-lake-56367.herokuapp.com request_id=002d2121-b42b-4cc7-8467-56589f59eaf2 fwd="131.212.249.112" dyno= connect= service= status=503 bytes= protocol=http
+2018-08-11T19:00:09.821649+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=dry-lake-56367.herokuapp.com request_id=2257429a-fd89-4540-996b-843b404dd86e fwd="131.212.249.112" dyno= connect= service= status=503 bytes= protocol=http
