@@ -37,13 +37,12 @@ class Comments extends Component {
             }).catch(err => console.log(err));
         }
 
-
         // This method handles entry deletion
-    //     this.handleDeleteEntry= (entry_id) => {
-    //         API.sendDeleteEntryInfo(entry_id).then(() => {
-    //             this.getAllComments();
-    //         }).catch(err => console.log(err));
-    //     }
+        this.handleDeleteEntry= (entry_id) => {
+            API.sendDeleteEntryInfo(entry_id).then(() => {
+                this.getAllComments();
+            }).catch(err => console.log(err));
+        }
     }
 
 
