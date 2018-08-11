@@ -3,7 +3,6 @@ import React from "react";
 const showResults = results => results.map((provider) => {
     // TO DO - check if the provider has a valid website, if not display alert message
     // TO DO - if no results available, display message to user
-    const websiteURL = "no website available" || `${provider.practices[0].website}`
     
     return (
         <div key={provider.practices[0].uid}>
@@ -24,9 +23,10 @@ const Results = (props) => {
 
   return(
     <div>
-        {/* <h1>Results</h1> */}
         <div>
-            {props.results ? showResults(props.results) : showNoResults()}
+            {props.results.length > 0 ? <h1>Results!</h1> : <h3>No results to display. Please enter your search terms.</h3>}
+            <hr />
+            {props.results.length > 0 ? showResults(props.results) : showNoResults()}
         </div>
     </div>
     )
