@@ -40,7 +40,7 @@ class ShowEntries extends Component {
                                         </div>    
                                         <div>
                                             <button className="btn-link entry-btn" type="button" data-toggle="collapse" data-target={"#"+entry._id+1} aria-expanded="true" aria-controls={entry._id+1}>
-                                            Comments
+                                            <span>{entry.comments.length}</span>   <span>{entry.comments.length>1?'Comments':'Comment'}</span>
                                             </button>
                                             <Link to={'/edit_entry/'+entry._id} className="entry-btn">Edit Post</Link> 
                                             <button className="entry-btn" data-id={entry._id} action="delete"
