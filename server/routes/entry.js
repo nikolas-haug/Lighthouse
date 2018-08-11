@@ -8,9 +8,7 @@ var router = express.Router();
 //GET ROUTE TO GET ALL ENTRIES
 //==============================================
 router.get("/journal", function (req, res) {
-    Entry.find({
-        public: true
-    }, function (err, entries) {
+    Entry.find({ public: true}).sort({date: 'asc'}).exec( function (err, entries) {
         res.json(entries)
     })
 })
