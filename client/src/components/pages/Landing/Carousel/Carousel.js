@@ -79,7 +79,7 @@ class Slides extends Component {
           key={item.src}
         >
           <img src={item.src} alt={item.altText} />
-          <CarouselCaption className="captionHeader" captionHeader={item.captionHeader} />
+          <CarouselCaption className="captionHeader" captionText={""} captionHeader={item.captionHeader} />
           <CarouselCaption captionText={item.caption} caption={item.caption} />
         </CarouselItem>
       );
