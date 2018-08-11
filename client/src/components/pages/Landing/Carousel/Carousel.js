@@ -15,19 +15,19 @@ const items = [
   {
     src: lighthouse,
     altText: 'LightHouse',
-    captionTitle: 'LightHouse',
+    captionHeader: 'LightHouse',
     caption: 'A beacon for those struggling with mental health'
   },
   {
     src: hands,
     altText: 'Community',
-    captionTitle: 'Community',
+    captionHeader: 'Community',
     caption: 'Find resources througout the community for help and support'
   },
   {
     src: stonePic,
     altText: 'Peace of Mind',
-    captionTitle: 'Peace of Mind',
+    captionHeader: 'Peace of Mind',
     caption: "Don't wait. You don't have to fight this alone"
   }
 ];
@@ -79,7 +79,7 @@ class Slides extends Component {
           key={item.src}
         >
           <img src={item.src} alt={item.altText} />
-          <CarouselCaption captionText={item.captionTitle} captionHeader={item.captionTitle} />
+          <CarouselCaption captionText={item.captionHeader} captionHeader={item.captionHeader} />
           <CarouselCaption captionText={item.caption} caption={item.caption} />
         </CarouselItem>
       );
