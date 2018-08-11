@@ -24,7 +24,7 @@ const Results = (props) => {
   return(
     <div>
         <div>
-            {props.results.length > 0 ? <h1>Results!</h1> : <h3>No results to display. Please enter your search terms.</h3>}
+            {props.results.length > 0 ? <h1>Results!</h1> : <h5>No results to display. Please enter your search terms.</h5>}
             <hr />
             {props.results.length > 0 ? showResults(props.results) : showNoResults()}
         </div>

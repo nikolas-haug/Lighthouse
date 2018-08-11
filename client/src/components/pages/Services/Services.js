@@ -38,7 +38,7 @@ class Services extends Component {
           keyword: "",
           location: ""
         });
-        
+        console.log(this.state.results.length);
       }).catch((err) => {
         console.log(err);
       });
@@ -51,7 +51,7 @@ class Services extends Component {
     return (
       <div>
         <h1>Services</h1>
-
+        <Results results={this.state.results}/>
         <form onSubmit={this.handleFormSubmit}>
           <Input handleChange={this.handleInputChange} keyword={this.state.keyword} location={this.state.location}/>
           <Button />
@@ -74,7 +74,7 @@ class Services extends Component {
 
     // TEST RENDERING OF RESULTS
       <div>
-        {this.state.results <= 0 ? this.renderForm() : this.renderResults()}
+        {this.state.results.length === 0 ? this.renderForm() : this.renderResults()}
       </div>
 
 
