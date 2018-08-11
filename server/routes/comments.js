@@ -1,5 +1,6 @@
-var passport = require("passport");
 var express = require("express");
+var User = require("../models/User");
+var Entry = require("../models/Entry");
 var Comments = require("../models/Comments");
 var router = express.Router();
 
