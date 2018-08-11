@@ -46,3 +46,47 @@
 2018-08-11T19:00:07.898559+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=dry-lake-56367.herokuapp.com request_id=7bbab192-bbb7-4d51-a16c-f66fc0413c62 fwd="131.212.249.112" dyno= connect= service= status=503 bytes= protocol=http
 2018-08-11T19:00:09.476793+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=dry-lake-56367.herokuapp.com request_id=002d2121-b42b-4cc7-8467-56589f59eaf2 fwd="131.212.249.112" dyno= connect= service= status=503 bytes= protocol=http
 2018-08-11T19:00:09.821649+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=dry-lake-56367.herokuapp.com request_id=2257429a-fd89-4540-996b-843b404dd86e fwd="131.212.249.112" dyno= connect= service= status=503 bytes= protocol=http
+2018-08-11T19:01:49.000000+00:00 app[api]: Build started by user nikohaug21@gmail.com
+2018-08-11T19:03:12.679174+00:00 app[api]: Release v6 created by user nikohaug21@gmail.com
+2018-08-11T19:03:12.679174+00:00 app[api]: Deploy d8384df8 by user nikohaug21@gmail.com
+2018-08-11T19:03:12.986703+00:00 heroku[web.1]: State changed from crashed to starting
+2018-08-11T19:03:13.000000+00:00 app[api]: Build succeeded
+2018-08-11T19:03:23.603118+00:00 heroku[web.1]: Starting process with command `npm start`
+2018-08-11T19:03:25.923094+00:00 app[web.1]: 
+2018-08-11T19:03:25.923115+00:00 app[web.1]: > lighthouse@1.0.0 start /app
+2018-08-11T19:03:25.923117+00:00 app[web.1]: > cd server && npm start
+2018-08-11T19:03:25.923119+00:00 app[web.1]: 
+2018-08-11T19:03:26.456624+00:00 app[web.1]: 
+2018-08-11T19:03:26.456668+00:00 app[web.1]: > server@1.0.0 start /app/server
+2018-08-11T19:03:26.456671+00:00 app[web.1]: > concurrently "cd node_modules/.bin && npm run server" "cd ../client && npm run start"
+2018-08-11T19:03:26.456673+00:00 app[web.1]: 
+2018-08-11T19:03:26.465107+00:00 app[web.1]: sh: 1: concurrently: not found
+2018-08-11T19:03:26.471817+00:00 app[web.1]: npm ERR! file sh
+2018-08-11T19:03:26.472104+00:00 app[web.1]: npm ERR! code ELIFECYCLE
+2018-08-11T19:03:26.472395+00:00 app[web.1]: npm ERR! errno ENOENT
+2018-08-11T19:03:26.472637+00:00 app[web.1]: npm ERR! syscall spawn
+2018-08-11T19:03:26.474813+00:00 app[web.1]: npm ERR! server@1.0.0 start: `concurrently "cd node_modules/.bin && npm run server" "cd ../client && npm run start"`
+2018-08-11T19:03:26.474815+00:00 app[web.1]: npm ERR! spawn ENOENT
+2018-08-11T19:03:26.474817+00:00 app[web.1]: npm ERR!
+2018-08-11T19:03:26.474819+00:00 app[web.1]: npm ERR! Failed at the server@1.0.0 start script.
+2018-08-11T19:03:26.474821+00:00 app[web.1]: npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+2018-08-11T19:03:26.481273+00:00 app[web.1]: 
+2018-08-11T19:03:26.481467+00:00 app[web.1]: npm ERR! A complete log of this run can be found in:
+2018-08-11T19:03:26.481593+00:00 app[web.1]: npm ERR!     /app/.npm/_logs/2018-08-11T19_03_26_476Z-debug.log
+2018-08-11T19:03:26.490427+00:00 app[web.1]: npm ERR! code ELIFECYCLE
+2018-08-11T19:03:26.490878+00:00 app[web.1]: npm ERR! errno 1
+2018-08-11T19:03:26.492550+00:00 app[web.1]: npm ERR! lighthouse@1.0.0 start: `cd server && npm start`
+2018-08-11T19:03:26.492795+00:00 app[web.1]: npm ERR! Exit status 1
+2018-08-11T19:03:26.493083+00:00 app[web.1]: npm ERR!
+2018-08-11T19:03:26.493296+00:00 app[web.1]: npm ERR! Failed at the lighthouse@1.0.0 start script.
+2018-08-11T19:03:26.493505+00:00 app[web.1]: npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+2018-08-11T19:03:26.499219+00:00 app[web.1]: 
+2018-08-11T19:03:26.498455+00:00 app[web.1]: npm WARN Local package.json exists, but node_modules missing, did you mean to install?
+2018-08-11T19:03:26.499435+00:00 app[web.1]: npm ERR! A complete log of this run can be found in:
+2018-08-11T19:03:26.499572+00:00 app[web.1]: npm ERR!     /app/.npm/_logs/2018-08-11T19_03_26_495Z-debug.log
+2018-08-11T19:03:26.546165+00:00 heroku[web.1]: Process exited with status 1
+2018-08-11T19:03:26.952207+00:00 heroku[web.1]: State changed from starting to crashed
+2018-08-11T19:03:32.703410+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=dry-lake-56367.herokuapp.com request_id=f04896c7-6cf2-49ed-a065-7d5be2d3c323 fwd="131.212.249.112" dyno= connect= service= status=503 bytes= protocol=http
+2018-08-11T19:03:33.051496+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=dry-lake-56367.herokuapp.com request_id=47edb38e-b1b1-43e9-a5e1-ff8b98ae002f fwd="131.212.249.112" dyno= connect= service= status=503 bytes= protocol=http
+2018-08-11T19:03:34.201006+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=dry-lake-56367.herokuapp.com request_id=65a1c3e1-703c-4646-897b-fb08dcb60729 fwd="131.212.249.112" dyno= connect= service= status=503 bytes= protocol=http
+2018-08-11T19:03:34.606589+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=dry-lake-56367.herokuapp.com request_id=9e2ca01c-61e1-4274-beaa-b5ebf9e763cc fwd="131.212.249.112" dyno= connect= service= status=503 bytes= protocol=http
