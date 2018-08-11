@@ -1,6 +1,7 @@
 import React from 'react'
 import { Component } from 'react';
 import { Jumbotron, Container, Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import { Link } from "react-router-dom";
 import Textarea from 'react-textarea-autosize';
 import API from '../../../API/messenger';
 
@@ -50,13 +51,14 @@ class EditEntry extends Component {
         text: data.text.value
       };
 
-      console.log(editedEntry)
-      API.sendEditedEntryInfo(editedEntry).then((res) => {
+      let entry_id = this.props.match.params.id
+      API.sendEditedEntryInfo(entry_id, editedEntry).then((res) => {
+          if(res.status === 200){
         //If res is success
-        console.log(res)
+        console.log("It works")
             // Redirect to ent ry page for now
             this.props.history.push('/entries');
-        
+          }
         // else {
             //If sign in fails, stay on login
         // }
@@ -109,6 +111,7 @@ handleCheckboxChange = (e) => {
             <FormGroup className="form-group">
               <Textarea onChange={this.handleInputChange} className="form-control" type="textarea" name="text" value={this.state.text}/>
             </FormGroup>
+            <Link to={'/entries'} color="#2800B2" className="btn btn-default btn-primary">Cancel</Link>
             <Button type="submit" color="#2800B2">Submit</Button>
             <FormGroup className="form-group private-check">
               <input  type="checkbox" id="private-square" name="public" value={this.state.public} />
