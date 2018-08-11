@@ -13,12 +13,10 @@ router.post("/comment/:entry_id", function (req, res) {
         if (err) {
             console.log(err)
         } else {
-            console.log(entry)
             Comment.create(req.body, function (err, comment) {
                 if (err) {
                     console.log(err)
                 } else {
-                    console.log(comment)
                     entry.comments.push(comment);
                     entry.save();
                     res.end()
@@ -38,7 +36,6 @@ router.put("/comments/:entryid", function(req, res){
 //DELETE ROUTE TO REMOVE ONE JOURNAL ENTRY COMMENT
 //==============================================
 router.delete("/comment/:comment_id", function (req, res) {
-    console.log(req.params.comment_id);
     Comment.findByIdAndRemove(req.params.comment_id, function (err) {
         if (err) {
             console.log(err)
