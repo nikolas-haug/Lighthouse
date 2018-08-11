@@ -2,7 +2,8 @@ import axios from "axios";
 
 
 export default {
-  //USERS MESSENGERS
+  //**************************************/
+  //USERS SERVER REQUESTS
   //**************************************/
   // Send a new user data to the express signup route
   sendNewUserInfo: function (newUser) {
@@ -13,8 +14,8 @@ export default {
   sendPreviousUserData: function (user) {
     return axios.post('/signin', user);
   },
-
-  //ENTRIES MESSENGERS
+  //**************************************/
+  //ENTRIES SERVER REQUESTS
   //**************************************/
   // Get all entries
   getAllEntries: function () {
@@ -40,6 +41,22 @@ export default {
   sendDeleteEntryInfo: function (entry_id) {
     return axios.delete('/' + entry_id);
   },
+
+  //**************************************/
+  //COMMENTS SERVER REQUESTS
+  //**************************************/
+ // Send new entry and user data to the express server route 
+ sendNewCommentInfo: function (entry_id, newComment) {
+  return axios.post('/comment/' +  entry_id, newComment,);
+},
+
+
+ // Send comment to be deleted data to the express server route 
+ sendDeleteCommentInfo: function (comment_id) {
+  return axios.delete('/comment/' + comment_id);
+},
+
+
 
   // PROVIDERS API MESSENGERS
   //**************************************/
