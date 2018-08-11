@@ -9,7 +9,7 @@ const showResults = results => results.map((provider) => {
             <h5>{provider.practices[0].visit_address.city}</h5>
             <h5>{provider.practices[0].visit_address.street}</h5>
             <h4>{provider.practices[0].visit_address.zip}</h4>
-            <a href={`tel: ${provider.practices[0].phones[0].number}`}>{provider.practices[0].phones[0].number}</a>
+            <h4><a href={`tel: ${provider.practices[0].phones[0].number}`}>{provider.practices[0].phones[0].number}</a></h4>
             <a href={provider.practices[0].website}>{provider.practices[0].website}</a>
         </div>
     )  
