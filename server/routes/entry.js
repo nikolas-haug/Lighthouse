@@ -9,7 +9,7 @@ var router = express.Router();
 //==============================================
 router.get("/journal", function (req, res) {
     Entry.find({ public: true}).sort({createdAt: 'desc'})
-         .populate({path: 'comments', options: { sort: { 'createdAt': -1 } } })
+         .populate({path: 'comments', options: { sort: { 'createdAt': 1 } } })
          .exec(function (err, entries) {
              if (err) {
                 console.log(err)
