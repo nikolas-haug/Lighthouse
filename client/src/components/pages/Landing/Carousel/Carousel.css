@@ -1,4 +1,14 @@
-Carousel {
+.carousel {
   margin: auto;
   width: 100%;
+}
+
+.carousel-item {
+  background-size: cover;
+  max-height: 400px;
+}
+
+img {
+  max-width: 100%;
+  max-height: auto;
 }
