@@ -5,7 +5,7 @@
   "main": "server/server.js",
   "scripts": {
     "postinstall": "cd server && npm install && cd ../client && npm install && cd ../server && npm run build",
-    "start": "cd server && npm start"
+    "start": "cd server && npm start:prod"
   },
   "repository": {
     "type": "git",
