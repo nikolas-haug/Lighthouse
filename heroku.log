@@ -1,0 +1,32 @@
+2018-08-11T16:58:08.066675+00:00 app[api]: Release v1 created by user nikohaug21@gmail.com
+2018-08-11T16:58:08.066675+00:00 app[api]: Initial release by user nikohaug21@gmail.com
+2018-08-11T16:58:08.292508+00:00 app[api]: Enable Logplex by user nikohaug21@gmail.com
+2018-08-11T16:58:08.292508+00:00 app[api]: Release v2 created by user nikohaug21@gmail.com
+2018-08-11T17:11:53.272268+00:00 app[api]: Attach MONGODB (@ref:mongolab-spherical-40411) by user nikohaug21@gmail.com
+2018-08-11T17:11:53.272268+00:00 app[api]: Release v3 created by user nikohaug21@gmail.com
+2018-08-11T17:13:46.000000+00:00 app[api]: Build started by user nikohaug21@gmail.com
+2018-08-11T17:13:47.000000+00:00 app[api]: Build failed -- check your build logs
+2018-08-11T17:16:06.000000+00:00 app[api]: Build started by user nikohaug21@gmail.com
+2018-08-11T17:16:06.000000+00:00 app[api]: Build failed -- check your build logs
+2018-08-11T18:54:00.000000+00:00 app[api]: Build started by user nikohaug21@gmail.com
+2018-08-11T18:55:24.556673+00:00 app[api]: Scaled to web@1:Free by user nikohaug21@gmail.com
+2018-08-11T18:55:24.535486+00:00 app[api]: Release v4 created by user nikohaug21@gmail.com
+2018-08-11T18:55:24.535486+00:00 app[api]: Deploy f391a11b by user nikohaug21@gmail.com
+2018-08-11T18:55:25.000000+00:00 app[api]: Build succeeded
+2018-08-11T18:55:35.975491+00:00 heroku[web.1]: Starting process with command `npm start`
+2018-08-11T18:55:38.979534+00:00 heroku[web.1]: State changed from starting to crashed
+2018-08-11T18:55:38.981428+00:00 heroku[web.1]: State changed from crashed to starting
+2018-08-11T18:55:38.952057+00:00 heroku[web.1]: Process exited with status 1
+2018-08-11T18:55:38.863243+00:00 app[web.1]: npm ERR! missing script: start
+2018-08-11T18:55:38.870962+00:00 app[web.1]: 
+2018-08-11T18:55:38.871259+00:00 app[web.1]: npm ERR! A complete log of this run can be found in:
+2018-08-11T18:55:38.871398+00:00 app[web.1]: npm ERR!     /app/.npm/_logs/2018-08-11T18_55_38_865Z-debug.log
+2018-08-11T18:55:50.388331+00:00 heroku[web.1]: Starting process with command `npm start`
+2018-08-11T18:55:53.681280+00:00 heroku[web.1]: Process exited with status 1
+2018-08-11T18:55:53.582321+00:00 app[web.1]: npm ERR! missing script: start
+2018-08-11T18:55:53.600337+00:00 app[web.1]: 
+2018-08-11T18:55:53.602901+00:00 app[web.1]: npm ERR! A complete log of this run can be found in:
+2018-08-11T18:55:53.603502+00:00 app[web.1]: npm ERR!     /app/.npm/_logs/2018-08-11T18_55_53_584Z-debug.log
+2018-08-11T18:55:53.700754+00:00 heroku[web.1]: State changed from starting to crashed
+2018-08-11T18:55:55.704288+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=dry-lake-56367.herokuapp.com request_id=2f45d108-0b68-4a19-8a0e-ed94b8b7903f fwd="131.212.249.112" dyno= connect= service= status=503 bytes= protocol=http
+2018-08-11T18:55:56.156841+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=dry-lake-56367.herokuapp.com request_id=8470b6d0-99d8-43bd-b4ef-d30559410290 fwd="131.212.249.112" dyno= connect= service= status=503 bytes= protocol=http
