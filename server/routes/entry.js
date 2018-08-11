@@ -8,8 +8,14 @@ var router = express.Router();
 //GET ROUTE TO GET ALL ENTRIES
 //==============================================
 router.get("/journal", function (req, res) {
-    Entry.find({ public: true}).populate('comments').exec(function (err, entries) {
-        res.json(entries)
+    Entry.find({ public: true}).sort({createdAt: 'desc'})
+         .populate({path: 'comments', options: { sort: { 'createdAt': -1 } } })
+         .exec(function (err, entries) {
+             if (err) {
+                console.log(err)
+             } else {
+                res.json(entries) 
+             }
     })
 })
 
