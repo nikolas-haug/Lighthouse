@@ -2,7 +2,6 @@ import React from 'react';
 import { Component } from 'react';
 import ShowEntries from './Show_entries'
 import NewEntry from './New_entry'
-// import EditEntry from './Edit_entry';
 import API from '../../../API/messenger';
 
 
@@ -11,10 +10,7 @@ class Entry extends Component {
         super(props);
         this.state = {
             entries: [],
-            editedEntry: {}
         };
-
-
 
         this.getAllEntries = () =>{
             API.getAllEntries().then(res => {
@@ -30,7 +26,6 @@ class Entry extends Component {
         }
 
         
-        
         //Fires when the new entry form is submitted
         this.addNewEntry = (newEntry) => {
             let userid = localStorage.getItem('id')
@@ -42,25 +37,6 @@ class Entry extends Component {
             }).catch(err => console.log(err));
         }
 
-
-        // this.handleEditEntry = (entry_id) => {
-        //     // Takes the submitted data and pass it over to the API module
-        //     API.getEntryToBeDeletedInfo(entry_id).then(res => {
-        //         //If res is success
-        //         if (res.data) {
-        //             this.setState({
-        //                 editedEntry: res.data
-        //             })
-        //             // console.log(this.state.editedEntry)
-        //             // Redirect to ent ry page for now
-        //             this.props.history.push('/edit_entry');
-        //         } 
-        //         // else {
-        //             //If sign in fails, stay on login
-        //             // this.props.history.push('/entries');
-        //         // }
-        //     }).catch(err => console.log(err));
-        // }
 
         // This method handles entry deletion
         this.handleDeleteEntry= (entry_id) => {
