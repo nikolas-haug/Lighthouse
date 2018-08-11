@@ -9,18 +9,6 @@ import {
   CarouselCaption
 } from 'reactstrap';
 
-const customStyles = {
-  content: {
-    background: 'rgb(211, 229, 248)',
-    height: '100%',
-    fontFamily: 'Source Sans Pro, arial, sans-serif',
-    fontWeight: '400',
-    fontSize: '16px',
-    lineHeight: '1.8',
-    backgroundSize: 'cover'
-  }
-}
-
 const items = [
   {
     src: stonePic,
@@ -80,19 +68,20 @@ class Slides extends Component {
 
     const slides = items.map((item) => {
       return (
-        <CarouselItem
+        <CarouselItem className="carousel-item"
           onExiting={this.onExiting}
           onExited={this.onExited}
           key={item.src}
         >
           <img src={item.src} alt={item.altText} />
-          <CarouselCaption styles={customStyles.content} captionText={item.caption} captionHeader={item.caption} />
+          <CarouselCaption captionText={item.caption} captionHeader={item.caption} />
         </CarouselItem>
       );
     });
 
     return (
-      <Carousel
+      <Carousel 
+        className="carousel"
         activeIndex={activeIndex}
         next={this.next}
         previous={this.previous}
