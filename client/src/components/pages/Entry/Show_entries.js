@@ -19,7 +19,6 @@ class ShowEntries extends Component {
         this.props.getAllEntries()
     }
     render() {
-        // console.log(this.props.entries)
         return (
             <div className="container">
                  <div className="row">
@@ -30,7 +29,7 @@ class ShowEntries extends Component {
                                     <div className="card-header" id={entry._id}>
                                         <div>  
                                             <h3>{entry.author}</h3>
-                                            <span>{Moment(entry.createdAt).format('LLLL')}</span>
+                                            <span>{Moment(entry.createdAt).format('llll')}</span>
                                          </div> 
                                         <div>  
                                             <h5>{entry.title}</h5>
