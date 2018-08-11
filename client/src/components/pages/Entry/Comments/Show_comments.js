@@ -51,7 +51,7 @@ class ShowComments extends Component {
                                 </div>
                                 <div>
                                     <span>
-                                    {Moment(comment.createdAt).format('LLLL')}
+                                    {Moment(comment.createdAt).format('llll')}
                                     </span>
                                 </div>
                                  <div>
@@ -62,7 +62,7 @@ class ShowComments extends Component {
                                 <div>
                                     <button data-id={comment._id} action="delete"
                                          onClick={this.handleAction} type="button" className=" btn-danger">Delete</button>
-                                    <button   type="button" className=" btn-warning">Edit</button>  
+                                    <button type="button" className=" btn-warning">Edit</button>  
                                 
                                 </div>
                             </div>

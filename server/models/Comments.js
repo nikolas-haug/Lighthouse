@@ -4,6 +4,6 @@ var CommentSchema = new mongoose.Schema({
     body: String,
     createdAt: { type: Date, default: Date.now },
     updatedAt: { type: Date, default: Date.now }, 
-    likes: [{}],
+    likes: [],
     }); 
     module.exports = mongoose.model("Comment", CommentSchema);
