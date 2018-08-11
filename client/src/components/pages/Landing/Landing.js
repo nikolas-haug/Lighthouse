@@ -4,7 +4,8 @@ import Login from "./Login/Login";
 import Signup from "./Signup/Signup";
 import Logout from "./Logout/Logout";
 import API from "../../../API/messenger";
-import Slides from "./Carousel/Carousel"
+import Slides from "./Carousel/Carousel";
+import "./Landing.css";
 
 
 class Landing extends Component {
@@ -87,7 +88,7 @@ class Landing extends Component {
 
   render() {
     return (
-        <div>
+        <div className="landingPage">
         <Slides/>
         {this.props.match.path === "/signup" ? (
           <Signup handleUserSignup={this.handleUserSignup} />

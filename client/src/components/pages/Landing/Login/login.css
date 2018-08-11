@@ -24,11 +24,6 @@ hr {
 .login-title {
     margin-bottom: 10px;
 }
-@media (max-width: 875px) {
-    .login-block {
-        padding-right: 40px;
-    }
-}
 @media (max-width: 725px) {
     .login-wrapper {
         text-align: center;
@@ -39,12 +34,16 @@ hr {
     .login-block {
         display: block;
         border-right: 0;
+        padding-right: initial;
         margin: 0 auto;
         width: 100%;
     }
     .about-block {
         width: 100%;
         margin: 0 auto;
+    }
+    .login-title {
+        margin-top: 30px;
     }
     .form-control {
         text-align: center;
