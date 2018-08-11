@@ -2,6 +2,8 @@ import React from 'react';
 import { Component } from 'react';
 import About from '../../Sections/About';
 import '../Login/login.css';
+import { Link } from "react-router-dom";
+
 
 class Signup extends Component {
     constructor(props) {
@@ -32,6 +34,7 @@ class Signup extends Component {
                     </div>
                     <hr />
                     <button type="submit" className="btn btn-primary">Submit</button>
+                    <Link to={'/'} className="btn btn-primary">Back to Login</Link>
                 </form>
             </div>
                 <About/>
