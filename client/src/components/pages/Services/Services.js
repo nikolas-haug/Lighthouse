@@ -13,9 +13,10 @@ class Services extends Component {
   state = {
     keyword: "",
     location: "",
-    USstate: "",
+    USstate: "MN",
     specialty: "professional-counselor", // setting default value for the dropdown select
-    results: []
+    results: [],
+    message: ""
   }
 
   // function to detect any change 
@@ -51,6 +52,7 @@ class Services extends Component {
     return (
       <div>
         <h1>Services</h1>
+        <h5>{this.state.message}</h5>
         <Results results={this.state.results}/>
         <form onSubmit={this.handleFormSubmit}>
           <Input handleChange={this.handleInputChange} keyword={this.state.keyword} location={this.state.location}/>
@@ -64,9 +66,15 @@ class Services extends Component {
     return (
       <div>
         {/* <button onClick={this.returnToSearch}>back to search</button> */}
-        <Results results={this.state.results}/>
+        <Results results={this.state.results} handleButtonClick={this.handleButtonClick}/>
       </div>
     )
+  }
+
+  handleButtonClick = () => {
+    this.setState({
+      results: []
+    });
   }
 
   render() {

@@ -89,7 +89,7 @@ const Input = (props) => {
                 </div>
                 <div className="form-group bottom-item specialty-input">
                     <label htmlFor="specialty">Type of service/specialty</label>
-                    <select id="specialty" name="specialty" onChange={props.handleChange} required>
+                    <select id="specialty" name="specialty" onChange={props.handleChange}>
                         <option value="professional-counselor">Professional counselor</option>
                         <option value="addiction-psychiatrist">Addiction</option>
                         <option value="psychiatrist">Professional psychiatrist</option>
