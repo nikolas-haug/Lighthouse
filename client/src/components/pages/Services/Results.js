@@ -1,9 +1,7 @@
 import React from "react";
 
 const showResults = results => results.map((provider) => {
-    // TO DO - check if the provider has a valid website, if not display alert message
-    // TO DO - if no results available, display message to user
-    
+    // loop through the array of returned results from the api and display it on the page
     return (
         <div key={provider.practices[0].uid}>
             <h1>{provider.practices[0].name}</h1>
@@ -17,21 +15,15 @@ const showResults = results => results.map((provider) => {
     )  
 });
 
-const showNoResults = () => {}
-
 const Results = (props) => {
-
+  // check that there are results returned to the array, otherwise display nothing
   return(
     <div>
         <div>
-            {props.results.length > 0 ? (
-                <div><h1>Results!</h1>
-                <button onClick={props.handleButtonClick}>go back to search</button></div>
-             ) : ( 
-                <h5></h5>
-             )}
+            {props.results.length > 0 && <div><h1>Results!</h1>
+                <button onClick={props.handleButtonClick}>go back to search</button></div>}
             <hr />
-            {props.results.length > 0 ? showResults(props.results) : showNoResults()}
+            {props.results.length > 0 && showResults(props.results)}
         </div>
     </div>
     )

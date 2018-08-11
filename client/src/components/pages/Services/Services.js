@@ -5,9 +5,6 @@ import Results from "./Results";
 import API from "../../../API/messenger";
 import './services.css'
 
-// TO DO - check this package 
-// import { PromiseProvider } from "mongoose";
-
 class Services extends Component {
 
   state = {
@@ -33,13 +30,18 @@ class Services extends Component {
     if(this.state.keyword !== "" && this.state.location !== "" && this.state.USstate !== "") {
       // after button click, format request params before calling the api
       API.getProviders(this.state.keyword.trim(), (this.state.location).toLowerCase().trim(), (this.state.USstate).toLowerCase(), this.state.specialty).then((res) => {
-        // TO DO - refresh the form for next query
+
         this.setState({
           results: res.data.data,
           keyword: "",
           location: ""
         });
-        console.log(this.state.results.length);
+
+        if(this.state.results.length === 0) {
+          this.setState({
+            message: "no results! please search again."
+          });
+        }
       }).catch((err) => {
         console.log(err);
       });
@@ -47,7 +49,7 @@ class Services extends Component {
     
   }
 
-  // TEST RENDERING FOR RESULTS
+  // render the search form to the view
   renderForm = () => {
     return (
       <div>
@@ -62,45 +64,29 @@ class Services extends Component {
     )
   }
 
+  // render the search results to the view
   renderResults = () => {
     return (
       <div>
-        {/* <button onClick={this.returnToSearch}>back to search</button> */}
         <Results results={this.state.results} handleButtonClick={this.handleButtonClick}/>
       </div>
     )
   }
 
+  // event listener for the return to search button, clears message as well
   handleButtonClick = () => {
     this.setState({
-      results: []
+      results: [],
+      message: ""
     });
   }
 
+  // if results returned, render that to the view, otherwise the form with message
   render() {
     return (
-
-    // TEST RENDERING OF RESULTS
       <div>
         {this.state.results.length === 0 ? this.renderForm() : this.renderResults()}
       </div>
-
-
-
-      // <div>
-      //   <h1>Services</h1>
-
-        
-      //   <form onSubmit={this.handleFormSubmit}>
-      //     <Input handleChange={this.handleInputChange} keyword={this.state.keyword} location={this.state.location}/>
-      //     <Button />
-      //   </form>
-      //   {/* TO DO - get the results to display on a different page/section with animation transition */}
-      //   <div>
-      //     <Results results={this.state.results}/>
-      //   </div>
-
-      // </div>
     )
   }
 }
