@@ -38,7 +38,7 @@ class Services extends Component {
           keyword: "",
           location: ""
         });
-        
+        console.log(this.state.results.length);
       }).catch((err) => {
         console.log(err);
       });
@@ -46,21 +46,53 @@ class Services extends Component {
     
   }
 
-  render() {
+  // TEST RENDERING FOR RESULTS
+  renderForm = () => {
     return (
       <div>
         <h1>Services</h1>
-
+        <Results results={this.state.results}/>
         <form onSubmit={this.handleFormSubmit}>
           <Input handleChange={this.handleInputChange} keyword={this.state.keyword} location={this.state.location}/>
           <Button />
         </form>
-        {/* TO DO - get the results to display on a different page/section with animation transition */}
-        <div>
-          <Results results={this.state.results}/>
-        </div>
-
       </div>
+    )
+  }
+
+  renderResults = () => {
+    return (
+      <div>
+        {/* <button onClick={this.returnToSearch}>back to search</button> */}
+        <Results results={this.state.results}/>
+      </div>
+    )
+  }
+
+  render() {
+    return (
+
+    // TEST RENDERING OF RESULTS
+      <div>
+        {this.state.results.length === 0 ? this.renderForm() : this.renderResults()}
+      </div>
+
+
+
+      // <div>
+      //   <h1>Services</h1>
+
+        
+      //   <form onSubmit={this.handleFormSubmit}>
+      //     <Input handleChange={this.handleInputChange} keyword={this.state.keyword} location={this.state.location}/>
+      //     <Button />
+      //   </form>
+      //   {/* TO DO - get the results to display on a different page/section with animation transition */}
+      //   <div>
+      //     <Results results={this.state.results}/>
+      //   </div>
+
+      // </div>
     )
   }
 }
