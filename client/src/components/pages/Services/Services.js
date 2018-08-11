@@ -22,6 +22,7 @@ class Services extends Component {
     let newState = {};
     newState[event.target.id] = event.target.value;
     this.setState(newState);
+    this.setState({message: ""});
     console.log(newState);
   }
 
