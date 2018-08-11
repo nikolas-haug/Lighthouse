@@ -18,6 +18,7 @@ class NewEntry extends Component {
       event.preventDefault();
       let data = event.target;
       let newEntry = {
+        author: localStorage.getItem('user'),
         public: data.public.checked,
         title: data.title.value,
         text: data.text.value
