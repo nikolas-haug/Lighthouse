@@ -1,6 +1,6 @@
 import React from "react";
 import { Component } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import Moment from 'moment';
 import API from '../../../../API/messenger';
 
@@ -13,14 +13,11 @@ class ShowComments extends Component {
             author:'',
             body:''
         }
-        
     }
 
     this.handleAction = e => {
       e.preventDefault();
       let comment_id = e.target.getAttribute("data-id")
-    //   let action = e.target.getAttribute("action");
-        // action === "comment"? this.props.handleAddComment(entry_id):
         API.sendDeleteCommentInfo(comment_id).then(res => {
                 this.props.getAllEntries()
             }).catch(err => console.log(err));
@@ -35,7 +32,6 @@ class ShowComments extends Component {
           author: localStorage.getItem('user'),
           body: data.body.value,
         };
-
         API.sendNewCommentInfo(entry_id, newComment).then(res => {
             this.props.getAllEntries()
         }).catch(err => console.log(err));
@@ -65,9 +61,8 @@ class ShowComments extends Component {
                                 </div>
                                 <div>
                                     <button data-id={comment._id} action="delete"
-                                    onClick={this.handleAction} type="button" className=" btn-danger">Delete</button>
-                                    <button  action="edit"
-                                    onClick={this.handleAction} type="button" className=" btn-warning">Edit</button>  
+                                         onClick={this.handleAction} type="button" className=" btn-danger">Delete</button>
+                                    <button   type="button" className=" btn-warning">Edit</button>  
                                 
                                 </div>
                             </div>
