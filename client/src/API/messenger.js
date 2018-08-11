@@ -31,8 +31,8 @@ export default {
   },
 
     // Send entry to be deleted data to the express server route 
-    sendEditedEntryInfo: function (entry_id) {
-      return axios.put('/journal' + entry_id);
+    sendEditedEntryInfo: function (entry_id, editedEntry) {
+      return axios.put('/journal/' + entry_id, editedEntry);
     },
 
 
