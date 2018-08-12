@@ -25,7 +25,7 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 app.use(cors());
 // Serve files created by create-react-app.
-app.use(express.static("client/build"));
+app.use(express.static("../client/build"));
 
 //PASSPORT CONFIGURATION
 app.use(require("express-session")({
