@@ -1,7 +1,7 @@
 import React from "react";
 import { Component } from 'react';
 import ShowEntries from '../Entry/Show_entries'
-import API from '../../API/messenger';
+import API from '../../../API/messenger';
 
 
 class  Journal extends Component {
@@ -12,7 +12,7 @@ class  Journal extends Component {
     };
 
     this.getAllEntries = () =>{
-        API.getAllUserEntries().then(res => {
+        API.getAllEntries().then(res => {
             // console.log(res.data)
             if(res.data){
             // Set the state with the results from the search
@@ -40,7 +40,7 @@ class  Journal extends Component {
     // This method handles entry deletion
     // this.handleDeleteEntry= (entry_id) => {
     //     API.sendDeleteEntryInfo(entry_id).then(() => {
-    //         this.getAllUserEntries();
+    //         this.getAllEntries();
     //     }).catch(err => console.log(err));
     // }
 }
@@ -60,7 +60,7 @@ class  Journal extends Component {
       <div className="container">
       <ShowEntries 
           handleDeleteEntry={this.handleDeleteEntry} 
-          getAllUserEntries={this.getAllUserEntries}
+          getAllEntries={this.getAllEntries}
           entries={this.state.entries}
           history={this.props.history}
         />
