@@ -47,8 +47,6 @@ router.put("/comment/:comment_id", function (req, res) {
         if (err) {
             console.log(err)
         } else {
-            console.log("========================")
-            console.log(comment)
             res.end();
         }
     });
