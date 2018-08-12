@@ -45,8 +45,6 @@ class Entry extends Component {
             }).catch(err => console.log(err));
         }
     }
-
-
     render() {
         return ( 
             <div> 
@@ -55,6 +53,7 @@ class Entry extends Component {
                             handleDeleteEntry={this.handleDeleteEntry} 
                             getAllEntries={this.getAllEntries}
                             entries={this.state.entries}
+                            history={this.props.history}
                         />
                 }
             </div>
