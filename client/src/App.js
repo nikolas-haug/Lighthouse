@@ -4,7 +4,7 @@ import Wrapper from './components/Wrapper/Wrapper'
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Services from "./components/pages/Services/Services";
 import Landing from './components/pages/Landing/Landing';
-import Journal from './components/pages/Journal';
+import Journal from './components/pages/Journal/Journal';
 import EditEntry from './components/pages/Entry/Edit_entry';
 
 
