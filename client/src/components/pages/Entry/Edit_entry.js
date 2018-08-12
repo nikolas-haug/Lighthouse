@@ -22,7 +22,7 @@ class EditEntry extends Component {
     this.handleEditEntry = () => {
         let entry_id = this.props.match.params.id
         // Takes the submitted data and pass it over to the API module
-        API.getEntryToBeEditedInfo(entry_id).then(res => {
+        API.getEntryToBeEdited(entry_id).then(res => {
             //If res is success
             if (res.data) {
                 this.setState({
