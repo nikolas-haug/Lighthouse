@@ -5,7 +5,7 @@ import './comments.css'
 const NewCommentForm = (props) => {
     return (
       <div>
-          <form onSubmit={props.onSubmit}  data-id={props.entry_id} ref={(el) => this.myFormRef = el}>
+          <form onSubmit={props.onSubmit}  data-id={props.entry_id}>
           <div className="input-group">
               <textarea className="form-control" data-id={props.entry_id} name='body' aria-label="With textarea" placeholder="Add comments"></textarea>
               <hr/>
