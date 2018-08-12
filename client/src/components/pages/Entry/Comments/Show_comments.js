@@ -1,27 +1,60 @@
 import React from "react";
 import { Component } from "react";
+import Comment from './Comments'
 // import { Link } from "react-router-dom";
-import Moment from 'moment';
 import API from '../../../../API/messenger';
-
+import './comments.css';
+import NewCommentForm from "./New_comments";
+import EditCommentForm from "./Edit_comments";
 
 class ShowComments extends Component {
   constructor(props) {
     super(props);
     this.state={
-        comments:{
-            author:'',
+        comment:{
             body:''
-        }
+        },
     }
 
     this.handleAction = e => {
       e.preventDefault();
       let comment_id = e.target.getAttribute("data-id")
-        API.sendDeleteCommentInfo(comment_id).then(res => {
-                this.props.getAllEntries()
-            }).catch(err => console.log(err));
+      let action = e.target.getAttribute("action")
+      if(action === 'delete'){
+            this.handleDeleteComments(comment_id)
+        }else{
+            this.handleEditComments(comment_id)
+        }
     };
+
+    this.handleDeleteComments = (comment_id)=>{
+        API.sendDeleteCommentInfo(comment_id).then(res => {
+            this.props.getAllEntries()
+        }).catch(err => console.log(err));
+    }
+
+    this.handleEditComments = (comment_id) => {
+        // let entry_id = this.props.match.params.id
+        // Takes the submitted data and pass it over to the API module
+        API.getCommentToBeEdited(comment_id).then(res => {
+            // If res is success
+            if (res.data) {
+                this.setState({
+                    comment:{
+                        body: res.data.body,
+                    },
+                })
+            } 
+        }).catch(err => console.log(err));
+    }
+
+    this.handleCancelEdit = () => {
+        this.setState({
+            comment:{
+                body: "",
+            },
+        })
+    }
 
   
     this.handleSubmit = e => {
@@ -32,50 +65,31 @@ class ShowComments extends Component {
           author: localStorage.getItem('user'),
           body: data.body.value,
         };
+        data.reset();
         API.sendNewCommentInfo(entry_id, newComment).then(res => {
-            this.props.getAllEntries()
+            this.props.getAllEntries();
         }).catch(err => console.log(err));
       }
   }
-   
+
     render() {
         return (
                 <div>
                     <div>
-                        {this.props.comments.length?this.props.comments.map((comment, i )=>
-                            <div key={comment._id + i}>
-                                <div>
-                                    <h6>
-                                        {comment.author}
-                                    </h6>
-                                </div>
-                                <div>
-                                    <span>
-                                    {Moment(comment.createdAt).format('llll')}
-                                    </span>
-                                </div>
-                                 <div>
-                                    <p>
-                                       {comment.body}
-                                    </p>
-                                </div>
-                                <div>
-                                    <button data-id={comment._id} action="delete"
-                                         onClick={this.handleAction} type="button" className=" btn-danger">Delete</button>
-                                    <button type="button" className=" btn-warning">Edit</button>  
-                                
-                                </div>
-                            </div>
+                        {this.props.comments.length && this.props.comments.length?this.props.comments.map((comment)=>
+                           this.state.comment.body === comment.body? 
+                            <EditCommentForm  
+                                key={comment._id}
+                                comment={comment}
+                                getAllEntries={this.props.getAllEntries}
+                                handleCancelEdit={this.handleCancelEdit}/>:
+                            <Comment 
+                                comment={comment} 
+                                key={comment._id} 
+                                handleAction={this.handleAction}/>
                         ):''}
                     </div>
-                    <form  onSubmit={this.handleSubmit}  data-id={this.props.entry_id}>
-                        <div className="input-group">
-                            <textarea className="form-control" data-id={this.props.entry_id} name='body' aria-label="With textarea"></textarea>
-                         </div>
-                         <div className="input-group">
-                         <button type="submit" data-id={this.props.entry_id} className="btn btn-light">Submit</button>
-                         </div>
-                    </form>
+                    <NewCommentForm entry_id={this.props.entry_id} onSubmit={this.handleSubmit}/>
                 </div>
             );
         }
