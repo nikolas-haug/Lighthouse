@@ -49,7 +49,11 @@ class ShowEntries extends Component {
                                         <div id={entry._id+1} className="collapse" aria-labelledby={entry._id} data-parent="#accordionExample">
                                             <div className="card">
                                                 <div className="card-body">
-                                                    <Comments getAllEntries={this.props.getAllEntries} entry_id={entry._id} comments={entry.comments}/>
+                                                    <Comments 
+                                                        getAllEntries={this.props.getAllEntries} 
+                                                        entry_id={entry._id} 
+                                                        comments={entry.comments}
+                                                        history={this.props.history}/>
                                                 </div>
                                             </div>
                                         </div>
