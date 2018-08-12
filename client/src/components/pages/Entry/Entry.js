@@ -48,7 +48,8 @@ class Entry extends Component {
     render() {
         return ( 
             <div> 
-                {this.props.match.path === '/new_entry'?<NewEntry addNewEntry={this.addNewEntry}/>:
+                {this.props.match.path === '/new_entry'?
+                <NewEntry addNewEntry={this.addNewEntry}/>:
                         <ShowEntries 
                             handleDeleteEntry={this.handleDeleteEntry} 
                             getAllEntries={this.getAllEntries}
