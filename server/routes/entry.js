@@ -22,9 +22,9 @@ router.get("/journal", function (req, res) {
 //==============================================
 //GET ROUTE TO GET ALL ENTRIES FOR INDIVIDUAL USERS
 //==============================================
-router.get("/journal/:userid", function (req, res) {
+router.get("/journal/:user", function (req, res) {
     console.log(req.params.userid)
-    Entry.find({ _id: req.params.userid}, function (err, entries) {
+    Entry.find({ author: req.params.user}, function (err, entries) {
              if (err) {
                 console.log(err)
              } else {

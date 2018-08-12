@@ -1,6 +1,4 @@
 import axios from "axios";
-
-
 export default {
   //**************************************/
   //USERS SERVER REQUESTS
