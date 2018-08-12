@@ -4,11 +4,11 @@ const axios = require("axios");
 
 // variables for the betterdoctor search
 const URL = "https://api.betterdoctor.com/2016-03-01/doctors";
-const betterdoctorKEY;
+const betterdoctorKEY = process.env.LIGHHOUSE_APP_PROVIDERS_KEY;
 
 // variables for google custom search
-const searchEngineID;
-const customSearchKey;
+const searchEngineID = process.env.LIGHTHOUSE_APP_GOOGLECUSTOM_KEY;
+const customSearchKey = process.env.LIGHTHOUSE_APP_CUSTOMENGINE_KEY;
 
 // api route to retrieve the betterdoctor data
 router.get('/api/providers/:keyword/:location/:USstate/:specialty', function(req, res) {
