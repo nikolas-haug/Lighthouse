@@ -32,7 +32,6 @@ router.post("/journal/:userid", function (req, res) {
                 if (err) {
                     console.log(err)
                 } else {
-                    console.log(entry._id)
                     user.entries.push(entry);
                     user.save();
                     res.end()
@@ -74,7 +73,6 @@ router.put("/journal/:entryid", function (req, res) {
 //DELETE ROUTE TO REMOVE ONE JOURNAL ENTRY
 //==============================================
 router.delete("/:entryid", function (req, res) {
-    console.log(req.params.entryid);
     Entry.findByIdAndRemove(req.params.entryid, function (err) {
         if (err) {
             console.log(err)
