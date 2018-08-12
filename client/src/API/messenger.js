@@ -26,18 +26,17 @@ export default {
   sendNewEntryInfo: function (newEntry, userid) {
     return axios.post('/journal/' + userid, newEntry);
   },
-  // get entry to be deleted 
-  getEntryToBeEditedInfo: function (entry_id) {
+  // get entry to be edited
+  getEntryToBeEdited: function (entry_id) {
     return axios.get('/journal/' + entry_id);
   },
 
-    // Send entry to be deleted data to the express server route 
-    sendEditedEntryInfo: function (entry_id, editedEntry) {
-      return axios.put('/journal/' + entry_id, editedEntry);
-    },
+  // Send entry to be updated 
+  sendEditedEntryInfo: function (entry_id, editedEntry) {
+    return axios.put('/journal/' + entry_id, editedEntry);
+  },
 
-
-  // Send entry to be deleted data to the express server route 
+  // Send entry to be deleted
   sendDeleteEntryInfo: function (entry_id) {
     return axios.delete('/' + entry_id);
   },
@@ -45,29 +44,37 @@ export default {
   //**************************************/
   //COMMENTS SERVER REQUESTS
   //**************************************/
- // Send new entry and user data to the express server route 
- sendNewCommentInfo: function (entry_id, newComment) {
-  return axios.post('/comment/' +  entry_id, newComment,);
-},
+  // Send new entry and user data to the express server route 
+  sendNewCommentInfo: function (entry_id, newComment) {
+    return axios.post('/comment/' + entry_id, newComment, );
+  },
 
+  // get comment to be edited 
+  getCommentToBeEdited: function (comment_id) {
+    return axios.get('/comment/' + comment_id);
+  },
 
- // Send comment to be deleted data to the express server route 
- sendDeleteCommentInfo: function (comment_id) {
-  return axios.delete('/comment/' + comment_id);
-},
+  // Send comment to be updated 
+  sendEditedCommentInfo: function (comment_id, editedComment) {
+    return axios.put('/comment/' + comment_id, editedComment);
+  },
 
+  // Send comment to be deleted 
+  sendDeleteCommentInfo: function (comment_id) {
+    return axios.delete('/comment/' + comment_id);
+  },
 
-
-  // PROVIDERS API MESSENGERS
   //**************************************/
-    // send a query to the betterdoctors api
-    getProviders: function (keyword, location, USstate, specialty) {
-      return axios.get('/api/providers/' + keyword + '/' + location + '/' + USstate + '/' + specialty);
-    },
+  // PROVIDERS API REQUEST
+  //**************************************/
+  // send a query to the betterdoctors api
+  getProviders: function (keyword, location, USstate, specialty) {
+    return axios.get('/api/providers/' + keyword + '/' + location + '/' + USstate + '/' + specialty);
+  },
 
-    // send a query to the google custom search api
-    getCustomArticles: function(searchTerm) {
-      return axios.get('/api/google/' + searchTerm);
-    }
+  // send a query to the google custom search api
+  getCustomArticles: function (searchTerm) {
+    return axios.get('/api/google/' + searchTerm);
+  }
 
 };

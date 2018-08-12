@@ -65,6 +65,18 @@ const Header = props => (
               ""
           )}
         </li>
+        <li>
+        {localStorage.getItem("user") ? (
+          <Link to={"/user-journals"}>
+            <b className="fa fa-users nav-link" aria-hidden="true" />
+            <span>
+              <i>My Journals</i>
+            </span>
+          </Link>
+        ) : (
+            ""
+        )}
+      </li>
 
         {/* Sign Out Nav Link */}
         <li>

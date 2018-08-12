@@ -26,9 +26,32 @@ router.post("/comment/:entry_id", function (req, res) {
     });
 }) 
 
-//Route to edit existing entries
-router.put("/comments/:entryid", function(req, res){
-    
+//==============================================
+//GET ROUTE TO GET ONE COMMENT TO BE EDITED
+//==============================================
+router.get('/comment/:comment_id', function (req, res) {
+    Comment.findById(req.params.comment_id, function (err, comment) {
+        if (err) {
+            console.log(err);
+        } else {
+            res.json(comment)
+        }
+    });
+});
+
+//==============================================
+//PUT ROUTE TO UPDATE ONE COMMENTS
+//==============================================
+router.put("/comment/:comment_id", function (req, res) {
+   Comment.findByIdAndUpdate(req.params.comment_id, req.body, function (err, comment) {
+        if (err) {
+            console.log(err)
+        } else {
+            console.log("========================")
+            console.log(comment)
+            res.end();
+        }
+    });
 })
 
 
