@@ -19,12 +19,12 @@ router.get("/journal", function (req, res) {
     })
 })
 
-//==============================================
-//GET ROUTE TO GET ALL ENTRIES FOR INDIVIDUAL USERS
-//==============================================
-router.get("/journal/:user", function (req, res) {
-    console.log(req.params.userid)
-    Entry.find({ author: req.params.user}, function (err, entries) {
+// ==============================================
+// GET ROUTE TO GET ALL ENTRIES FOR INDIVIDUAL USERS
+// ==============================================
+router.get("/user_journals/:author", function (req, res) {
+    console.log(req.params.author)
+    Entry.find({ author: req.params.author}, function (err, entries) {
              if (err) {
                 console.log(err)
              } else {
@@ -65,6 +65,7 @@ router.get('/journal/:entry_id', function (req, res) {
         if (err) {
             console.log(err);
         } else {
+            console.log('this   '+ entry)
             res.json(entry)
         }
     });
