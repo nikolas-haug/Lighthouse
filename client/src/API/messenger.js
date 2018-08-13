@@ -39,6 +39,14 @@ export default {
     return axios.delete('/' + entry_id);
   },
 
+
+  //**************************************/
+  //ENTRIES SERVER REQUESTS
+  //**************************************/
+  // Get all entries
+  getAllUserEntries: function (author) {
+    return axios.get('/user_journals/'+ author);
+  },
   //**************************************/
   //COMMENTS SERVER REQUESTS
   //**************************************/
