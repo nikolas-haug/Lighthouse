@@ -28,8 +28,6 @@ router.get("/user_journals/:author", function (req, res) {
              if (err) {
                 console.log(err)
              } else {
-                 //Why is 'entries' empty?
-                console.log("Data boi" + entries);
                 res.json(entries) 
              }
     })
@@ -65,7 +63,6 @@ router.get('/journal/:entry_id', function (req, res) {
         if (err) {
             console.log(err);
         } else {
-            console.log('this   '+ entry)
             res.json(entry)
         }
     });
