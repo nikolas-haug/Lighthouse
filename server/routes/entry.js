@@ -23,7 +23,6 @@ router.get("/journal", function (req, res) {
 // GET ROUTE TO GET ALL ENTRIES FOR INDIVIDUAL USERS
 // ==============================================
 router.get("/user_journals/:author", function (req, res) {
-    console.log(req.params.author)
     Entry.find({ author: req.params.author}, function (err, entries) {
              if (err) {
                 console.log(err)
