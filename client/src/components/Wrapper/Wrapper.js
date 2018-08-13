@@ -67,7 +67,7 @@ const Header = props => (
         </li>
         <li>
         {localStorage.getItem("user") ? (
-          <Link to={"/user-journals"}>
+          <Link to={"/my_journals"}>
             <b className="fa fa-users nav-link" aria-hidden="true" />
             <span>
               <i>My Journals</i>

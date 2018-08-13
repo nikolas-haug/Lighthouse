@@ -4,7 +4,6 @@ import { Jumbotron, Container, Button, Form, FormGroup, Label, Input } from 'rea
 import { Link } from "react-router-dom";
 import Textarea from 'react-textarea-autosize';
 import API from '../../../API/messenger';
-
 import './entry.css'
 
 

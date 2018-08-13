@@ -58,12 +58,12 @@ class  Journal extends Component {
             </div>
       </div>
       <div className="container">
-      <ShowEntries 
-          handleDeleteEntry={this.handleDeleteEntry} 
-          getAllEntries={this.getAllEntries}
-          entries={this.state.entries}
-          history={this.props.history}
-        />
+        <ShowEntries 
+            handleDeleteEntry={this.handleDeleteEntry} 
+            getAllEntries={this.getAllEntries}
+            entries={this.state.entries}
+            history={this.props.history}
+            />
       </div>
   </div>
 

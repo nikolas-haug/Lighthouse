@@ -20,7 +20,7 @@ const App = () => (
         <Route exact path="/entries" component={Entry} />
         <Route exact path="/new_entry" component={Entry} />
         <Route exact path="/edit_entry/:id" component={EditEntry} />
-        <Route exact path="/user-journals" component={Journal} />
+        <Route exact path="/my_journals" component={Journal} />
         <Route exact path="/services" component={Services} />
       </div>
       </Wrapper>
