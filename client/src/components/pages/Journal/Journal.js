@@ -2,6 +2,8 @@ import React from "react";
 import { Component } from 'react';
 import ShowUserJournals from './Show'
 import API from '../../../API/messenger';
+import Header from "../Sections/Header";
+
 
 
 class  Journal extends Component {
@@ -12,7 +14,7 @@ class  Journal extends Component {
     };
 
     this.getAllUserEntries = () =>{
-        let author = localStorage.getItem('user')
+        let author = localStorage.getItem('litH@user')
         API.getAllUserEntries(author).then(res => {
             // console.log(res.data)
             if(res.data){
@@ -48,16 +50,7 @@ class  Journal extends Component {
   render() { 
     return ( 
 <div>
-      <div className="card">
-            <div className="card-header">
-                <h3>My Journals</h3>
-            </div>
-            <div className="card-body">
-                <h5 className="card-title">Special title treatment</h5>
-                <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="/" className="btn btn-primary">Go somewhere</a>
-            </div>
-      </div>
+        <Header heading="My Journals" title="Track your routaine"/>
         <ShowUserJournals 
             handleDeleteEntry={this.handleDeleteEntry} 
             getAllUserEntries={this.getAllUserEntries}

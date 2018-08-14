@@ -7,7 +7,7 @@ const Comments =(props)=> {
         return (
                 <div>
                     <div>
-                            <div>
+                            <div className="comment-content">
                                 <div>
                                     <h6>
                                         {props.comment.author}
@@ -23,13 +23,17 @@ const Comments =(props)=> {
                                        {props.comment.body}
                                     </p>
                                 </div>
-                                <div>
-                                    <button data-id={props.comment._id} action="delete"
-                                         onClick={props.handleAction} type="button" className="btn-danger">Delete</button>
-                                    <button data-id={props.comment._id} action="edit"
-                                    onClick={props.handleAction} type="button" className="btn-warning">Edit</button>  
+                                <div>{props.comment.author===localStorage.getItem('litH@user')?
+                                    <div>
+                                        <button data-id={props.comment._id} action="delete"
+                                            onClick={props.handleAction} type="button" className="btn-danger">Delete</button>
+                                        <button data-id={props.comment._id} action="edit"
+                                        onClick={props.handleAction} type="button" className="btn-warning">Edit</button>
+                                    </div>:
+                                    <div className='button-spacer'></div>
+
                                 
-                                </div>
+                                }</div>
                             </div>
                     </div>
                 </div>

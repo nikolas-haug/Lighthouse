@@ -24,13 +24,13 @@ const Header = props => (
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav mr-auto" />
 
-        {/* User Nav-Link */}
-        {localStorage.getItem("user") ? (
+        {/* litH@user Nav-Link */}
+        {localStorage.getItem("litH@user") ? (
           <li>
             <b className="fa fa-user" aria-hidden="true" />
             <span>
               <i>
-                <a>{localStorage.getItem("user")}</a>
+                <a>{localStorage.getItem("litH@user")}</a>
               </i>
             </span>
           </li>
@@ -40,7 +40,7 @@ const Header = props => (
 
         {/* New Entry Nav Link */}
         <li>
-          {localStorage.getItem("user") ? (
+          {localStorage.getItem("litH@user") ? (
             <Link to={"/new_entry"}>
               <b className="fa fa-plus-square nav-link" aria-hidden="true" />
               <span>
@@ -54,7 +54,7 @@ const Header = props => (
 
         {/* Entries Nav-Link */}
         <li>
-          {localStorage.getItem("user") ? (
+          {localStorage.getItem("litH@user") ? (
             <Link to={"/entries"}>
               <b className="fa fa-users nav-link" aria-hidden="true" />
               <span>
@@ -66,7 +66,7 @@ const Header = props => (
           )}
         </li>
         <li>
-        {localStorage.getItem("user") ? (
+        {localStorage.getItem("litH@user") ? (
           <Link to={"/my_journals"}>
             <b className="fa fa-book nav-link" aria-hidden="true" />
             <span>
@@ -80,7 +80,7 @@ const Header = props => (
 
         {/* Sign Out Nav Link */}
         <li>
-          {localStorage.getItem("user") ? (
+          {localStorage.getItem("litH@user") ? (
             <Link to={"/logout"} className="nav-link" aria-hidden="true">
               <b className="fa fa-sign-out" aria-hidden="true" />
               <span>
