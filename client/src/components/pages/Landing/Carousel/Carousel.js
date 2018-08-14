@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Carousel.css';
-import stonePic from '../../../../Images/stones-pic.png';
+import stonePic from '../../../../Images/fire-pic.jpg';
 import lighthouse from '../../../../Images/lighthouse-pic.jpg';
 import hands from '../../../../Images/hands.jpg';
 import {
