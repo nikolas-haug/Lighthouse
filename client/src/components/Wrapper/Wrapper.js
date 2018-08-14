@@ -11,6 +11,7 @@ const Header = props => (
       </a>
       <button
         className="navbar-toggler"
+        style={{display: localStorage.getItem("litH@user") ? "block" : "none"}}
         type="button"
         data-toggle="collapse"
         data-target="#navbarSupportedContent"
