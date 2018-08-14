@@ -3,6 +3,7 @@ import { Component } from "react";
 import { Link } from "react-router-dom";
 import Moment from 'moment';
 import Comments from './Comments/Show_comments';
+import Header from '../Sections/Header';
 
 class ShowEntries extends Component {
   constructor(props) {
@@ -16,11 +17,12 @@ class ShowEntries extends Component {
     };
   }
     componentDidMount() {
-        this.props.getAllEntries()
+        this.props.getAllEntries()        
     }
     render() {
         return (
             <div className="container">
+            <Header heading="Posts" title="Join the conversation"/>
                  <div className="row">
                     <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div className="accordion" id="accordionExample">
@@ -35,15 +37,22 @@ class ShowEntries extends Component {
                                             <h5>{entry.title}</h5>
                                         </div>    
                                         <div>  
-                                            <p>{entry.text}</p>
+                                            <p className="entry-text">{entry.text}</p>
                                         </div>    
                                         <div>
+                                        
                                             <button className="btn-link entry-btn" type="button" data-toggle="collapse" data-target={"#"+entry._id+1} aria-expanded="true" aria-controls={entry._id+1}>
-                                            <span>{entry.comments.length}</span>   <span>{entry.comments.length>1?'Comments':'Comment'}</span>
+                                              {entry.comments.length === 1?<span>{entry.comments.length} Comment</span> :
+                                              entry.comments.length > 1?<span>{entry.comments.length} Comments</span>: 
+                                              'Add Comment'}
                                             </button>
-                                            <Link to={'/edit_entry/'+entry._id} className="entry-btn">Edit Post</Link> 
-                                            <button className="entry-btn" data-id={entry._id} action="delete"
-                                                        onClick={this.handleAction}>Delete</button>
+                                        
+                                            {entry.author===localStorage.getItem('litH@user')?
+                                            <span>
+                                             <Link to={'/edit_entry/'+entry._id}><button className="entry-btn">Edit Post</button></Link>
+                                                <button className="entry-btn" data-id={entry._id} action="delete"
+                                                            onClick={this.handleAction}>Delete</button>
+                                                            </span>:""}
                                         </div>    
                                     </div>
                                         <div id={entry._id+1} className="collapse" aria-labelledby={entry._id} data-parent="#accordionExample">

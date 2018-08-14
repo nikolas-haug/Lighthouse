@@ -53,8 +53,8 @@ class  EditCommentForm extends Component {
               <hr/>
           </div>
           <div className="input-group">
-          <button onClick={this.props.handleCancelEdit} color="#2800B2" className="btn btn-default btn-primary">Cancel</button>
-          <button type="submit" className="btn btn-light">Submit</button>
+          <button onClick={this.props.handleCancelEdit} color="#2800B2" className="btn-primary">Cancel</button>
+          <button type="submit" className="btn-light">Submit</button>
           </div>
       </form>
     </div>);

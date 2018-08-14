@@ -18,7 +18,7 @@ class NewEntry extends Component {
       event.preventDefault();
       let data = event.target;
       let newEntry = {
-        author: localStorage.getItem('user'),
+        author: localStorage.getItem('litH@user'),
         public: data.public.checked,
         title: data.title.value,
         text: data.text.value
@@ -38,7 +38,7 @@ class NewEntry extends Component {
             <FormGroup className="form-group">
               <Textarea className="form-control" id="entry-body" type="textarea" name="text" placeholder='Write about your day...' />
             </FormGroup>
-            <Button type="submit" color="#2800B2">Submit</Button>
+            <Button type="submit" color="#2800B2" className="entry-btn">Submit</Button>
             <FormGroup className="form-group private-check">
               <input type="checkbox" id="private-square" name="public" />
               <Label for="exampleText">Post this to the forums</Label>

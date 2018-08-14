@@ -34,7 +34,7 @@ class Signup extends Component {
                     </div>
                     <hr />
                     <button type="submit" className="btn btn-primary">Submit</button>
-                    <Link to={'/'} className="btn btn-primary">Back to Login</Link>
+                    <Link to={'/'} className="btn btn-primary">Login</Link>
                 </form>
             </div>
                 <About/>

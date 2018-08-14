@@ -62,7 +62,7 @@ class ShowComments extends Component {
         let entry_id = e.target.getAttribute('data-id')
         let data = e.target;
         let newComment = {
-          author: localStorage.getItem('user'),
+          author: localStorage.getItem('litH@user'),
           body: data.body.value,
         };
         data.reset();
