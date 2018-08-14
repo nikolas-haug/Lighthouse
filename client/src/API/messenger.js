@@ -71,6 +71,15 @@ export default {
   },
 
   //**************************************/
+  //ENTRIES SERVER REQUESTS
+  //**************************************/
+  // Send like
+  sendLikeForAction: function (comment_id, like) {
+    return axios.post('/comments/likes/' + comment_id, like );
+  },
+
+
+  //**************************************/
   // PROVIDERS API REQUEST
   //**************************************/
   // send a query to the betterdoctors api

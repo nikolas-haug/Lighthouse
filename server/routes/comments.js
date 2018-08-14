@@ -24,7 +24,7 @@ router.post("/comment/:entry_id", function (req, res) {
             });
         }
     });
-}) 
+})
 
 //==============================================
 //GET ROUTE TO GET ONE COMMENT TO BE EDITED
@@ -43,7 +43,7 @@ router.get('/comment/:comment_id', function (req, res) {
 //PUT ROUTE TO UPDATE ONE COMMENTS
 //==============================================
 router.put("/comment/:comment_id", function (req, res) {
-   Comment.findByIdAndUpdate(req.params.comment_id, req.body, function (err, comment) {
+    Comment.findByIdAndUpdate(req.params.comment_id, req.body, function (err, comment) {
         if (err) {
             console.log(err)
         } else {
@@ -64,6 +64,30 @@ router.delete("/comment/:comment_id", function (req, res) {
             res.end();
         }
     })
+})
+
+
+
+//==============================================
+//POST ROUTE ADD OR DELETE COMMENT LIKES
+//==============================================
+router.post("/comments/likes/:comment_id", function (req, res) {
+    let like = req.body.likeBy
+    Comment.findById(req.params.comment_id, function (err, comment) {
+        if (err) {
+            console.log(err)
+        } else {
+            let index = comment.likes.indexOf(like);
+            if (index > -1) {
+                comment.likes.splice(index, 1);
+                comment.save()
+            } else {
+                comment.likes.push(like)
+                comment.save()
+            }
+            res.end()
+        }
+    });
 })
 
 
