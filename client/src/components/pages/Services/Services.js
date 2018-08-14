@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import Button from "./Button";
 import Input from "./Input";
 import Results from "./Results";
@@ -21,14 +21,14 @@ class Services extends Component {
     // Here we create syntax to capture any change in text to the query terms (pre-search).
     let newState = {};
     newState[id] = value;
+    newState.message = "";
     this.setState(newState);
-    this.setState({message: ""});
     console.log(newState);
   }
 
   handleFormSubmit = (event) => {
     event.preventDefault();
-    if(this.state.keyword !== "" && this.state.location !== "" && this.state.USstate !== "") {
+    if (this.state.keyword !== "" && this.state.location !== "" && this.state.USstate !== "") {
       // after button click, format request params before calling the api
       API.getProviders(this.state.keyword.trim(), (this.state.location).toLowerCase().trim(), (this.state.USstate).toLowerCase(), this.state.specialty).then((res) => {
 
@@ -38,7 +38,7 @@ class Services extends Component {
           location: ""
         });
 
-        if(this.state.results.length === 0) {
+        if (this.state.results.length === 0) {
           this.setState({
             message: "no results! please search again."
           });
@@ -47,7 +47,7 @@ class Services extends Component {
         console.log(err);
       });
     }
-    
+
   }
 
   // render the search form to the view
@@ -56,9 +56,9 @@ class Services extends Component {
       <div>
         <h1>Services</h1>
         <h5>{this.state.message}</h5>
-        <Results results={this.state.results}/>
+        <Results results={this.state.results} />
         <form onSubmit={this.handleFormSubmit}>
-          <Input handleChange={this.handleInputChange} keyword={this.state.keyword} location={this.state.location}/>
+          <Input handleChange={this.handleInputChange} keyword={this.state.keyword} location={this.state.location} />
           <Button />
         </form>
       </div>
@@ -69,7 +69,7 @@ class Services extends Component {
   renderResults = () => {
     return (
       <div>
-        <Results results={this.state.results} handleButtonClick={this.handleButtonClick}/>
+        <Results results={this.state.results} handleButtonClick={this.handleButtonClick} />
       </div>
     )
   }
