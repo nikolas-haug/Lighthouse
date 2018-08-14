@@ -1,7 +1,6 @@
 import React from "react";
 import { Component } from "react";
 import Comment from './Comments'
-// import { Link } from "react-router-dom";
 import API from '../../../../API/messenger';
 import './comments.css';
 import NewCommentForm from "./New_comments";
@@ -12,7 +11,8 @@ class ShowComments extends Component {
     super(props);
     this.state={
         comment:{
-            body:''
+            body:'',
+            _id:''
         },
     }
 
@@ -43,6 +43,7 @@ class ShowComments extends Component {
                 this.setState({
                     comment:{
                         body: res.data.body,
+                        _id: res.data._id,
                     },
                 })
             } 
@@ -57,7 +58,6 @@ class ShowComments extends Component {
         // Takes the submitted data and pass it over to the API module
         API.sendLikeForAction(comment_id, like).then(res => {
             // If res is success
-           
             this.props.getAllEntries();
             
         }).catch(err => console.log(err));
@@ -67,6 +67,7 @@ class ShowComments extends Component {
         this.setState({
             comment:{
                 body: "",
+                _id: "",
             },
         })
     }
@@ -91,7 +92,7 @@ class ShowComments extends Component {
         return (
                 <div>
                     <div>
-                        {this.props.comments.length && this.props.comments.length?this.props.comments.map((comment)=>
+                        {this.props.comments && this.props.comments.length?this.props.comments.map((comment)=>
                            this.state.comment.body === comment.body? 
                             <EditCommentForm  
                                 key={comment._id}

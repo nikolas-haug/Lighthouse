@@ -4,7 +4,7 @@ import { Jumbotron, Container, Button, Form, FormGroup, Label, Input } from 'rea
 import { Link } from "react-router-dom";
 import Textarea from 'react-textarea-autosize';
 import API from '../../../API/messenger';
-import './entry.css'
+import '../Entry/Comments/comments.css'
 
 
 class EditEntry extends Component {
@@ -89,7 +89,7 @@ handleCheckboxChange = (e) => {
               <Textarea onChange={this.handleInputChange} className="form-control" type="textarea" name="text" value={this.state.text}/>
             </FormGroup>
             <Link to={'/entries'} color="#2800B2" className="btn btn-default btn-primary">Cancel</Link>
-            <Button type="submit" color="#2800B2">Submit</Button>
+            <Button type="submit" className="btn btn-default btn-primary">Submit</Button>
             <FormGroup className="form-group private-check">
               <input  type="checkbox" id="private-square" name="public" value={this.state.public} />
               <Label for="exampleText">Post this to the forums</Label>

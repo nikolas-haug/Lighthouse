@@ -27,19 +27,7 @@ class  Journal extends Component {
         })
     }
 
-    
-    //Fires when the new entry form is submitted
-    // this.addNewEntry = (newEntry) => {
-    //     let userid = localStorage.getItem('id')
-    //     // Takes the submitted data and pass it over to the API module
-    //     API.sendNewEntryInfo(newEntry, userid).then((res) => {
-    //         if (res) {
-    //             this.props.history.push('/entries');
-    //         }
-    //     }).catch(err => console.log(err));
-    // }
-
-
+ 
     // This method handles entry deletion
     this.handleDeleteEntry= (entry_id) => {
         API.sendDeleteEntryInfo(entry_id).then(() => {

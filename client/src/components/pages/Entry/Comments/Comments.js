@@ -1,6 +1,7 @@
 import React from "react";
 import Moment from 'moment';
 import './comments.css';
+import LikeButton from "../../Services/LikeButton";
 
 
 const Comments =(props)=> {
@@ -9,30 +10,30 @@ const Comments =(props)=> {
                     <div>
                             <div className="comment-content">
                                 <div>
-                                    <h6>
+                                    <h5>
                                         {props.comment.author}
-                                    </h6>
+                                    </h5>
                                 </div>
                                 <div>
-                                    <span>
+                                    <span className="comment-date">
                                     {Moment(props.comment.createdAt).format('llll')}
                                     </span>
                                 </div>
+                                <hr/>
                                  <div>
-                                    <p>
+                                    <p className='comment-body'>
                                        {props.comment.body}
                                     </p>
                                 </div>
-                                <div>{props.comment.author===localStorage.getItem('litH@user')?
-                                    <div>
+                                <div className="row">
+                                <LikeButton {...props}/>
+                                {props.comment.author===localStorage.getItem('litH@user')?
+                                    <div className="comment-buttons">
                                         <button data-id={props.comment._id} action="delete"
                                             onClick={props.handleAction} type="button" className="btn-danger">Delete</button>
                                         <button data-id={props.comment._id} action="edit"
                                         onClick={props.handleAction} type="button" className="btn-warning">Edit</button>
-                                    </div>:
-                                    <div className='button-spacer'></div>
-
-                                
+                                    </div>:""
                                 }</div>
                             </div>
                     </div>

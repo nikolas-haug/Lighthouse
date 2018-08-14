@@ -72,6 +72,7 @@ router.delete("/comment/:comment_id", function (req, res) {
 //POST ROUTE ADD OR DELETE COMMENT LIKES
 //==============================================
 router.post("/comments/likes/:comment_id", function (req, res) {
+    console.log(req.params.comment_id)
     let like = req.body.likeBy
     Comment.findById(req.params.comment_id, function (err, comment) {
         if (err) {

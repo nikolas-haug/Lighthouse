@@ -38,7 +38,7 @@ class NewEntry extends Component {
             <FormGroup className="form-group">
               <Textarea className="form-control" id="entry-body" type="textarea" name="text" placeholder='Write about your day...' />
             </FormGroup>
-            <Button type="submit" color="#2800B2" className="entry-btn">Submit</Button>
+            <Button type="submit" color="#2800B2" className="entry-btn btn btn-primary">Submit</Button>
             <FormGroup className="form-group private-check">
               <input type="checkbox" id="private-square" name="public" />
               <Label for="exampleText">Post this to the forums</Label>
