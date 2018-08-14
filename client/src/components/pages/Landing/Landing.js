@@ -6,6 +6,7 @@ import Logout from "./Logout/Logout";
 import API from "../../../API/messenger";
 import Slides from "./Carousel/Carousel";
 import "./Landing.css";
+import Quicklinks from "../Sections/Quicklinks";
 
 
 class Landing extends Component {
@@ -89,15 +90,19 @@ class Landing extends Component {
 
   render() {
     return (
-        <div className="landingPage">
+      <div className="landingPage">
         <Slides/>
-        {this.props.match.path === "/signup" ? (
+
+        {this.props.match.path === "/logout" ? (
+          <Logout handleUserLogout={this.handleUserLogout} />):
+          localStorage.getItem('litH@user')?(
+          <Quicklinks/>):
+          this.props.match.path === "/signup" ? (
           <Signup handleUserSignup={this.handleUserSignup} />
-        ) : this.props.match.path === "/" ? (
-          <Login handleUserLogin={this.handleUserLogin} />
-        ) : (
-          <Logout handleUserLogout={this.handleUserLogout} />
-        )}
+        ) : <Login handleUserLogin={this.handleUserLogin} />
+       
+         
+        }
       </div>
     );
   }
