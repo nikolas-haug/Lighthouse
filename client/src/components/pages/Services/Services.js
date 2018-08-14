@@ -17,10 +17,10 @@ class Services extends Component {
   }
 
   // function to detect any change 
-  handleInputChange = (event) => {
+  handleInputChange = (id, value) => {
     // Here we create syntax to capture any change in text to the query terms (pre-search).
     let newState = {};
-    newState[event.target.id] = event.target.value;
+    newState[id] = value;
     this.setState(newState);
     this.setState({message: ""});
     console.log(newState);
@@ -85,7 +85,7 @@ class Services extends Component {
   // if results returned, render that to the view, otherwise the form with message
   render() {
     return (
-      <div>
+      <div className="services">
         {this.state.results.length === 0 ? this.renderForm() : this.renderResults()}
       </div>
     )
