@@ -35,7 +35,7 @@ const Header = props => (
             </span>
           </li>
         ) : (
-          <a className="" href="/">Login</a>
+          ""
         )}
 
         {/* New Entry Nav Link */}
@@ -88,7 +88,7 @@ const Header = props => (
               </span>
             </Link>
           ) : (
-            <a className="" href="/">Sign Up</a>
+            ""
           )}
         </li>
       </div>
