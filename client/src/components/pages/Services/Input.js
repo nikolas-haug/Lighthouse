@@ -1,4 +1,74 @@
 import React from "react";
+import Select from 'react-select';
+
+const options = [
+    { value: "AL", label: "AL" },
+    { value: "AK", label: "AK" },
+    { value: "AZ", label: "AZ" },
+    { value: "AR", label: "AR" },
+    { value: "CA", label: "CA" },
+    { value: "CO", label: "CO" },
+    { value: "CT", label: "CT" },
+    { value: "DE", label: "DE" },
+    { value: "DC", label: "DC" },
+    { value: "FL", label: "FL" },
+    { value: "GA", label: "GA" },
+    { value: "HI", label: "HI" },
+    { value: "ID", label: "ID" },
+    { value: "IL", label: "IL" },
+    { value: "IN", label: "IN" },
+    { value: "IA", label: "IA" },
+    { value: "KS", label: "KS" },
+    { value: "KY", label: "KY" },
+    { value: "LA", label: "LA" },
+    { value: "ME", label: "ME" },
+    { value: "MD", label: "MD" },
+    { value: "MA", label: "MA" },
+    { value: "MI", label: "MI" },
+    { value: "MN", label: "MN" },
+    { value: "MS", label: "MS" },
+    { value: "MO", label: "MO" },
+    { value: "MT", label: "MT" },
+    { value: "NE", label: "NE" },
+    { value: "NV", label: "NV" },
+    { value: "NH", label: "NH" },
+    { value: "NJ", label: "NJ" },
+    { value: "NM", label: "NM" },
+    { value: "NY", label: "NY" },
+    { value: "NC", label: "NC" },
+    { value: "ND", label: "ND" },
+    { value: "OH", label: "OH" },
+    { value: "OK", label: "OK" },
+    { value: "OR", label: "OR" },
+    { value: "PA", label: "PA" },
+    { value: "RI", label: "RI" },
+    { value: "SC", label: "SC" },
+    { value: "SD", label: "SD" },
+    { value: "TN", label: "TN" },
+    { value: "TX", label: "TX" },
+    { value: "UT", label: "UT" },
+    { value: "VT", label: "VT" },
+    { value: "VA", label: "VA" },
+    { value: "WA", label: "WA" },
+    { value: "WV", label: "WV" },
+    { value: "WI", label: "WI" },
+    { value: "WY", label: "WY" }
+];
+
+const specialtyOptions = [
+    { value: "professional-counselor", label: "Professional counselor" },
+    { value: "addiction-psychiatrist", label: "Addiction" },
+    { value: "psychiatrist", label: "Professional psychiatrist" },
+    { value: "mental-health-nurse-practitioner", label: "Mental health practitioner" },
+    { value: "group-psychotherapy-psychologist", label: "Group psychologist" },
+    { value: "school-counselor", label: "School counselor" },
+    { value: "clinical-psychologist", label: "Clinical psychologist" },
+    { value: "mental-health-counselor", label: "Mental health counselor" },
+    { value: "art-therapist", label: "Art therapy" },
+    { value: "psychiatry-neurology-addiction-medicine", label: "Neurology medicine" },
+    { value: "rehabilitation-counselor", label: "Rehabilitation counselor" },
+    { value: "rehabilitation-psychologist", label: "Rehabilitation psychologist" }
+]
 
 const Input = (props) => {
     return (
@@ -11,13 +81,13 @@ const Input = (props) => {
                     className="form-control"
                     id="keyword"
                     placeholder="keyword"
-                    onChange={props.handleChange}
+                    onChange={event => props.handleChange(event.target.id, event.target.value)}
                     required
                 />
                 <hr />
             </div>
-            <div className="bottom-row">
-                <div className="form=group bottom-item">
+            <div className="row bottom-row">
+                <div className="form=group bottom-item col-6">
                     <label htmlFor="location">City</label>
                     <input
                         type="text"
@@ -25,84 +95,23 @@ const Input = (props) => {
                         className="form-control"
                         id="location"
                         placeholder="city"
-                        onChange={props.handleChange}
+                        onChange={event => props.handleChange(event.target.id, event.target.value)}
                         required
                     />
                     <hr />
                 </div>
-                <div className="form-group bottom-item state-input">
+                <div className="form-group bottom-item state-input col-3">
                     <label htmlFor="USstate">State</label>
-                    <select id="USstate" name="USstate" onChange={props.handleChange}>
-                        <option value="AL">AL</option>
-                        <option value="AK">AK</option>
-                        <option value="AZ">AZ</option>
-                        <option value="AR">AR</option>
-                        <option value="CA">CA</option>
-                        <option value="CO">CO</option>
-                        <option value="CT">CT</option>
-                        <option value="DE">DE</option>
-                        <option value="DC">DC</option>
-                        <option value="FL">FL</option>
-                        <option value="GA">GA</option>
-                        <option value="HI">HI</option>
-                        <option value="ID">ID</option>
-                        <option value="IL">IL</option>
-                        <option value="IN">IN</option>
-                        <option value="IA">IA</option>
-                        <option value="KS">KS</option>
-                        <option value="KY">KY</option>
-                        <option value="LA">LA</option>
-                        <option value="ME">ME</option>
-                        <option value="MD">MD</option>
-                        <option value="MA">MA</option>
-                        <option value="MI">MI</option>
-                        <option value="MN">MN</option>
-                        <option value="MS">MS</option>
-                        <option value="MO">MO</option>
-                        <option value="MT">MT</option>
-                        <option value="NE">NE</option>
-                        <option value="NV">NV</option>
-                        <option value="NH">NH</option>
-                        <option value="NJ">NJ</option>
-                        <option value="NM">NM</option>
-                        <option value="NY">NY</option>
-                        <option value="NC">NC</option>
-                        <option value="ND">ND</option>
-                        <option value="OH">OH</option>
-                        <option value="OK">OK</option>
-                        <option value="OR">OR</option>
-                        <option value="PA">PA</option>
-                        <option value="RI">RI</option>
-                        <option value="SC">SC</option>
-                        <option value="SD">SD</option>
-                        <option value="TN">TN</option>
-                        <option value="TX">TX</option>
-                        <option value="UT">UT</option>
-                        <option value="VT">VT</option>
-                        <option value="VA">VA</option>
-                        <option value="WA">WA</option>
-                        <option value="WV">WV</option>
-                        <option value="WI">WI</option>
-                        <option value="WY">WY</option>
-                    </select>
+                    <Select style={{ width: '100px' }} options={options} id="USstate" name="USstate"
+                        onChange={selectedOption => props.handleChange('USstate', selectedOption.value)}> */}
+                    </Select>
 
                 </div>
-                <div className="form-group bottom-item specialty-input">
+                <div className="form-group bottom-item specialty-input col-3">
                     <label htmlFor="specialty">Type of service/specialty</label>
-                    <select id="specialty" name="specialty" onChange={props.handleChange}>
-                        <option value="professional-counselor">Professional counselor</option>
-                        <option value="addiction-psychiatrist">Addiction</option>
-                        <option value="psychiatrist">Professional psychiatrist</option>
-                        <option value="mental-health-nurse-practitioner">Mental health practitioner</option>
-                        <option value="group-psychotherapy-psychologist">Group psychologist</option>
-                        <option value="school-counselor">School counselor</option>
-                        <option value="clinical-psychologist">Clinical psychologist</option>
-                        <option value="mental-health-counselor">Mental health counselor</option>
-                        <option value="art-therapist">Art therapy</option>
-                        <option value="psychiatry-neurology-addiction-medicine">Neurology medicine</option>
-                        <option value="rehabilitation-counselor">Rehabilitation counselor</option>
-                        <option value="rehabilitation-psychologist">Rehabilitation psychologist</option>
-                    </select>
+                    <Select options={specialtyOptions} id="specialty" name="specialty"
+                        onChange={selectedOption => props.handleChange('specialty', selectedOption.value)}>
+                    </Select>
                 </div>
             </div>
         </div>

@@ -1,14 +1,12 @@
-.bottom-item {
-    display: inline-block;
-    width: 40%;
-    margin-right: 40px;
+.services {
+    margin: 40px;
+    max-width: 60%;
+    padding: 6px 6px 3px;
+    border: none;
+    font-size: 13px;
 }
-.state-input {
- width: 10%;
-}
-.specialty-input {
-    width: 15%;
-}
+
 .btn-search {
-margin: 20px 0;
+    margin: 20px 0;
+    white-space: inherit;
 }
