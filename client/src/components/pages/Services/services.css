@@ -9,4 +9,11 @@
 .btn-search {
     margin: 20px 0;
     white-space: inherit;
+    width:15rem;
+    border-radius: 50px;
+}
+
+label {
+    display: inline-block;
+    margin: .5rem;
 }
