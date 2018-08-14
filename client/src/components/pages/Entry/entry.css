@@ -17,7 +17,9 @@
     margin: 0 2px;
     border: none;
     font-size: 13px;
-
+    width:6.5rem;
+    border-radius: 50px;
+    padding:5px;
 }
 .entry-btn:hover {
     background-color: #499BFF;
@@ -57,4 +59,10 @@ textarea {
 .card-header {
     background-color: #fff;
     border-bottom: none;
+}
+
+.entry-text{
+    padding:2% 3%;
+    background: #f9fafa;
+    border-radius: 10px;
 }

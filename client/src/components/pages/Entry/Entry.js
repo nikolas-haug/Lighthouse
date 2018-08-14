@@ -28,7 +28,7 @@ class Entry extends Component {
         
         //Fires when the new entry form is submitted
         this.addNewEntry = (newEntry) => {
-            let userid = localStorage.getItem('id')
+            let userid = localStorage.getItem('litH@user_id')
             // Takes the submitted data and pass it over to the API module
             API.sendNewEntryInfo(newEntry, userid).then((res) => {
                 if (res) {
