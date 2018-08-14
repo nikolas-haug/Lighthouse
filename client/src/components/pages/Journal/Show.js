@@ -37,7 +37,7 @@ class ShowUserJournals extends Component {
                                             <p>{entry.text}</p>
                                         </div>    
                                         <div>
-                                            <Link to={'/edit_entry/'+entry._id} className="entry-btn">Edit Post</Link> 
+                                            <Link to={'/edit_entry/'+entry._id} className=" btn entry-btn">Edit Journal</Link> 
                                             <button className="entry-btn" data-id={entry._id} action="delete"
                                                         onClick={this.handleAction}>Delete</button>
                                         </div>    
