@@ -11,6 +11,28 @@
     visibility: hidden;
 }
 
+.btn-link{
+    border:none;
+    font-weight: 700;
+}
+
+.btn-link:link {
+    text-decoration: none;
+}
+
+.btn-link:visited {
+    text-decoration: none;
+    color:grey;
+}
+
+.btn-link:hover {
+    text-decoration: none;
+}
+
+.btn-link:active {
+    text-decoration: none;
+}
+
 .btn-primary, .btn-light{
     border-color: #212529;
 
@@ -26,9 +48,8 @@
     padding: 0.1rem;
     transition: ease-in 0.5s;
     transition: ease-out 0.05s;
-
+    outline-width: 0rem;
 }
-
 
 .comment-content:hover .btn-danger{
     visibility: visible;
@@ -38,6 +59,38 @@
     visibility: visible;
 }
 
-.button-spacer{
-    height:2rem;
+
+.comment-body {
+    font-size: 1rem;
+    line-height: 1.7;
+    color:rgb(87, 86, 86);
+}
+
+.comment-content{
+    background: #f9f9fa;
+    margin-top:2%;
+    padding:2% 4%;
+    border-radius: 10px;
+}
+
+.comment-content h5{
+        font-size: 1.25rem;
+        font-weight: 800;
+        color:rgb(87, 86, 86);
+}
+
+.comment-content .comment-date{
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.newcomment-textbox{
+    margin-top: 2rem;
+}
+
+.new-comment .input-group>.form-control {
+    width: 1%;
+    margin: 2% 0;
+    height:auto;
+    border-bottom: 1px #dad7d7 solid;
 }

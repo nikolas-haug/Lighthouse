@@ -19,7 +19,8 @@ class Entry extends Component {
                 // Set the state with the results from the search
                 this.setState({
                     entries: res.data
-                })}else{
+                })
+                }else{
                     return;
                 }
             })

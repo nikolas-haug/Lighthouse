@@ -8,27 +8,26 @@ class  EditCommentForm extends Component {
         super(props);
         this.state = {
             comment:{
-                body:this.props.comment.body
+                body:this.props.comment.body,
             }
         }
-        this.handleSubmit = e => {
-            e.preventDefault();
-            let comment_id = e.target.getAttribute('data-id')
-            let data = e.target;
-            let editedComment = {
-              body: data.body.value,
-            };
-            API.sendEditedCommentInfo(comment_id, editedComment).then((res) => {
-                if(res.status === 200){
-                  this.props.getAllEntries();
-                }
-              else {
-                this.props.getAllEntries();
-                //   this.props.history.go('back');
-              }
-             }).catch(err => console.log(err));
-          }
+
+
+    this.handleSubmit = e => {
+        e.preventDefault();
+        let comment_id = e.target.getAttribute('data-id')
+        let data = e.target;
+        let editedComment = {
+          body: data.body.value,
+        };
+        
+        API.sendEditedCommentInfo(comment_id, editedComment)
+           .then((res) => {
+              this.props.getAllEntries();
+         }).catch(err => console.log(err));
+    }
     
+
     this.handleInputChange = (e) => {
             let target = e.target;
             let value = target.value;
