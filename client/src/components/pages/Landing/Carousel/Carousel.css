@@ -5,13 +5,13 @@
 
 .carousel-item {
   max-height: 400px;
-  object-fit: cover;
 }
 
 img {
 	left: 0;
 	right: 0;
   width: 100%;
+  height: 0 auto;
 }
 
 .captionHeader {
