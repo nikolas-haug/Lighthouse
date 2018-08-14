@@ -28,7 +28,6 @@ class ShowUserJournals extends Component {
                                 <div className="card" key={entry._id}>
                                     <div className="card-header" id={entry._id}>
                                         <div>  
-                                            <h3>{entry.author}</h3>
                                             <span>{Moment(entry.createdAt).format('llll')}</span>
                                          </div> 
                                         <div>  
