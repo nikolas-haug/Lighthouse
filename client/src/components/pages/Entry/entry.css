@@ -60,3 +60,9 @@ textarea {
     background-color: #fff;
     border-bottom: none;
 }
+
+.entry-text{
+    padding:2% 3%;
+    background: #f9fafa;
+    border-radius: 10px;
+}
