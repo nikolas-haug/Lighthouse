@@ -20,3 +20,19 @@
     transition: ease-out 0.05s;
 
 }
+
+
+
+.login-wrapper{
+    margin-top: 5%;
+}
+.login-wrapper .list-group-item.active {
+    background-color: #3c3d41;
+    border:none;
+}
+
+.login-wrapper .list-group-item{
+    font-size: 1rem;
+    font-weight: 800;
+    background: #f7f7f7;
+}
