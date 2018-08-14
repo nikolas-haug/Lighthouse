@@ -55,6 +55,16 @@ li:hover span {
   color: #007bff;
 }
 
+@media (max-width: 725px) {
+  li {
+    position: relative;
+    display: inline-block;
+    width: 725px;
+    height: 50px;
+    vertical-align: middle;
+  }
+}
+
 .fa {
   line-height: 1.2;
   margin: 0 10px;
