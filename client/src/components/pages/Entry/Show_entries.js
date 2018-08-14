@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Moment from 'moment';
 import Comments from './Comments/Show_comments';
 import Header from '../Sections/Header';
-import LikeButton from "../Services/LikeButton";
+// import LikeButton from "../Services/LikeButton";
 
 class ShowEntries extends Component {
   constructor(props) {

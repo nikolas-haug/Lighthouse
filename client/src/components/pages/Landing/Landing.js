@@ -91,18 +91,18 @@ class Landing extends Component {
   render() {
     return (
       <div className="landingPage">
-        <Slides/>
-
-        {this.props.match.path === "/logout" ? (
-          <Logout handleUserLogout={this.handleUserLogout} />):
-          localStorage.getItem('litH@user')?(
-          <Quicklinks/>):
-          this.props.match.path === "/signup" ? (
-          <Signup handleUserSignup={this.handleUserSignup} />
-        ) : <Login handleUserLogin={this.handleUserLogin} />
-       
-         
-        }
+          <div> 
+            <Slides/>
+          </div>
+          <div>
+            {this.props.match.path === "/logout" ? (
+              <Logout handleUserLogout={this.handleUserLogout} />):
+              localStorage.getItem('litH@user')?(
+              <Quicklinks/>):
+              this.props.match.path === "/signup" ? (
+              <Signup handleUserSignup={this.handleUserSignup} />
+            ) : <Login handleUserLogin={this.handleUserLogin} />
+            }</div>
       </div>
     );
   }

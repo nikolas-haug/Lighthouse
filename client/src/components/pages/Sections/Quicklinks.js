@@ -8,7 +8,7 @@ const Quicklinks = () => {
     return (
     <div className="login-wrapper">
         <div className="login-block">
-            <ul className="list-group">
+            <ul className="list-group quicklink-block">
                 <h3   className="list-group-item active">Quick links</h3>
                 <Link to={'/entries'} className="list-group-item">Journal Entries</Link>
                 <Link to={'/new_entry'} className="list-group-item">Add New Entry</Link>
