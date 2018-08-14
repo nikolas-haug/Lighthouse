@@ -22,8 +22,10 @@ class ShowComments extends Component {
       let action = e.target.getAttribute("action")
       if(action === 'delete'){
             this.handleDeleteComments(comment_id)
-        }else{
+        }else if(action === 'edit'){
             this.handleEditComments(comment_id)
+        }else{
+            this.handleAddOrDeleteLikes(comment_id) 
         }
     };
 
@@ -34,7 +36,6 @@ class ShowComments extends Component {
     }
 
     this.handleEditComments = (comment_id) => {
-        // let entry_id = this.props.match.params.id
         // Takes the submitted data and pass it over to the API module
         API.getCommentToBeEdited(comment_id).then(res => {
             // If res is success
@@ -45,6 +46,20 @@ class ShowComments extends Component {
                     },
                 })
             } 
+        }).catch(err => console.log(err));
+    }
+
+
+    this.handleAddOrDeleteLikes = (comment_id) => {
+        let like = {
+            likeBy: localStorage.getItem('litH@user_id')
+        }
+        // Takes the submitted data and pass it over to the API module
+        API.sendLikeForAction(comment_id, like).then(res => {
+            // If res is success
+           
+            this.props.getAllEntries();
+            
         }).catch(err => console.log(err));
     }
 

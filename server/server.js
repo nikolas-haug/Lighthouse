@@ -9,7 +9,6 @@ const cors = require('cors');
 const index = require('./routes/index');
 const entry = require('./routes/entry');
 const comments = require('./routes/comments');
-
 const api = require('./routes/api');
 
 
