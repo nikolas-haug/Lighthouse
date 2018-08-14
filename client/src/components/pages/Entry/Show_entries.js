@@ -42,7 +42,7 @@ class ShowEntries extends Component {
                                         </div>    
                                         <div>
                                              <i className="fa fa-comments"></i>
-                                            <button className="btn-link entry-btn" type="button" data-toggle="collapse" data-target={"#"+entry._id+1} aria-expanded="true" aria-controls={entry._id+1}>
+                                            <button className="btn-link comment-btn" type="button" data-toggle="collapse" data-target={"#"+entry._id+1} aria-expanded="true" aria-controls={entry._id+1}>
                                               {entry.comments.length === 1?<span>{entry.comments.length} Comment</span> :
                                               entry.comments.length > 1?<span>{entry.comments.length} Comments</span>: 
                                               'Add Comment'}

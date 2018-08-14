@@ -21,6 +21,14 @@
     border-radius: 50px;
     padding:5px;
 }
+.comment-btn {
+    color: #3c3d41;
+    margin-left: -10px;
+}
+.comment-btn:hover {
+    color: #499BFF;
+
+}
 .entry-btn:hover {
     background-color: #499BFF;
     color: #343a40;

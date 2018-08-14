@@ -38,7 +38,7 @@ class  Journal extends Component {
   render() { 
     return ( 
 <div>
-        <Header heading="My Journals" title="Track your routaine"/>
+        <Header heading="My Journals" title="Track your Routine"/>
         <ShowUserJournals 
             handleDeleteEntry={this.handleDeleteEntry} 
             getAllUserEntries={this.getAllUserEntries}
