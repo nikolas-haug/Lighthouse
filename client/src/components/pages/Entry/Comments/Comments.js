@@ -25,9 +25,9 @@ const Comments =(props)=> {
                                 </div>
                                 <div>
                                     <button data-id={props.comment._id} action="delete"
-                                         onClick={props.handleAction} type="button" className=" btn-danger">Delete</button>
+                                         onClick={props.handleAction} type="button" className="btn-danger">Delete</button>
                                     <button data-id={props.comment._id} action="edit"
-                                    onClick={props.handleAction} type="button" className=" btn-warning">Edit</button>  
+                                    onClick={props.handleAction} type="button" className="btn-warning">Edit</button>  
                                 
                                 </div>
                             </div>
