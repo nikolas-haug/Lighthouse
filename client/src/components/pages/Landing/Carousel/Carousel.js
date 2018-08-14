@@ -78,7 +78,7 @@ class Slides extends Component {
           onExited={this.onExited}
           key={item.src}
         >
-          <img src={item.src} alt={item.altText} />
+          <div className="d-block w-100" style={{backgroundImage: `url(${item.src})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'center center'}} alt={item.altText} />
           <CarouselCaption className="captionHeader" captionText={""} captionHeader={item.captionHeader} />
           <CarouselCaption captionText={item.caption} caption={item.caption} />
         </CarouselItem>

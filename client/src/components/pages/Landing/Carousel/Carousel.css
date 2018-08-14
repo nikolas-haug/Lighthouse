@@ -3,15 +3,20 @@
   width: 100%;
 }
 
-.carousel-item {
-  max-height: 400px;
+.carousel-item .d-block {
+  height: 400px;
 }
 
-img {
-	left: 0;
-	right: 0;
-  width: 100%;
-  height: 0 auto;
+@media (min-width: 1200px) {
+  .carousel-item .d-block{
+    height: 600px;
+  }
+}
+
+@media (min-width: 2000px) {
+  .carousel-item .d-block{
+    height: 800px;
+  }
 }
 
 .captionHeader {
