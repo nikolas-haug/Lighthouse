@@ -81,8 +81,8 @@ class Landing extends Component {
         //Redirect user to home page
         this.props.history.push("/");
       } else {
-        //Just for testing we will redirect here
-        this.props.history.push("/services");
+        //redirect back to the last page
+        this.props.history.goBack();
       }
     };
   }
