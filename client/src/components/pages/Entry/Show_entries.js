@@ -37,7 +37,7 @@ class ShowEntries extends Component {
                                             <h5>{entry.title}</h5>
                                         </div>    
                                         <div>  
-                                            <p>{entry.text}</p>
+                                            <p className="entry-text">{entry.text}</p>
                                         </div>    
                                         <div>
                                         
