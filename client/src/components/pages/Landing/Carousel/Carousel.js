@@ -91,6 +91,13 @@ class Slides extends Component {
         activeIndex={activeIndex}
         next={this.next}
         previous={this.previous}
+        keyboard={false}
+        pause={false}
+        ride="carousel"
+        interval="6000"
+        slide={false}
+
+        className="carousel-fade"
       >
         <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
         {slides}
