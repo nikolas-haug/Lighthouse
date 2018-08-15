@@ -87,7 +87,7 @@ const Input = (props) => {
                 <hr />
             </div>
             <div className="row bottom-row">
-                <div className="form=group bottom-item col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <div className="form=group bottom-item col-lg-5 col-md-5 col-sm-12 col-xs-12">
                     <label htmlFor="location">City</label>
                     <input
                         type="text"
@@ -107,7 +107,7 @@ const Input = (props) => {
                     </Select>
 
                 </div>
-                <div className="form-group bottom-item specialty-input col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                <div className="form-group bottom-item specialty-input col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <label htmlFor="specialty">Type of service/specialty</label>
                     <Select options={specialtyOptions} id="specialty" name="specialty"
                         onChange={selectedOption => props.handleChange('specialty', selectedOption.value)}>

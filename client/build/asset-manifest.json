@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "main.css": "static/css/main.aad6e24e.css",
   "main.css.map": "static/css/main.aad6e24e.css.map",
   "main.js": "static/js/main.11ba5971.js",
@@ -6,4 +7,13 @@
   "static/media/fire-pic.jpg": "static/media/fire-pic.effd7465.jpg",
   "static/media/hands.jpg": "static/media/hands.3971f5d4.jpg",
   "static/media/lighthouse-pic.jpg": "static/media/lighthouse-pic.d240036e.jpg"
+=======
+  "main.css": "static/css/main.361febd9.css",
+  "main.css.map": "static/css/main.361febd9.css.map",
+  "main.js": "static/js/main.aba9eeae.js",
+  "main.js.map": "static/js/main.aba9eeae.js.map",
+  "static/media/hands.jpg": "static/media/hands.7130789d.jpg",
+  "static/media/lighthouse-pic.jpg": "static/media/lighthouse-pic.0830f379.jpg",
+  "static/media/stones-pic.png": "static/media/stones-pic.acac8770.png"
+>>>>>>> niko-footer
 }
