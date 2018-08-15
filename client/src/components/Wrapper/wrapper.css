@@ -64,7 +64,7 @@ li:hover span {
     vertical-align: middle;
   }
 }
-@media (min-width: 990px) {
+@media (min-width: 992px) {
   button.navbar-toggler {
     display: none!important;
   }
