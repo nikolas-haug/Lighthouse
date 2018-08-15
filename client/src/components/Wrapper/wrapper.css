@@ -65,7 +65,9 @@ li:hover span {
   }
 }
 @media (min-width: 725px) {
-
+  button.navbar-toggler {
+    display: none!important;
+  }
 }
 
 .fa {
@@ -83,6 +85,9 @@ li:hover span {
   margin-left: 5px;
 }
 
+.nav-link {
+  display: inherit;
+}
 
 .header {
   color: #fff;
