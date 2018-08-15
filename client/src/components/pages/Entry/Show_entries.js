@@ -18,27 +18,6 @@ class ShowEntries extends Component {
         : this.props.handleDeleteEntry(entry_id);
     };
   }
-<<<<<<< HEAD
-  componentDidMount() {
-    this.props.getAllEntries();
-  }
-  render() {
-    return (
-      <div className="container">
-        <Header heading="Posts" title="Join the conversation" />
-        <div className="row">
-          <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <div className="accordion" id="accordionExample">
-              {this.props.entries.map(entry => (
-                <div className="card" key={entry._id}>
-                  <div className="card-header" id={entry._id}>
-                    <div>
-                      <h3>{entry.author}</h3>
-                      <span>{Moment(entry.createdAt).format("llll")}</span>
-                    </div>
-                    <div>
-                      <h5>{entry.title}</h5>
-=======
     componentDidMount() {
         this.props.getAllEntries()        
     }
@@ -92,7 +71,6 @@ class ShowEntries extends Component {
                                 </div>
                             )}
                         </div>
->>>>>>> 3cff73ee74f544c13d2dbeaea03fbf18e1b68be8
                     </div>
                     <div>
                       <p className="entry-text">{entry.text}</p>
