@@ -1,7 +1,7 @@
 import React from "react";
 import Moment from 'moment';
 import './comments.css';
-import LikeButton from "../../Services/LikeButton";
+import LikeButton from "../../Sections/LikeButton";
 
 
 const Comments =(props)=> {
