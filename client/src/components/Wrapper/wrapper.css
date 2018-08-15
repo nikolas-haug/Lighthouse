@@ -124,6 +124,30 @@ li:hover span {
   .btn-primary {
     margin-top: 15px;
   }
+  li {
+    border-radius: 0;
+    border-bottom: 1px solid rgba(255,255,255,.1);
+    height: auto;
+    width: 100%;
+    padding: 10px 0;
+
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+
+  }
+
+  li span {
+    opacity: 1;
+  }
+  i {
+    padding: 0;
+  }
+  .nav-link {
+    padding: 0;
+  }
+  .fa-user, .fa-plus-square, .fa-users, .fa-book, .fa-sign-out {
+    display: none;
+  
+  }
 }
 button {
  background-color: #343a40;
