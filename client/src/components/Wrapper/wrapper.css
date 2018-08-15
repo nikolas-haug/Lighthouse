@@ -64,6 +64,9 @@ li:hover span {
     vertical-align: middle;
   }
 }
+@media (min-width: 725px) {
+
+}
 
 .fa {
   line-height: 1.2;
@@ -80,9 +83,6 @@ li:hover span {
   margin-left: 5px;
 }
 
-.nav-link {
-  display: inherit;
-}
 
 .header {
   color: #fff;
