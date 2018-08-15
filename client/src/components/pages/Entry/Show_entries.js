@@ -22,7 +22,7 @@ class ShowEntries extends Component {
     }
     render() {
         return (
-            <div className="container">
+            <div className="container" style={{paddingTop: "50px"}}>
             <Header heading="Posts" title="Join the conversation"/>
                  <div className="row">
                     <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
