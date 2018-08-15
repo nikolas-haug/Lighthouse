@@ -4,11 +4,7 @@ const axios = require("axios");
 
 // variables for the betterdoctor search
 const URL = "https://api.betterdoctor.com/2016-03-01/doctors";
-<<<<<<< HEAD
-const KEY = process.env.LIGHHOUSE_APP_PROVIDERS_KEY;
-=======
 const betterdoctorKEY = process.env.LIGHHOUSE_APP_PROVIDERS_KEY;
->>>>>>> niko-footer
 
 // variables for google custom search
 const searchEngineID = process.env.LIGHTHOUSE_APP_GOOGLECUSTOM_KEY;
