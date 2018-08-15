@@ -64,6 +64,11 @@ li:hover span {
     vertical-align: middle;
   }
 }
+@media (min-width: 725px) {
+  button.navbar-toggler {
+    display: none!important;
+  }
+}
 
 .fa {
   line-height: 1.2;

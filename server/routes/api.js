@@ -4,7 +4,11 @@ const axios = require("axios");
 
 // variables for the betterdoctor search
 const URL = "https://api.betterdoctor.com/2016-03-01/doctors";
+<<<<<<< HEAD
 const KEY = process.env.LIGHHOUSE_APP_PROVIDERS_KEY;
+=======
+const betterdoctorKEY = process.env.LIGHHOUSE_APP_PROVIDERS_KEY;
+>>>>>>> niko-footer
 
 // variables for google custom search
 const searchEngineID = process.env.LIGHTHOUSE_APP_GOOGLECUSTOM_KEY;
@@ -13,7 +17,7 @@ const customSearchKey = process.env.LIGHTHOUSE_APP_CUSTOMENGINE_KEY;
 // api route to retrieve the betterdoctor data
 router.get('/api/providers/:keyword/:location/:USstate/:specialty', function(req, res) {
     // make the api query with user params set from services component client side
-    axios.get(`${URL}?q=${req.params.keyword}&specialty_uid=${req.params.specialty}&location=${req.params.USstate}-${req.params.location}&skip=0&limit=10&user_key=${KEY}`)
+    axios.get(`${URL}?q=${req.params.keyword}&specialty_uid=${req.params.specialty}&location=${req.params.USstate}-${req.params.location}&skip=0&limit=10&user_key=${betterdoctorKEY}`)
         .then((response) => {
             // send the response as json
             res.json(response.data);
