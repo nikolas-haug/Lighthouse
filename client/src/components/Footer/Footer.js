@@ -1,19 +1,21 @@
 import React from "react";
 import { Component } from "react";
 
+import Input from "./Input";
+
 // import { BrowserRouter as Router, Route } from "react-router-dom";
 
 
 import "./footer.css";
 
 class Footer extends Component {
-    constructor(props) {
-        super(props);
-        // state = {
-        //     searchTerm: "",
-        //     results: []
-        // }
-    }
+    // constructor(props) {
+    //     super(props);
+        state = {
+            searchTerm: "",
+            results: []
+        }
+    // }
 
     handleInputChange = (event) => {
         // Here we create syntax to capture any change in text to the query terms (pre-search).
@@ -78,17 +80,9 @@ class Footer extends Component {
                             <p>
                                 Search for helpful articles and journals regarding your mental health
                             </p>
-                                {/* <p>
-                                <div className="input-group">
-                                    <input type="text" className="form-control" placeholder="Search for...">
-                                    <span className="input-group-btn">
-                                    <button className="btn btn-default" type="button">
-                                        <span className="glyphicon glyphicon-envelope"></span>
-                                    </button>
-                                    </span>
-                                </div> */}
-                                {/* <!-- /input-group --> */}
-                                {/* </p> */}
+                            <div>
+                                <Input searchTerm={this.state.searchTerm} handleChange={this.handleInputChange}/>
+                            </div>
                         </div>
                     </div>
                 </footer>
