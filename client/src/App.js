@@ -7,6 +7,8 @@ import Landing from './components/pages/Landing/Landing';
 import Journal from './components/pages/Journal/Journal';
 import EditEntry from './components/pages/Entry/Edit_entry';
 
+import Footer from './components/Footer/Footer';
+
 
 
 const App = () => (
@@ -23,6 +25,7 @@ const App = () => (
         <Route exact path="/my_journals" component={Journal} />
         <Route exact path="/services" component={Services} />
       </div>
+        <Route path="/" component={Footer} />
       </Wrapper>
     </Router>
   
