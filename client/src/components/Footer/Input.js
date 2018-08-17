@@ -13,11 +13,11 @@ const Input = (props) => {
                 onChange={props.handleChange}
                 required 
                 />
-                <span className="input-group-btn">
+                {/* <span className="input-group-btn">
                 <button className="btn btn-default" type="button">
                     <span className="glyphicon glyphicon-envelope"></span>
                 </button>
-                </span>
+                </span> */}
             </div> 
       
     )

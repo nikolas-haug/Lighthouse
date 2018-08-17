@@ -8,6 +8,7 @@ import Journal from './components/pages/Journal/Journal';
 import EditEntry from './components/pages/Entry/Edit_entry';
 
 import Footer from './components/Footer/Footer';
+import SearchResults from './components/Footer/SearchResults';
 
 
 
@@ -24,6 +25,7 @@ const App = () => (
         <Route exact path="/edit_entry/:id" component={EditEntry} />
         <Route exact path="/my_journals" component={Journal} />
         <Route exact path="/services" component={Services} />
+        <Route exact path="/custom_search/:term" component={SearchResults} />
       </div>
         <Route path="/" component={Footer} />
       </Wrapper>

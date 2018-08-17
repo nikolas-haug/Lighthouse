@@ -2,6 +2,7 @@ import React from "react";
 import { Component } from "react";
 
 import Input from "./Input";
+import Button from "./Button";
 
 // import { BrowserRouter as Router, Route } from "react-router-dom";
 
@@ -23,6 +24,18 @@ class Footer extends Component {
         newState[event.target.id] = event.target.value;
         this.setState(newState);
         console.log(newState);
+    }
+
+    handleFormSubmit = (event) => {
+        event.preventDefault();
+
+        let newSearchTerm = this.state.searchTerm;
+
+        this.props.history.push("/custom_search" + newSearchTerm);
+
+        this.setState({
+            searchTerm: ""
+        });
     }
 
     render() {
@@ -81,7 +94,10 @@ class Footer extends Component {
                                 Search for helpful articles and journals regarding your mental health
                             </p>
                             <div>
-                                <Input searchTerm={this.state.searchTerm} handleChange={this.handleInputChange}/>
+                                <form onSubmit={this.handleFormSubmit}>
+                                    <Input searchTerm={this.state.searchTerm} handleChange={this.handleInputChange}/>
+                                    <Button />
+                                </form>
                             </div>
                         </div>
                     </div>
