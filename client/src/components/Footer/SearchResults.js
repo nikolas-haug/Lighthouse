@@ -1,16 +1,22 @@
 import React, { Component } from "react";
-
 import API from "../../API/messenger";
 
 
 class SearchResults extends Component {
-
-    state = {
-        results: []
+    constructor(props) {
+        super(props);
+        this.state = {
+            results: []
+        }
     }
-
+    
+    // TO DO - make this talk to the footer component
     componentDidMount() {
+        this.setState({
+            results: []
+        });
         console.log("mounted!");
+        console.log(this.state.results);
         console.log(this.props.match.params.term);
         this.getCustomResults(this.props.match.params.term);
     }
@@ -18,7 +24,7 @@ class SearchResults extends Component {
     getCustomResults = (term) => {
         API.getCustomArticles(term).then((res) => {
             this.setState({
-                results: res.data.items
+                results: res.data
             });
         }).catch((err) => { 
             console.log(err);

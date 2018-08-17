@@ -7,8 +7,12 @@ const URL = "https://api.betterdoctor.com/2016-03-01/doctors";
 const betterdoctorKEY = process.env.LIGHHOUSE_APP_PROVIDERS_KEY;
 
 // variables for google custom search
-const searchEngineID = process.env.LIGHTHOUSE_APP_GOOGLECUSTOM_KEY;
-const customSearchKey = process.env.LIGHTHOUSE_APP_CUSTOMENGINE_KEY;
+// const searchEngineID = process.env.LIGHTHOUSE_APP_GOOGLECUSTOM_KEY;
+// const customSearchKey = process.env.LIGHTHOUSE_APP_CUSTOMENGINE_KEY;
+
+// TO DO - FIX THE .env KEYS FOR THIS API CALL
+const searchEngineID = "010255389438387523105:2zeoyobpe1u"
+const customSearchKey = "AIzaSyCYBljdTUagh5WS_xPwGqq1_Y40thTh0fk";
 
 // api route to retrieve the betterdoctor data
 router.get('/api/providers/:keyword/:location/:USstate/:specialty', function(req, res) {
@@ -39,7 +43,7 @@ router.get('/api/google/:search_term', function(req, res) {
                 console.log("======================================");
             }
             // send the response as json
-            res.json(response.data);
+            res.json(response.data.items);
         }).catch(function(err) {
             console.log(err);
         });

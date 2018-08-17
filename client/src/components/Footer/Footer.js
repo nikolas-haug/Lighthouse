@@ -1,24 +1,23 @@
 import React from "react";
 import { Component } from "react";
-
 import Input from "./Input";
 import Button from "./Button";
-
-// import { BrowserRouter as Router, Route } from "react-router-dom";
-
-
 import "./footer.css";
 
 class Footer extends Component {
-    // constructor(props) {
-    //     super(props);
-        state = {
+    constructor(props) {
+        super(props);
+        this.state = {
             searchTerm: "",
             results: []
         }
-    // }
+    }
 
     handleInputChange = (event) => {
+
+        // TO DO - FIX MULTIPLE SEARCH FUNCTIONALITY WITHOUT RE-ROUTE
+        this.props.history.push("/");
+
         // Here we create syntax to capture any change in text to the query terms (pre-search).
         let newState = {};
         newState[event.target.id] = event.target.value;
@@ -28,14 +27,11 @@ class Footer extends Component {
 
     handleFormSubmit = (event) => {
         event.preventDefault();
-
-        let newSearchTerm = this.state.searchTerm;
-
-        this.props.history.push("/custom_search" + newSearchTerm);
-
         this.setState({
             searchTerm: ""
         });
+        let newSearchTerm = this.state.searchTerm;
+        this.props.history.push("/custom_search/" + newSearchTerm);
     }
 
     render() {
