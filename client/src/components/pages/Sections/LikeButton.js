@@ -3,7 +3,6 @@ import "../Entry/Comments/comments.css";
 
 
 const LikeButton = (props) => {
-    console.log(props)
     return (
         <button 
         data-id={props.comment._id} 
