@@ -7,14 +7,8 @@ const URL = "https://api.betterdoctor.com/2016-03-01/doctors";
 const betterdoctorKEY = process.env.LIGHHOUSE_APP_PROVIDERS_KEY;
 
 // variables for google custom search
-// const searchEngineID = process.env.LIGHTHOUSE_APP_GOOGLECUSTOM_KEY;
-// const customSearchKey = process.env.LIGHTHOUSE_APP_CUSTOMENGINE_KEY;
-
-// TO DO - FIX THE .env KEYS FOR THIS API CALL
-const searchEngineID = "010255389438387523105:2zeoyobpe1u"
-// NEW KEY
-const customSearchKey = "AIzaSyDCOIxczoKG04Kq5rzTrTmpOL1lJRgXhtU"
-// const customSearchKey = "AIzaSyCYBljdTUagh5WS_xPwGqq1_Y40thTh0fk";
+const customSearchKey = process.env.LIGHTHOUSE_APP_GOOGLECUSTOM_KEY;
+const searchEngineID = process.env.LIGHTHOUSE_APP_CUSTOMENGINE_KEY;
 
 // api route to retrieve the betterdoctor data
 router.get('/api/providers/:keyword/:location/:USstate/:specialty', function(req, res) {
@@ -36,14 +30,6 @@ router.get('/api/google/:search_term', function(req, res) {
     // make the api query with user params set from the searchbar component client side
     axios.get(`https://www.googleapis.com/customsearch/v1?key=${customSearchKey}&cx=${searchEngineID}&q=${req.params.search_term}`)
         .then(function(response) {
-            
-            for(let i = 0; i < response.data.items.length; i++) {
-                console.log("======================================");
-                console.log(response.data.items[i].title);
-                console.log(response.data.items[i].link);
-                console.log(response.data.items[i].snippet);
-                console.log("======================================");
-            }
             // send the response as json
             res.json(response.data.items);
         }).catch(function(err) {
