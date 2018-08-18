@@ -12,7 +12,9 @@ const betterdoctorKEY = process.env.LIGHHOUSE_APP_PROVIDERS_KEY;
 
 // TO DO - FIX THE .env KEYS FOR THIS API CALL
 const searchEngineID = "010255389438387523105:2zeoyobpe1u"
-const customSearchKey = "AIzaSyCYBljdTUagh5WS_xPwGqq1_Y40thTh0fk";
+// NEW KEY
+const customSearchKey = "AIzaSyDCOIxczoKG04Kq5rzTrTmpOL1lJRgXhtU"
+// const customSearchKey = "AIzaSyCYBljdTUagh5WS_xPwGqq1_Y40thTh0fk";
 
 // api route to retrieve the betterdoctor data
 router.get('/api/providers/:keyword/:location/:USstate/:specialty', function(req, res) {
