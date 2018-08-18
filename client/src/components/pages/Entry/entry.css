@@ -74,3 +74,7 @@ textarea {
     background: #f9fafa;
     border-radius: 10px;
 }
+
+.page-header .card-body{
+    padding:0;
+}
