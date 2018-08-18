@@ -2,7 +2,7 @@ import React from 'react';
 
 const Header = (props) => {
     return (
-        <div className="card">
+        <div className="card page-header">
             <h3 className="card-header">{props.heading}</h3>
             <div className="card-body">
                 <h5 className="card-title">{props.title}</h5>
