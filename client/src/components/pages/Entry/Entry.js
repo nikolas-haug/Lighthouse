@@ -66,3 +66,5 @@ class Entry extends Component {
 
 export default Entry;
 
+
+
