@@ -14,17 +14,14 @@ class Footer extends Component {
     }
 
     handleInputChange = (event) => {
-
-        // TO DO - FIX MULTIPLE SEARCH FUNCTIONALITY WITHOUT RE-ROUTE
-        this.props.history.push("/");
-
         // Here we create syntax to capture any change in text to the query terms (pre-search).
         let newState = {};
         newState[event.target.id] = event.target.value;
         this.setState(newState);
-        console.log(newState);
+        // console.log(newState);
     }
 
+    // pass the user input into the react router path after form submit
     handleFormSubmit = (event) => {
         event.preventDefault();
         this.setState({
