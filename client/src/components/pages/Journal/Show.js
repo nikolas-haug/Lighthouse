@@ -24,6 +24,7 @@ class ShowUserJournals extends Component {
                  <div className="row">
                     <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div className="accordion" id="accordionExample">
+                            <a href="/assessment">Assessment</a>
                             {this.props.entries.map(entry=>
                                 <div className="card" key={entry._id}>
                                     <div className="card-header" id={entry._id}>
