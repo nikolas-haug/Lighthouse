@@ -41,10 +41,10 @@ class SearchResults extends Component {
 
     showGoogleResults = results => results.map((item, index) => {
         return (
-            <div key={index}>
-                <h4><a href={item.link} target="_blank">{item.title}</a></h4>
-                <p>{item.snippet}</p>
-            </div>
+                <div key={index}>
+                    <h4><a href={item.link} target="_blank">{item.title}</a></h4>
+                    <p>{item.snippet}</p>
+                </div>
         )  
     });
 
@@ -61,7 +61,7 @@ class SearchResults extends Component {
         return (
             <div>
                 {this.state.lastSearched && (
-                    <div>
+                    <div className="container">
                         {this.state.results.length > 0 ? this.showGoogleResults(this.state.results) : this.showNoResults()}
                     </div>
                 )}
