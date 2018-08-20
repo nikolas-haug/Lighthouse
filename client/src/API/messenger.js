@@ -84,7 +84,7 @@ export default {
   //**************************************/
   // send a query to the betterdoctors api
   getProviders: function (keyword, location, USstate, specialty) {
-    return axios.get('/api/providers/' + keyword + '/' + location + '/' + USstate + '/' + specialty);
+    return axios.get(`/api/providers/${keyword}/${location}/${USstate}/${specialty}`);
   },
 
   // send a query to the google custom search api

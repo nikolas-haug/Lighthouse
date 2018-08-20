@@ -1,36 +1,21 @@
 import React from 'react';
+import './assessment.css'
 
 function QuestionDisplay(props) {
   return (
-  <div className="container">
-    <div>
-      <p>If you have experienced any of these symptoms in the past two weeks, how difficult have they made it for you to do your work, take care of things at home, or get along with other people.</p>
+  <div>
+    <div className="question-div">
+      <p>{props.question.question}</p>
     </div>
-    <div>
-        <div className="form-check">
-          <input className="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked/>
-            <label className="form-check-label" for="exampleRadios1">
-              Not at all
-            </label>
+    <div className="option-div">
+        <h6>Please check the best option and click next to continue.</h6>
+        <hr/>
+       {props.options.map((option, i) => 
+        <div className="custom-control custom-radio" key={i}>
+             <input onChange={props.handleOnChange} data-id={i+1} type="radio" id={"customRadio"+i} name="customRadio" className="custom-control-input"/>
+                <label className="custom-control-label" htmlFor={"customRadio"+i}>{option}</label>
         </div>
-        <div className="form-check">
-          <input className="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked/>
-            <label className="form-check-label" for="exampleRadios1">
-              Several days
-            </label>
-        </div> 
-        <div className="form-check">
-          <input className="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked/>
-            <label className="form-check-label" for="exampleRadios1">
-              More than half of the days
-            </label>
-        </div>
-        <div className="form-check">
-          <input className="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked/>
-            <label className="form-check-label" for="exampleRadios1">
-              Nearly every day
-            </label>
-        </div>
+       )}
     </div>
   </div>
   );
