@@ -14,6 +14,7 @@ const Quicklinks = () => {
                 <Link to={'/new_entry'} className="list-group-item">Add New Post</Link>
                 <Link to={'/my_journals'} className="list-group-item">My Journals</Link>
                 <Link to={'/services'} className="list-group-item">Services</Link>
+                <Link to={'/assessment'} className="list-group-item">Assessment Quiz</Link>
             </ul>
         </div>
             <About/>
