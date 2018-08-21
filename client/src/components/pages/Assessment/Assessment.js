@@ -4,6 +4,7 @@ import questions from './question';
 import QuestionDisplay from './QuestionDisplay';
 import StartButton from '../Sections/StartButton';
 
+
 class Assessment extends Component {
     constructor(props){
         super(props);
@@ -39,8 +40,11 @@ class Assessment extends Component {
         }
 
       this.generateResult=()=>{
-          console.log(this.assessmentData)
-            alert('YOUR RESULT WILL DISPLAY NEXT!!!')
+          //console.log(this.assessmentData)
+          for(var i = 0; i < this.assessmentData.length; i++ ){
+              console.log(this.assessmentData[i].response)
+          }
+            
       }
     }
     render(){
