@@ -11,7 +11,6 @@ export default {
 
 
     getResultInfor: (score) => {
-        // console.log(score)
         let result={};
             if( score >= 20){
                 return result = {
@@ -19,7 +18,6 @@ export default {
                     PD: 'Major Depression, servere',
                     TR: 'Antidepressant or psychotherapy (especially if not improved on monotherapy)'
                 }
-                // console.log(result)
             }
             if( score >= 15 && score <= 19){
                 return result = {
@@ -27,7 +25,6 @@ export default {
                     PD: 'Major Depression, moderately servere',
                     TR: 'Antidepressant or psychotherapy'
                 }
-                // console.log(result)
             }
             if( score >= 10 && score <= 14){
                 return result = {
@@ -35,7 +32,6 @@ export default {
                     PD: 'Minor Depression++, Dysthymia*,  Major Depression, mild',
                     TR: 'Support, watchful waiting, Antidepressant or psychotherapy'
                 }
-                // console.log(result)
             }
             if( score >= 5 && score <= 9){
                 return result = {
@@ -43,7 +39,6 @@ export default {
                     PD: 'Minimum Symptoms*',
                     TR: 'Support, educate to call if worse, return in one month'
                 }
-                // console.log(result)
             }
             if( score < 5){
                 return result = {
@@ -51,7 +46,6 @@ export default {
                     PD: 'No Symptoms',
                     TR: 'No Treatment Recommended'
                 }
-                // console.log(result)
             }
     },
 
@@ -75,8 +69,6 @@ export default {
                         queTracker++;
                         total = total + dataArr[i];
                         if (queTracker >= 5 && queTen > 1) {
-                            console.log(queTracker);
-                            console.log(total);
                             console.log('symptom counts. The depression analysis shows that you need treatment.');
                             return total;
                         }
@@ -86,9 +78,9 @@ export default {
                 return total;
             }
             console.log("Q9 not qualified")
-            return;
+            return "Q9 not qualified";
         }
         console.log('Q1 & Q2 not qualified')
-        return;
+        return 'Q1 & Q2 not qualified';
     }
 }
