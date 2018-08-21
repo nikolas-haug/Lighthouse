@@ -3,7 +3,7 @@ import {Component} from 'react';
 import questions from './question';
 import QuestionDisplay from './QuestionDisplay';
 import StartButton from '../Sections/StartButton';
-import Result from './Result'
+import Result from './ResultGenetator'
 
 
 class Assessment extends Component {
@@ -46,6 +46,8 @@ class Assessment extends Component {
                 e.target.reset()
                 this.getQuestion()
             }else{
+
+              let analysis = Result.performAnalysis(this.assessmentData)
               let result = Result.generateResult(this.assessmentData)
               console.log(result)
             let data = Result.getResultInfor(result);
@@ -81,9 +83,8 @@ class Assessment extends Component {
                             </div>
                             </form>
                         </div>
-                    </div>
-                        :
-                            <StartButton onClick={this.getQuestion}/>
+                    </div>:
+                        <StartButton onClick={this.getQuestion}/>
                     }</div>
                 </div>
             </div>
