@@ -16,6 +16,10 @@ class Landing extends Component {
       user: {
         _id: "",
         username: ""
+      },
+      loginError:{
+        usernameError:"",
+        passwordError:""
       }
     };
 
@@ -50,6 +54,7 @@ class Landing extends Component {
       // Takes the submitted data and pass it over to the API module
       API.sendPreviousUserData(user)
         .then(res => {
+          console.log(res)
           //If sign in is success
           if (res.data.username) {
             //Store user info
@@ -66,10 +71,10 @@ class Landing extends Component {
             this.props.history.push("/entries");
           } else {
             //If sign in fails, stay on login
-            this.props.history.push("/");
+            // this.props.history.push("/");
           }
         })
-        .catch(err => console.log(err));
+        .catch(err => console.log("this is error  "+err));
     };
 
     // This method handles user signout
