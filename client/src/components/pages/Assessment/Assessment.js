@@ -54,14 +54,6 @@ class Assessment extends Component {
             }
         }
 
-<<<<<<< HEAD
-      this.generateResult=()=>{
-        for(let i = 0; i < this.assessmentData.length; i++ ){
-            console.log(this.assessmentData[i].response);
-        }
-      }
-=======
->>>>>>> 021ccce91f6571d832ca1ec29450146c018612ea
     }
 
     render(){
