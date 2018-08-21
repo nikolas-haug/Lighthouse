@@ -12,18 +12,20 @@ router.post("/signup", (req, res) => {
     //register the new user by passing the password for hashing
     User.register(newUser, req.body.password, (error, user) => {
         if (error) {
-            //if we get error while registering the user, log the error
-            //We will handle error gracefully later
-                console.log(error);
+            return res.json(error)
         } else {
             //if all work fine, log tthe user into the system
-            passport.authenticate("local")(req, res, () => {
-                //send the new user info back to the client-side so we can use it or misuse it :)
+            passport.authenticate("local")(err, req, res, () => {
+                if(err){
+                    res.json(err)
+                }else{
+                //send the new user info back to the client-side
                 res.json({
                     //And we only want the user id and user name
                     _id: req.user._id,
                     username: req.user.username
                 });
+                }
             });
         }
     });
@@ -31,12 +33,14 @@ router.post("/signup", (req, res) => {
     
 
 //Login route
-router.post("/signin", passport.authenticate("local"), (req, res) => {
+router.post("/signin", passport.authenticate("local"), ( req, res) => {
     res.json({
         _id: req.user._id,
         username: req.user.username
     });
 });
+
+
 
 //Login route
 router.get("/signout", function(req, res){
