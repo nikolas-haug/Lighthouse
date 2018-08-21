@@ -39,10 +39,12 @@ class Assessment extends Component {
         }
 
       this.generateResult=()=>{
-          console.log(this.assessmentData)
-            alert('YOUR RESULT WILL DISPLAY NEXT!!!')
+        for(let i = 0; i < this.assessmentData.length; i++ ){
+            console.log(this.assessmentData[i].response);
+        }
       }
     }
+
     render(){
         return (
             <div className="container">
