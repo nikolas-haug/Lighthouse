@@ -34,7 +34,7 @@ const Results = (props) => {
         <div>
             <div>
                 {props.results.length > 0 && <div><h1>Results!</h1>
-                    <button onClick={props.handleButtonClick}>go back to search</button></div>}
+                    <button className="btn-back" onClick={props.handleButtonClick}>go back to search</button></div>}
                 {props.results.length > 0 && showResults(props.results)}
             </div>
         </div>

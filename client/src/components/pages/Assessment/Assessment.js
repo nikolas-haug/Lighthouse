@@ -3,6 +3,8 @@ import {Component} from 'react';
 import questions from './question';
 import QuestionDisplay from './QuestionDisplay';
 import StartButton from '../Sections/StartButton';
+import Result from './Result'
+
 
 class Assessment extends Component {
     constructor(props){
@@ -10,39 +12,56 @@ class Assessment extends Component {
         this.state = {
             number:0,
             question:'',
-            response:''
+            response:'',
+            severityScore:0,
+            result:'',
         }
         
         this.assessmentData = [];
         this.tracker = 0;
         this.responseOptions = ["Not at all","Several days","More than half of the days","Nearly every day"];
+        this.qTenOptions = ["Not difficult at all","Somewhat difficult","Very difficult","Extremely Difficult"];
 
         this.getQuestion = () => {
             let question = questions[this.tracker];
-            this.setState(question)    
+            this.setState({
+                number:question.number,
+                question:question.question
+                })    
         }
 
         this.handleOnChange = (e) => {
             let option = e.target.getAttribute('data-id')
-            this.setState({
-                response:option
-            })
+            let response = Number(option)
+                this.setState({
+                    response:response
+                })
         }
 
         this.handleSubmit = (e) => {
+            this.assessmentData.push(this.state.response);
             e.preventDefault()
-            this.assessmentData.push(this.state);
-            this.assessmentData.length <= 8?
-            (this.tracker++,
-            e.target.reset(),
-            this.getQuestion()):this.generateResult()
+            if(this.assessmentData.length <= 9){
+                this.tracker++
+                e.target.reset()
+                this.getQuestion()
+            }else{
+              let result = Result.generateResult(this.assessmentData)
+              console.log(result)
+            let data = Result.getResultInfor(result);
+                console.log(data)
+                alert(data.PD)
+            }
         }
 
+<<<<<<< HEAD
       this.generateResult=()=>{
         for(let i = 0; i < this.assessmentData.length; i++ ){
             console.log(this.assessmentData[i].response);
         }
       }
+=======
+>>>>>>> 021ccce91f6571d832ca1ec29450146c018612ea
     }
 
     render(){
@@ -58,13 +77,16 @@ class Assessment extends Component {
                         <div>
                             <form onSubmit={this.handleSubmit}>
                             <QuestionDisplay 
-                                options={this.responseOptions}
+                                options={this.state.number===10?this.qTenOptions:this.responseOptions}
                                 handleOnChange={this.handleOnChange}
                                 question={this.state}
                             /> 
                             <div className="button-div">
-                                <a href="/">Cancel <i class="fa fa-undo"></i></a>
+                                <a href="/assessment">Cancel <i className="fa fa-undo"></i></a>
+                                {this.state.number===10?
+                                <button type="submit" className="btn-light">Submit</button>:
                                 <button type="submit" className="btn-light">Next<i className="fa fa-angle-double-right"></i></button>
+                                }
                             </div>
                             </form>
                         </div>

@@ -29,7 +29,11 @@ class Login extends Component {
         <div className="login-wrapper">
             <div className="login-block">
                 <form  onSubmit={this.handleSubmit}> 
+                    
                     <h3 className="login-title">Login</h3>
+                    <div className="">
+                        {this.props.error.error}
+                     </div>
                     <div className="form-group">
                         <input type="text" name="username" className="form-control" id="login-username" placeholder="Enter your username" />
                     </div>
