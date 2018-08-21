@@ -1,5 +1,9 @@
 import React, { Component } from "react";
 import API from "../../API/messenger";
+import {
+    Card, CardText, CardBody,
+    CardTitle, CardSubtitle
+} from 'reactstrap';
 
 
 class SearchResults extends Component {
@@ -10,7 +14,7 @@ class SearchResults extends Component {
             results: []
         }
     }
-    
+
     // call the custom search api using the route params when component mounts
     componentDidMount() {
         this.getCustomResults(this.props.match.params.term);
@@ -21,7 +25,7 @@ class SearchResults extends Component {
         const searchTerm = this.props.match.params.term
         window.scrollTo(0, 0);
 
-        if(searchTerm !== this.state.lastSearched) {
+        if (searchTerm !== this.state.lastSearched) {
             this.getCustomResults(searchTerm);
         }
     }
@@ -34,24 +38,33 @@ class SearchResults extends Component {
                 lastSearched: term,
                 results: res.data
             });
-        }).catch((err) => { 
+        }).catch((err) => {
             console.log(err);
         });
     }
 
     showGoogleResults = results => results.map((item, index) => {
         return (
-                <div key={index}>
-                    <h4><a href={item.link} target="_blank">{item.title}</a></h4>
-                    <p>{item.snippet}</p>
-                </div>
-        )  
+            <div key={index}>
+                <Card>
+                    <CardBody>
+                        <CardTitle><h4><a href={item.link} target="_blank">{item.title}</a></h4></CardTitle>
+                        <CardSubtitle>{item.snippet}</CardSubtitle>
+                    </CardBody>
+                </Card>
+            </div>
+        )
     });
 
     showNoResults = () => {
         return (
             <div>
-                <h4>No results to display. Please try your search again.</h4>
+                <Card>
+                    <CardBody>
+                        <CardTitle><h4>No results to display. Please try your search again.</h4></CardTitle>
+                    </CardBody>
+                </Card>
+
             </div>
         )
     }
