@@ -7,6 +7,7 @@ import API from "../../../API/messenger";
 import Slides from "./Carousel/Carousel";
 import "./Landing.css";
 import Quicklinks from "../Sections/Quicklinks";
+import Errors from '../../../Errors/HandleError'
 
 
 class Landing extends Component {
@@ -18,16 +19,20 @@ class Landing extends Component {
         username: ""
       },
       loginError:{
-        usernameError:"",
-        passwordError:""
+        error:"",
       }
     };
 
     //Fires when the signup form is submitted
     this.handleUserSignup = newUser => {
+      this.setState({loginError:{error:""}});
+      if(newUser.username < 1 || newUser.password< 1){
+        return this.setState({loginError:{error:"Username and password are required"}});
+      }
       // Takes the submitted data and pass it over to the API module
       API.sendNewUserInfo(newUser)
         .then(res => {
+          console.log(res)
           if (res.data.username) {
             //If a valid user is return, save the user info to local storage
             localStorage.setItem("litH@user", res.data.username);
@@ -41,9 +46,12 @@ class Landing extends Component {
             });
             // Redirect the user to entry page for now
             this.props.history.push("/new_entry");
-          } else {
+          } else if(res.data.message) {
+
+            this.setState({loginError:{error:res.data.message}});
+            // console.log(res.data.message)
             //If fails stay on sign up page
-            this.props.history.push("/signup");
+            // this.props.history.push("/signup");
           }
         })
         .catch(err => console.log(err));
@@ -54,7 +62,6 @@ class Landing extends Component {
       // Takes the submitted data and pass it over to the API module
       API.sendPreviousUserData(user)
         .then(res => {
-          console.log(res)
           //If sign in is success
           if (res.data.username) {
             //Store user info
@@ -69,12 +76,12 @@ class Landing extends Component {
             });
             //Redirect to entry page for now
             this.props.history.push("/entries");
-          } else {
-            //If sign in fails, stay on login
-            // this.props.history.push("/");
-          }
+          } 
         })
-        .catch(err => console.log("this is error  "+err));
+        .catch(err => {
+          let message = Errors.HandleLoginError(err.response.data)
+            this.setState(message)
+      })
     };
 
     // This method handles user signout
@@ -94,6 +101,8 @@ class Landing extends Component {
   }
 
   render() {
+    let valid = "is-valid";
+    let invalid = "is-invalid";
     return (
       <div className="landingPage">
           <div> 
@@ -105,8 +114,12 @@ class Landing extends Component {
               localStorage.getItem('litH@user')?(
               <Quicklinks/>):
               this.props.match.path === "/signup" ? (
-              <Signup handleUserSignup={this.handleUserSignup} />
-            ) : <Login handleUserLogin={this.handleUserLogin} />
+              <Signup handleUserSignup={this.handleUserSignup} 
+                      error={this.state.loginError}
+                      className={this.state.loginError.error?"form-control "+invalid:"form-control "+ valid}/>
+                      
+            ) : <Login handleUserLogin={this.handleUserLogin} 
+                       error={this.state.loginError} />
             }</div>
       </div>
     );

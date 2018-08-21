@@ -25,12 +25,15 @@ class Signup extends Component {
             <div className="login-block">
                 <form  onSubmit={this.handleSubmit}> 
                     <h3 className="login-title">Sign Up</h3>
+                    <div className="error-text">
+                        {this.props.error.error}
+                     </div>
                     <div className="form-group">
-                        <input type="text" name="username" className="form-control" id="login-username" placeholder="Enter your username" />
+                        <input type="text" name="username"  className={this.props.className} id="login-username" placeholder="Enter your username"/>
                     </div>
                     <hr />
                     <div className="form-group">
-                        <input type="password" name="password" className="form-control" id="login-password" placeholder="Enter your password" />
+                        <input type="password" name="password" className={this.props.className}  id="login-password" placeholder="Enter your password"/>
                     </div>
                     <hr />
                     <button type="submit" className="btn btn-primary">Submit</button>
