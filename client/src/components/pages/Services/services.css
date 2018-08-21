@@ -17,3 +17,7 @@ label {
     display: inline-block;
     margin: .5rem;
 }
+.btn-back {
+    border-radius: 50px;
+    margin: 5px 0;
+}
