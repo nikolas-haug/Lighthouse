@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import API from "../../API/messenger";
 import {
-    Card, CardText, CardBody,
+    Card, CardBody,
     CardTitle, CardSubtitle
 } from 'reactstrap';
 
