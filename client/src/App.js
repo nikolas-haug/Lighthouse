@@ -6,6 +6,7 @@ import Services from "./components/pages/Services/Services";
 import Landing from './components/pages/Landing/Landing';
 import Journal from './components/pages/Journal/Journal';
 import EditEntry from './components/pages/Entry/Edit_entry';
+import './sticky.css';
 
 import Footer from './components/Footer/Footer';
 import SearchResults from './components/Footer/SearchResults';
@@ -17,7 +18,7 @@ const App = () => (
   
     <Router>
     <Wrapper>
-      <div >
+      <div className="body-wrapper">
         <Route exact path="/" component={Landing} />
         <Route exact path="/signup" component={Landing} />
         <Route exact path="/logout" component={Landing} />
@@ -28,8 +29,11 @@ const App = () => (
         <Route exact path="/services" component={Services} />
         <Route exact path="/custom_search/:term" component={SearchResults}/>
         <Route exact path="/assessment" component={Assessment}/>
+        <div className="push"></div>
       </div>
+      <div className="footer">
         <Route path="/" component={Footer} />
+        </div>
       </Wrapper>
     </Router>
   

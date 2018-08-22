@@ -9,11 +9,11 @@ body {
 
   /* Equal to height of footer */
   /* But also accounting for potential margin-bottom of last child */
-  margin-bottom: -310px;
+  margin-bottom: -420px;
 }
 .footer,
 .push {
-  height: 350px;
+  height: 420px;
 }
 
 .footer-bs {
