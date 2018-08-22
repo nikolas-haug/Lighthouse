@@ -37,36 +37,36 @@ export default {
             if( score >= 20){
                 return result = {
                     score: score,
-                    PD: 'Major Depression, servere',
-                    TR: 'Antidepressant or psychotherapy (especially if not improved on monotherapy)'
+                    PD: 'Major Depression (severe)',
+                    TR: 'You should definitely seek help from a clinician. For the level of severity indicated by your responses, you should consider enlisting in regular counseling as well as an antidepressant regimen.'
                 }
             }
             if( score >= 15 && score <= 19){
                 return result = {
                     score: score,
-                    PD: 'Major Depression, moderately servere',
-                    TR: 'Antidepressant or psychotherapy'
+                    PD: 'Major Depression (moderately severe)',
+                    TR: 'While you might consider anti-depressants, you might benefit from regular psychotherapy alone. In any case, you should get in touch with a clinician to talk about your symptoms.'
                 }
             }
             if( score >= 10 && score <= 14){
                 return result = {
                     score: score,
-                    PD: 'Minor Depression++, Dysthymia*,  Major Depression, mild',
-                    TR: 'Support, watchful waiting, Antidepressant or psychotherapy'
+                    PD: 'Minor Depression',
+                    TR: 'It sounds like you might just be in a bit of a funk. Keep track of how you are feeling in our journaling app. If your do not improve within a month, consider a lifestyle change or seeking counseling.'
                 }
             }
             if( score >= 5 && score <= 9){
                 return result = {
                     score: score,
-                    PD: 'Minimum Symptoms*',
-                    TR: 'Support, educate to call if worse, return in one month'
+                    PD: 'Minimal Symptoms of Depression',
+                    TR: 'It sounds like the shades of blue that you are experiencing are probably part of a robust and healthy emotional life. Start journaling to probe the contours of your day-to-day emotional life. Post your entries to our forums - sometimes conversation is the best medicine!'
                 }
             }
             if( score < 5){
                 return result = {
                     score: score,
                     PD: 'No Symptoms',
-                    TR: 'No Treatment Recommended'
+                    TR: 'Wow! You sound like you are really enjoying life. Consider writing a journal entry to reflect on how you have gotten to this zen place. Maybe even share it to the forums - you may just inspire someone!'
                 }
             }
     },

@@ -3,6 +3,7 @@ import React from 'react';
 
 const DisplayResult = (props) => {
     return (
+    <div>
         <div>
             <h1>The results are in!</h1>
         </div>
@@ -14,6 +15,7 @@ const DisplayResult = (props) => {
         <div className="treatment-div">
         <h2>Some treatment you might consider...</h2>
         <p>{props.result.TR}</p>
+        </div>
     </div>
     );
 }
