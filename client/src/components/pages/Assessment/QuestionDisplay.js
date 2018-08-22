@@ -8,7 +8,7 @@ function QuestionDisplay(props) {
       <p>{props.question.number}. {props.question.question}</p>
     </div>
     <div className="option-div">
-        <h6>{props.question.number!==10?
+        <h6>{props.question.number!==9?
           'Please check the best option and click next to continue.':
           'Please check the best option and click submit.'
         }</h6>
