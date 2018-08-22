@@ -5,15 +5,28 @@ import Results from "./Results";
 import API from "../../../API/messenger";
 import './services.css'
 
-class Services extends Component {
+import { withRouter } from 'react-router';
 
-  state = {
-    keyword: "",
-    location: "",
-    USstate: "MN",
-    specialty: "professional-counselor", // setting default value for the dropdown select
-    results: [],
-    message: ""
+class Services extends Component {
+  constructor(props) {
+    super(props);
+    console.log(this.props);
+    this.state = {
+      keyword: "",
+      location: "",
+      USstate: "MN",
+      specialty: "professional-counselor", // setting default value for the dropdown select
+      results: JSON.parse(localStorage.getItem('providers_results')) || [],
+      message: ""
+    }
+  }
+
+  // componentDidMount() {
+  //   this.props.router.setRouteLeaveHook(this.props.route, this.clearLocalStorage);
+  // }
+
+  clearLocalStorage() {
+    localStorage.removeItem('providers_results');
   }
 
   // function to detect any change 
@@ -32,8 +45,11 @@ class Services extends Component {
       // after button click, format request params before calling the api
       API.getProviders(this.state.keyword.trim(), (this.state.location).toLowerCase().trim(), (this.state.USstate).toLowerCase(), this.state.specialty).then((res) => {
 
+        //if we get valid response, place search into storage.
+        localStorage.setItem('providers_results', JSON.stringify(res.data.data));
+
         this.setState({
-          results: res.data.data,
+          results: JSON.parse(localStorage.getItem('providers_results')),
           keyword: "",
           location: ""
         });
@@ -92,4 +108,4 @@ class Services extends Component {
   }
 }
 
-export default Services;
+export default withRouter(Services);

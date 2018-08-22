@@ -11,7 +11,7 @@ class SearchResults extends Component {
         super(props);
         this.state = {
             lastSearched: "",
-            results: []
+            results: JSON.parse(localStorage.getItem('custom_search_results')) || []
         }
     }
 
@@ -33,10 +33,13 @@ class SearchResults extends Component {
     // call the custom search api
     getCustomResults = (term) => {
         API.getCustomArticles(term).then((res) => {
-            console.log(res.data);
+            // if we get a response, place it into local storage
+            localStorage.setItem('custom_search_results', JSON.stringify(res.data));
+            // console.log(res.data);
+            // set the state of the results from the local storage
             this.setState({
                 lastSearched: term,
-                results: res.data
+                results: JSON.parse(localStorage.getItem('custom_search_results'))
             });
         }).catch((err) => {
             console.log(err);
