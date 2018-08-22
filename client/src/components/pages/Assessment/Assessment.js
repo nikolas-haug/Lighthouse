@@ -6,7 +6,6 @@ import StartButton from '../Sections/StartButton';
 import Result from './ResultGenetator'
 import DisplayResult from './DisplayResult';
 
-
 class Assessment extends Component {
     constructor(props){
         super(props);
@@ -20,7 +19,6 @@ class Assessment extends Component {
         this.assessmentData = [];
         this.tracker = 0;
         this.responseOptions = ["Not at all","Several days","More than half of the days","Nearly every day"];
-        this.qTenOptions = ["Not difficult at all","Somewhat difficult","Very difficult","Extremely Difficult"];
 
         this.getQuestion = () => {
             let question = questions[this.tracker];
@@ -41,29 +39,21 @@ class Assessment extends Component {
         this.handleSubmit = (e) => {
             this.assessmentData.push(this.state.response);
             e.preventDefault()
-            if(this.assessmentData.length <= 9){
+            if(this.assessmentData.length <= 8){
                 this.tracker++
                 e.target.reset()
                 this.getQuestion()
             }else{
-              let analysis = Result.performAnalysis(this.assessmentData)
-                if(analysis!=='needs treatment'){
-                    console.log('no treatment needed');
-                }else{
-                    console.log('treatment needed!!!');
-                    let severityScore = Result.generateResult(this.assessmentData)
-                    let result = Result.getResultInfor(severityScore)
-                    this.setState({
-                        result:result,
-                        question:''
-                    })
-                }
+                let assessmentScore = Result.generateResult(this.assessmentData)
+                let result = Result.getResultInfor(assessmentScore)
+                this.setState({
+                    result:result,
+                    question:''
+                }) 
             }
         }
-
     }
     render(){
-        console.log(this.state)
         return (
             <div className="container">
                 <div className="row">
@@ -76,15 +66,15 @@ class Assessment extends Component {
                         <div>
                             <form onSubmit={this.handleSubmit}>
                             <QuestionDisplay 
-                                options={this.state.number===10?this.qTenOptions:this.responseOptions}
+                                options={this.responseOptions}
                                 handleOnChange={this.handleOnChange}
                                 question={this.state}
                             /> 
                             <div className="button-div">
-                                <a href="/assessment">Cancel <i className="fa fa-undo"></i></a>
-                                {this.state.number===10?
+                                <button className="btn-light"><a href="/assessment">Cancel</a></button>
+                                {this.state.number===9?
                                 <button type="submit" className="btn-light">Submit</button>:
-                                <button type="submit" className="btn-light">Next<i className="fa fa-angle-double-right"></i></button>
+                                <button type="submit" className="btn-light">Next</button>
                                 }
                             </div>
                             </form>
