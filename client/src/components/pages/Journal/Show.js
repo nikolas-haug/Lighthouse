@@ -2,6 +2,7 @@ import React from "react";
 import { Component } from "react";
 import { Link } from "react-router-dom";
 import Moment from "moment";
+import Header from "../Sections/Header";
 import { Card, CardText, CardBody, CardTitle } from "reactstrap";
 // import Comments from './Comments/Show_comments';
 
