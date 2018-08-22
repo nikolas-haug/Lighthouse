@@ -44,11 +44,6 @@ const questions = [
         question: "Thoughts that you would be better off dead or of hurting yourself in some way.",
         response : "",
     },
-    {
-        number : 10,
-        question: "If you have experienced any of these symptoms in the past two weeks, how difficult have they made it for you to do your work, take care of things at home, or get along with other people.",
-        response : "",
-    },
 ];
 
 
