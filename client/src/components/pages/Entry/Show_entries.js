@@ -25,83 +25,77 @@ class ShowEntries extends Component {
   }
   render() {
     return (
-      <div className="container">
+      <div>
         <Header heading="Posts" title="Join the conversation" />
-        <div className="row">
-          <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <div className="accordion" id="accordionExample">
-              {this.props.entries.map(entry => (
-                <Card key={entry._id}>
-                  <CardBody>
-                    <div id={entry._id}>
-                      <CardTitle>{entry.author}</CardTitle>
-                      <CardSubtitle>
-                        {Moment(entry.createdAt).format("llll")}
-                      </CardSubtitle>
-                      <br />
-                      <CardTitle>{entry.title}</CardTitle>
-                      <CardText className="entry-text">{entry.text}</CardText>
-                      <div>
-                        <i className="fa fa-comments" />
-                        <button
-                          className="btn-link comment-btn"
-                          type="button"
-                          data-toggle="collapse"
-                          data-target={"#" + entry._id + 1}
-                          aria-expanded="true"
-                          aria-controls={entry._id + 1}
-                        >
-                          {entry.comments.length === 1 ? (
-                            <span>{entry.comments.length} Comment</span>
-                          ) : entry.comments.length > 1 ? (
-                            <span>{entry.comments.length} Comments</span>
-                          ) : (
-                            "Add Comment"
-                          )}
-                        </button>
+        {this.props.entries.map(entry => (
+          <Card key={entry._id}>
+            <CardBody>
+              <div id={entry._id}>
+                <CardTitle>{entry.author}</CardTitle>
+                <CardSubtitle>
+                  {Moment(entry.createdAt).format("llll")}
+                </CardSubtitle>
+                <br />
+                <CardTitle>{entry.title}</CardTitle>
+                <CardText className="entry-text">{entry.text}</CardText>
+                <div>
+                  <i className="fa fa-comments" />
+                  <button
+                    className="btn-link comment-btn"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target={"#" + entry._id + 1}
+                    aria-expanded="true"
+                    aria-controls={entry._id + 1}
+                  >
+                    {entry.comments.length === 1 ? (
+                      <span>{entry.comments.length} Comment</span>
+                    ) : entry.comments.length > 1 ? (
+                      <span>{entry.comments.length} Comments</span>
+                    ) : (
+                      "Add Comment"
+                    )}
+                  </button>
 
-                        {entry.author === localStorage.getItem("litH@user") ? (
-                          <span>
-                            <Link to={"/edit_entry/" + entry._id}>
-                              <button className="entry-btn">Edit Post</button>
-                            </Link>
-                            <button
-                              className="entry-btn"
-                              data-id={entry._id}
-                              action="delete"
-                              onClick={this.handleAction}
-                            >
-                              Delete
-                            </button>
-                          </span>
-                        ) : (
-                          ""
-                        )}
-                      </div>
-                    </div>
-                    <div
-                      id={entry._id + 1}
-                      className="collapse"
-                      aria-labelledby={entry._id}
-                      data-parent="#accordionExample"
-                    >
-                      <div className="card">
-                        <div className="card-body">
-                          <Comments
-                            getAllEntries={this.props.getAllEntries}
-                            entry_id={entry._id}
-                            comments={entry.comments}
-                            history={this.props.history}
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </CardBody>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </div>
+                  {entry.author === localStorage.getItem("litH@user") ? (
+                    <span>
+                      <Link to={"/edit_entry/" + entry._id}>
+                        <button className="entry-btn">Edit Post</button>
+                      </Link>
+                      <button
+                        className="entry-btn"
+                        data-id={entry._id}
+                        action="delete"
+                        onClick={this.handleAction}
+                      >
+                        Delete
+                      </button>
+                    </span>
+                  ) : (
+                    ""
+                  )}
+                </div>
+              </div>
+              <div
+                id={entry._id + 1}
+                className="collapse"
+                aria-labelledby={entry._id}
+                data-parent="#accordionExample"
+              >
+                <div className="card">
+                  <div className="card-body">
+                    <Comments
+                      getAllEntries={this.props.getAllEntries}
+                      entry_id={entry._id}
+                      comments={entry.comments}
+                      history={this.props.history}
+                    />
+                  </div>
+                </div>
+              </div>
+            </CardBody>
+          </Card>
+        ))}
       </div>
     );
   }
