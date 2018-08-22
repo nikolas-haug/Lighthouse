@@ -12,8 +12,6 @@ import Footer from './components/Footer/Footer';
 import SearchResults from './components/Footer/SearchResults';
 import Assessment from './components/pages/Assessment/Assessment';
 
-
-
 const App = () => (
   
     <Router>

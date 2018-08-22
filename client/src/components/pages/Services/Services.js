@@ -10,7 +10,8 @@ import { withRouter } from 'react-router';
 class Services extends Component {
   constructor(props) {
     super(props);
-    console.log(this.props);
+
+    console.log(this.context, this.props, this);
     this.state = {
       keyword: "",
       location: "",
@@ -19,14 +20,6 @@ class Services extends Component {
       results: JSON.parse(localStorage.getItem('providers_results')) || [],
       message: ""
     }
-  }
-
-  // componentDidMount() {
-  //   this.props.router.setRouteLeaveHook(this.props.route, this.clearLocalStorage);
-  // }
-
-  clearLocalStorage() {
-    localStorage.removeItem('providers_results');
   }
 
   // function to detect any change 
