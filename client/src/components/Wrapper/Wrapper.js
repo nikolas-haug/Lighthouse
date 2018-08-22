@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import "./wrapper.css";
 
 const Header = props => (
-  <div>
+  <div className="wrapper-wrapper">
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark header">
       <a className="navbar-brand" href="/">
         LightHouse

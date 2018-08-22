@@ -97,6 +97,9 @@ li:hover span {
   padding-bottom: 0;
   border: none;
 }
+.content, .wrapper-wrapper{
+  height: 100%;
+}
 
 .form-control:focus {
   box-shadow: none;
