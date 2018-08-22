@@ -1,14 +1,15 @@
-import React from 'react';
+import React from "react";
+import { Card, CardBody, CardTitle, CardSubtitle } from "reactstrap";
 
-const Header = (props) => {
-    return (
-        <div className="card page-header">
-            <h3 className="card-header">{props.heading}</h3>
-            <div className="card-body">
-                <h5 className="card-title">{props.title}</h5>
-          </div>
-        </div>
-    );
-}
+const Header = props => {
+  return (
+    <Card>
+      <CardBody>
+        <CardTitle>{props.heading}</CardTitle>
+        <CardSubtitle className="text-justify">{props.title}</CardSubtitle>
+      </CardBody>
+    </Card>
+  );
+};
 
 export default Header;

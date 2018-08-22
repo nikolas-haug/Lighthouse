@@ -110,3 +110,7 @@ section {
     border-left: solid 1px rgba(255, 255, 255, 0.1);
   }
 }
+.btn {
+  border-radius: 20px;
+  margin-top: 5px;
+}
