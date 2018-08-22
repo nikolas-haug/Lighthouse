@@ -3,7 +3,8 @@ import {Component} from 'react';
 import questions from './question';
 import QuestionDisplay from './QuestionDisplay';
 import StartButton from '../Sections/StartButton';
-import Result from './Result'
+import Result from './ResultGenetator'
+import DisplayResult from './DisplayResult';
 
 
 class Assessment extends Component {
@@ -13,7 +14,6 @@ class Assessment extends Component {
             number:0,
             question:'',
             response:'',
-            severityScore:0,
             result:'',
         }
         
@@ -34,7 +34,7 @@ class Assessment extends Component {
             let option = e.target.getAttribute('data-id')
             let response = Number(option)
                 this.setState({
-                    response:response
+                    response:response,
                 })
         }
 
@@ -46,17 +46,25 @@ class Assessment extends Component {
                 e.target.reset()
                 this.getQuestion()
             }else{
-              let result = Result.generateResult(this.assessmentData)
-              console.log(result)
-            let data = Result.getResultInfor(result);
-                console.log(data)
-                alert(data.PD)
+              let analysis = Result.performAnalysis(this.assessmentData)
+                if(analysis!=='needs treatment'){
+                    console.log('no treatment needed');
+                }else{
+                    console.log('treatment needed!!!');
+                    let severityScore = Result.generateResult(this.assessmentData)
+                    let result = Result.getResultInfor(severityScore)
+                    this.setState({
+                        result:result,
+                        question:''
+                    })
+                }
             }
         }
 
     }
 
     render(){
+        console.log(this.state)
         return (
             <div className="container">
                 <div className="row">
@@ -82,9 +90,10 @@ class Assessment extends Component {
                             </div>
                             </form>
                         </div>
-                    </div>
-                        :
-                            <StartButton onClick={this.getQuestion}/>
+                    </div>:
+                    this.state.result?
+                    <DisplayResult result={this.state.result}/>:
+                        <StartButton onClick={this.getQuestion}/>
                     }</div>
                 </div>
             </div>

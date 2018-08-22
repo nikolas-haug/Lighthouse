@@ -43,8 +43,8 @@
     color: #212529;
     background-color: #fcfcfa;
     border-radius: 50px;
-    width: 6rem;
-    margin: 0.5rem;
+    width: 5rem;
+    margin-right: 0.5rem;
     padding: 0.1rem;
     transition: ease-in 0.5s;
     transition: ease-out 0.05s;
