@@ -110,7 +110,7 @@ class Landing extends Component {
           </div>
           <div>
             {this.props.match.path === "/logout" ? (
-              <Logout handleUserLogout={this.handleUserLogout} />):
+              <Logout handleUserLogout={this.handleUserLogout}/>):
               localStorage.getItem('litH@user')?(
               <Quicklinks/>):
               this.props.match.path === "/signup" ? (
