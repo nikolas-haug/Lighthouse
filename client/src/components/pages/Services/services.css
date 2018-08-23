@@ -22,12 +22,12 @@ label {
     margin: 5px 0;
 }
 
-.help-tab h5 {
-    display: inline-block;
-}
-
 .help-tab a {
     display: inline-block;
     margin: 0 10px;
     font-size: 14px;
 }
+
+/* .card-body {
+    background-color: #E0DFD5;
+} */

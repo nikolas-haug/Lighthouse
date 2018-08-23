@@ -67,7 +67,7 @@ class SearchResults extends Component {
                         <CardTitle><h4>No results to display. Please try your search again.</h4></CardTitle>
                     </CardBody>
                 </Card>
-
+                
             </div>
         )
     }
@@ -77,7 +77,8 @@ class SearchResults extends Component {
         return (
             <div>
                 {this.state.lastSearched && (
-                    <div className="container">
+                    <div className="container results-container pb-3">
+                    {this.state.results.length > 0 && <h2 className="pb-3 pt-4 mb-0"><i className="fa fa-envelope-open-o"></i>{this.state.results.length} Results found online:</h2>}
                         {this.state.results.length > 0 ? this.showGoogleResults(this.state.results) : this.showNoResults()}
                     </div>
                 )}

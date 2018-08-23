@@ -71,7 +71,7 @@ class Services extends Component {
         </form>
 
           <div className="help-tab">
-            <h5>! immediate assistance online:</h5>
+            <h5><i class="fa fa-phone"></i>immediate assistance online:</h5>
             <a href="http://www.crisischat.org/" target="_blank" rel="noopener noreferrer">Crisis Chat</a>
             <a href="https://www.suicidepreventionlifeline.org/GetHelp/LifelineChat.aspx" target="_blank" rel="noopener noreferrer">National Suicide Prevention</a>
             <a href="https://www.imalive.org/" target="_blank" rel="noopener noreferrer">IMAlive</a>
