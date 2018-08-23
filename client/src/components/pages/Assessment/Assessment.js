@@ -2,9 +2,10 @@ import React from 'react';
 import {Component} from 'react';
 import questions from './question';
 import QuestionDisplay from './QuestionDisplay';
-import StartButton from '../Sections/StartButton';
+import StartButton from './StartButton';
 import Result from './ResultGenetator'
 import DisplayResult from './DisplayResult';
+import Title from './Title';
 
 class Assessment extends Component {
     constructor(props){
@@ -14,6 +15,7 @@ class Assessment extends Component {
             question:'',
             response:'',
             result:'',
+            loader:false,
         }
         
         this.assessmentData = [];
@@ -47,9 +49,15 @@ class Assessment extends Component {
                 let assessmentScore = Result.generateResult(this.assessmentData)
                 let result = Result.getResultInfor(assessmentScore)
                 this.setState({
-                    result:result,
-                    question:''
-                }) 
+                    question:'',
+                    loader:true,
+                })
+                setTimeout(()=>{ 
+                    this.setState({
+                        result:result,
+                        loader:false
+                    }) 
+                 }, 4000); 
             }
         }
     }
@@ -60,9 +68,7 @@ class Assessment extends Component {
                     <div className="col-lg-10 col-md-8 col-sm-12 col-xs-12 mx-auto">
                     {this.state.question?
                     <div>
-                        <div>
-                            <h2 className="assessement-title">Assessment Questionnaire</h2>
-                        </div>
+                        <Title title="Assessment Questionnaire"/>
                         <div>
                             <form onSubmit={this.handleSubmit}>
                             <QuestionDisplay 
@@ -80,7 +86,7 @@ class Assessment extends Component {
                             </form>
                         </div>
                     </div>:
-                    this.state.result?
+                    this.state.loader || this.state.result?
                     <DisplayResult result={this.state.result}/>:
                         <StartButton onClick={this.getQuestion}/>
                     }</div>

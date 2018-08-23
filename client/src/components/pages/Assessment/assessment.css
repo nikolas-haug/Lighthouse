@@ -1,34 +1,93 @@
-.question-div p{
-    padding:2rem;
-    margin:0.2rem 0;
+.question-div p {
+    padding: 2rem;
+    margin: 0.2rem 0;
     background: rgb(196, 221, 233);
     border-radius: 5px;
     font-size: 1.5rem;
     transition: all 3s;
 }
 
-.option-div{
-    padding:2rem;
-    margin:0.2rem 0 ;
+.diagnosis-div,
+.loading-div {
+    padding: 2rem;
+    margin: 0.2rem 0;
+    background: rgb(196, 221, 233);
+    border-radius: 5px;
+    transition: all 3s;
+    color: rgb(75, 72, 72);
+}
+
+.option-div,
+.treatment-div {
+    padding: 2rem;
+    margin: 0.2rem 0;
     background: rgb(216, 215, 215);
-    border-radius:5px;
-}
-
-.button-div{
-    padding:1rem;
-    margin:0
-}
-
-.assessement-title{
-    padding:1rem;
-    background:rgb(82, 81, 81);
-    margin-top:3%;
-    margin-bottom:0;
-    color:white;
     border-radius: 5px;
 }
 
-.start-button{
-    width:100%;
-    height:10rem;
+.treatment-div,
+.loading-div {
+    margin-bottom: 25px;
+    color: rgb(75, 72, 72);
+}
+
+.button-div {
+    padding: 1rem;
+    margin: 0
+}
+
+.assessement-title {
+    padding: 1rem;
+    background: rgb(82, 81, 81);
+    margin-top: 3%;
+    margin-bottom: 0;
+    color: white;
+    border-radius: 5px;
+}
+
+.start-button {
+    width: 20rem;
+    background: transparent;
+    border: 1px gray solid;
+    text-align: center;
+    align-content: center;
+    padding: 1%;
+    color: rgb(73, 71, 71);
+    font-weight: bold;
+    transition: all 0.8s;
+    height: 2.7rem;
+}
+
+.start-button:hover {
+    background: rgb(96, 121, 133);
+    color: #fff;
+}
+
+.loading-image-box{
+    width:200px;
+    margin:0 auto;
+}
+
+.loading-div img {
+    width: 12rem;
+    height: auto;
+    transition: ease-in-out 2s;
+    align-content: center;
+}
+
+.loading-message {
+    padding: 1%;
+    margin: px 1%;
+    color: #8e8989;
+    text-align: center;
+}
+
+.result-div h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.result-div p {
+    font-size: 1..1rem;
+    margin-bottom: 2px;
 }
