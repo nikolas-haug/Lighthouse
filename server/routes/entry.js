@@ -8,27 +8,40 @@ var router = express.Router();
 //GET ROUTE TO GET ALL ENTRIES
 //==============================================
 router.get("/journal", function (req, res) {
-    Entry.find({ public: true}).sort({createdAt: 'desc'})
-         .populate({path: 'comments', options: { sort: { 'createdAt': 1 } } })
-         .exec(function (err, entries) {
-             if (err) {
+    Entry.find({
+            public: true
+        }).sort({
+            createdAt: 'desc'
+        })
+        .populate({
+            path: 'comments',
+            options: {
+                sort: {
+                    'createdAt': 1
+                }
+            }
+        })
+        .exec(function (err, entries) {
+            if (err) {
                 console.log(err)
-             } else {
-                res.json(entries) 
-             }
-    })
+            } else {
+                res.json(entries)
+            }
+        })
 })
 
 // ==============================================
 // GET ROUTE TO GET ALL ENTRIES FOR INDIVIDUAL USERS
 // ==============================================
 router.get("/user_journals/:author", function (req, res) {
-    Entry.find({ author: req.params.author}, function (err, entries) {
-             if (err) {
-                console.log(err)
-             } else {
-                res.json(entries) 
-             }
+    Entry.find({
+        author: req.params.author
+    }, function (err, entries) {
+        if (err) {
+            console.log(err)
+        } else {
+            res.json(entries)
+        }
     })
 })
 
@@ -39,15 +52,15 @@ router.get("/user_journals/:author", function (req, res) {
 router.post("/journal/:userid", function (req, res) {
     User.findById(req.params.userid, function (err, user) {
         if (err) {
-            console.log(err)
+            console.log(err);
         } else {
             Entry.create(req.body, function (err, entry) {
                 if (err) {
-                    console.log(err)
+                    console.log(err);
                 } else {
                     user.entries.push(entry);
                     user.save();
-                    res.end()
+                    res.end();
                 }
             });
         }
@@ -62,7 +75,7 @@ router.get('/journal/:entry_id', function (req, res) {
         if (err) {
             console.log(err);
         } else {
-            res.json(entry)
+            res.json(entry);
         }
     });
 });
@@ -74,7 +87,7 @@ router.get('/journal/:entry_id', function (req, res) {
 router.put("/journal/:entryid", function (req, res) {
     Entry.findByIdAndUpdate(req.params.entryid, req.body, function (err, entry) {
         if (err) {
-            console.log(err)
+            console.log(err);
         } else {
             res.end();
         }
@@ -88,12 +101,49 @@ router.put("/journal/:entryid", function (req, res) {
 router.delete("/:entryid", function (req, res) {
     Entry.findByIdAndRemove(req.params.entryid, function (err) {
         if (err) {
-            console.log(err)
+            console.log(err);
         } else {
             res.end();
         }
     })
 })
+
+
+//==============================================
+//POST ROUTE TO ADD USER ASSESSMENT RESULTS
+//==============================================
+router.post("/assessment/:user_id", function (req, res) {
+    User.findById(req.params.user_id, function (err, user) {
+        if (err) {
+            console.log(err);
+        } else {
+            user.assessmentResults.push(req.body);
+            user.save();
+            res.end();
+        }
+    });
+})
+
+
+// ==============================================
+// GET ROUTE TO ASSESSMENT RESULTS FOR INDIVIDUAL USERS
+// ==============================================
+router.get("/assessment/:user_id", function (req, res) {
+    User.findById(req.params.user_id, function (err, user) {
+        if (err) {
+            console.log(err);
+        } else {
+            let result = user.assessmentResults;
+            res.json(result);
+        }
+    });
+})
+
+
+
+
+
+
 
 
 module.exports = router;

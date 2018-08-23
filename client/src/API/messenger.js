@@ -90,6 +90,20 @@ export default {
   // send a query to the google custom search api
   getCustomArticles: function (searchTerm) {
     return axios.get('/api/google/' + searchTerm);
+  },
+
+
+  //**************************************/
+  // User Assessment data API REQUEST
+  //**************************************/
+  // Send assessment result to database
+  sendAssessmentResult: function (user_id, result) {
+    return axios.post(`/assessment/${user_id}`, result );
+  },
+
+  // send a query to the google custom search api
+  getAssessmentData: function (user_id) {
+    return axios.get(`/assessment/${user_id}`);
   }
 
 };
