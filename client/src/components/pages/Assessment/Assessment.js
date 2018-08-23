@@ -52,6 +52,7 @@ class Assessment extends Component {
                     question:'',
                     loader:true,
                 })
+                
                 setTimeout(()=>{ 
                     this.setState({
                         result:result,
