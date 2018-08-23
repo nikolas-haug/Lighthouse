@@ -5,8 +5,6 @@ import Results from "./Results";
 import API from "../../../API/messenger";
 import './services.css'
 
-import { withRouter } from 'react-router';
-
 class Services extends Component {
   constructor(props) {
     super(props);
@@ -85,6 +83,7 @@ class Services extends Component {
 
   // event listener for the return to search button, clears message as well
   handleButtonClick = () => {
+    localStorage.removeItem('providers_results');
     this.setState({
       results: [],
       message: ""
@@ -101,4 +100,4 @@ class Services extends Component {
   }
 }
 
-export default withRouter(Services);
+export default Services;
