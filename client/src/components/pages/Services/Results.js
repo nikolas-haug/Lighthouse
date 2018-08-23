@@ -15,9 +15,15 @@ const showResults = results => results.map((provider) => {
                     <br />
                     <CardText><div className="row">
                         <div className="col-6">{provider.practices[0].visit_address.street} &bull; {provider.practices[0].visit_address.city} &bull; {provider.practices[0].visit_address.zip}</div>
-                        <div className="col-6 text-right"><a href={`tel: ${provider.practices[0].phones[0].number}`}>{provider.practices[0].phones[0].number}</a>
-                        <a href={provider.practices[0].website}>{provider.practices[0].website}</a></div>
-                        </div></CardText>
+                            <div className="col-6 text-right"><a href={`tel: ${provider.practices[0].phones[0].number}`}>{provider.practices[0].phones[0].number}</a>
+                            </div>
+                        </div>
+                            {provider.practices[0].website && 
+                            <div className="mt-1">
+                                <a href={provider.practices[0].website} target="_blank">{provider.practices[0].website}</a>
+                            </div>
+                            }
+                        </CardText>
 
                     <CardText><div className="row">
 

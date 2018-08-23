@@ -62,7 +62,7 @@ class Footer extends Component {
                                     <a href="/assessment">Assessement Quiz</a>
                                     </li>
                                     <li>
-                                    <a href="/">Forum</a>
+                                    <a href="/entries">Forum</a>
                                     </li>
                                     <li>
                                     <a target="_blank" href="/assets/privacypolicy/pplighthouse.pdf">Privacy Policy</a>
