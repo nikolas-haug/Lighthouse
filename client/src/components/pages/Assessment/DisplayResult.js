@@ -23,10 +23,10 @@ const DisplayResult = (props) => {
                 <h3 >Provisional Diagnosis*</h3>
                 <hr/>
                 <p >{props.result.PD}</p>
-                <span>* Not a clinical diagnosis.</span>
+                <span>*We are not clinicians in any legal sense of the word.</span>
             </div>
             <div className="treatment-div">
-                <h3>Some treatment you might consider...</h3>
+                <h3>"So what does this mean for me?"</h3>
                 <hr/>
                 <p>{props.result.TR}</p>
             </div>

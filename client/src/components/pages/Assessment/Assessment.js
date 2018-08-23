@@ -68,7 +68,7 @@ class Assessment extends Component {
                     <div className="col-lg-10 col-md-8 col-sm-12 col-xs-12 mx-auto">
                     {this.state.question?
                     <div>
-                        <Title title="Assessment Questionnaire"/>
+                        <Title title="In the past two weeks, how often have you experienced the following symptoms?"/>
                         <div>
                             <form onSubmit={this.handleSubmit}>
                             <QuestionDisplay 
