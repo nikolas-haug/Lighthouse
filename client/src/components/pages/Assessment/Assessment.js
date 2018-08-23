@@ -21,6 +21,8 @@ class Assessment extends Component {
             loader: false,
         }
 
+        this.state.result = 'Not at all'; // TODO: REMOVE BEFORE COMMIT
+
         this.assessmentData = [];
         this.tracker = 0;
         this.responseOptions = ["Not at all", "Several days", "More than half of the days", "Nearly every day"];

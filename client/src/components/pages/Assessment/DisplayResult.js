@@ -1,11 +1,21 @@
 import React from 'react';
 import loader from '../../../Images/loader.gif'
 import Title from './Title';
+import { Route } from "react-router-dom";
 
 
 const DisplayResult = (props) => {
     return (
     <div>
+    <div>
+        <Title title="Assessment Questionnaire"/>          
+        <div className='loading-div'>  
+            <h5 className="loading-message">Please wait! Your results are being processed....</h5>
+            <div className="loading-image-box mx-auto">                 
+                <img src={loader} className="mx-auto img-fluid" alt="loader"/>
+            </div>
+        </div>
+    </div>
         {!props.result?
         <div>
             <Title title="Assessment Questionnaire"/>          
