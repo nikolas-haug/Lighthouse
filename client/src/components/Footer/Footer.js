@@ -59,6 +59,9 @@ class Footer extends Component {
                                     <a href="/services">Local Providers</a>
                                     </li>
                                     <li>
+                                    <a href="/assessment">Assessement Quiz</a>
+                                    </li>
+                                    <li>
                                     <a href="/">Forum</a>
                                     </li>
                                     <li>

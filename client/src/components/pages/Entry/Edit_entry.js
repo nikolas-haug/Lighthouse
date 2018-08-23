@@ -72,6 +72,7 @@ handleCheckboxChange = (e) => {
     })
 }
 
+
   componentWillMount() {
     this.handleEditEntry() 
 }

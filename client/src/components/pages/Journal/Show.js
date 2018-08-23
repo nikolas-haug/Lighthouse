@@ -2,7 +2,7 @@ import React from "react";
 import { Component } from "react";
 import { Link } from "react-router-dom";
 import Moment from "moment";
-import Header from "../Sections/Header";
+// import Header from "../Sections/Header";
 import { Card, CardText, CardBody, CardTitle } from "reactstrap";
 // import Comments from './Comments/Show_comments';
 
@@ -13,8 +13,10 @@ class ShowUserJournals extends Component {
       e.preventDefault();
       let entry_id = e.target.getAttribute("data-id");
       let action = e.target.getAttribute("action");
-      action === "comment"
-        ? this.props.handleAddComment(entry_id)
+      action === "comment"? 
+        this.props.handleAddComment(entry_id):
+        action==="assessment-result"?
+        this.props.getAssessmentData()
         : this.props.handleDeleteEntry(entry_id);
     };
   }
@@ -23,12 +25,11 @@ class ShowUserJournals extends Component {
   }
   render() {
     return (
-      <div className="container">
-        <div className="row">
           <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div className="accordion" id="accordionExample">
               <i className="fa fa-file-text-o" aria-hidden="true" />
               <a href="/assessment">Assessment Quiz</a>
+              <button className='btn' action='assessment-result' onClick={this.handleAction}>Assessment Dashboard</button>
               {this.props.entries.map(entry => (
                 <Card key={entry._id}>
                   <CardBody>
@@ -57,10 +58,8 @@ class ShowUserJournals extends Component {
               ))}
             </div>
           </div>
-        </div>
-      </div>
-    );
-  }
-}
+          );
+        }
+      }
 
 export default ShowUserJournals;
