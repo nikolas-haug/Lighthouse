@@ -7,24 +7,37 @@ import {
     Card, CardBody,
     CardSubtitle
 } from 'reactstrap';
-
-
+import Dashboard from "./Dashboard";
 
 class Journal extends Component {
     constructor(props) {
         super(props);
         this.state = {
             entries: [],
+            assessmentData: [],
         };
 
         this.getAllUserEntries = () => {
             let author = localStorage.getItem('litH@user')
             API.getAllUserEntries(author).then(res => {
-                // console.log(res.data)
                 if (res.data) {
                     // Set the state with the results from the search
                     this.setState({
                         entries: res.data
+                    })
+                } else {
+                    return;
+                }
+            })
+        }
+
+        this.getAssessmentData = () => {
+            let user_id = localStorage.getItem('litH@user_id')
+            API.getAssessmentData(user_id).then(res => {
+                if (res.data) {
+                    // Set the state with the results from the search
+                    this.setState({
+                        assessmentData: res.data
                     })
                 } else {
                     return;
@@ -44,17 +57,29 @@ class Journal extends Component {
         return (
             <div>
                 <Header heading="My Journals" title="Track your routine" />
-                <Card>
-                    <CardBody>
-                        <CardSubtitle className="text-justify">
-                            <ShowUserJournals
-                                handleDeleteEntry={this.handleDeleteEntry}
-                                getAllUserEntries={this.getAllUserEntries}
-                                entries={this.state.entries}
-                                history={this.props.history}
-                            /></CardSubtitle>
-                    </CardBody>
-                </Card>
+                <div className="container">
+                    <div className="row">
+                        <Card>
+                            <CardBody>
+                                <CardSubtitle className="text-justify">
+                                {this.state.assessmentData.length?
+                                <Dashboard
+                                getAssessmentData={this.getAssessmentData}
+                                assessmentData={this.state.assessmentData}
+                                />:""}
+                                <ShowUserJournals
+                                    handleDeleteEntry={this.handleDeleteEntry}
+                                    getAllUserEntries={this.getAllUserEntries}
+                                    getAssessmentData={this.getAssessmentData}
+                                    assessmentData={this.state.assessmentData}
+                                    entries={this.state.entries}
+                                    history={this.props.history}
+                                />                            
+                                </CardSubtitle>
+                            </CardBody>
+                        </Card>
+                    </div>
+                </div>
             </div>
 
         );
