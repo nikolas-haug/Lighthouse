@@ -21,3 +21,13 @@ label {
     border-radius: 50px;
     margin: 5px 0;
 }
+
+.help-tab h5 {
+    display: inline-block;
+}
+
+.help-tab a {
+    display: inline-block;
+    margin: 0 10px;
+    font-size: 14px;
+}

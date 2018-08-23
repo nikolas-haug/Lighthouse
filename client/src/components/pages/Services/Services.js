@@ -62,13 +62,25 @@ class Services extends Component {
     return (
       <div>
         <h1>Services</h1>
+        <p>search for providers in your area by keyword and specialty</p>
         <h5>{this.state.message}</h5>
         <Results results={this.state.results} />
         <form onSubmit={this.handleFormSubmit}>
           <Input handleChange={this.handleInputChange} keyword={this.state.keyword} location={this.state.location} />
           <Button />
         </form>
+
+          <div className="help-tab">
+            <h5>! immediate assistance online:</h5>
+            <a href="http://www.crisischat.org/" target="_blank" rel="noopener noreferrer">Crisis Chat</a>
+            <a href="https://www.suicidepreventionlifeline.org/GetHelp/LifelineChat.aspx" target="_blank" rel="noopener noreferrer">National Suicide Prevention</a>
+            <a href="https://www.imalive.org/" target="_blank" rel="noopener noreferrer">IMAlive</a>
+            <a href="http://www.crisistextline.org/" target="_blank" rel="noopener noreferrer">Crisis Text (smartphones)</a>
+          </div>
+
       </div>
+
+      
     )
   }
 
