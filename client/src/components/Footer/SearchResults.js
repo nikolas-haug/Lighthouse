@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import API from "../../API/messenger";
+import loader from '../../Images/loader.gif'
 import {
     Card, CardBody,
     CardTitle, CardSubtitle
@@ -11,7 +12,7 @@ class SearchResults extends Component {
         super(props);
         this.state = {
             lastSearched: "",
-            results: []
+            results: JSON.parse(localStorage.getItem('custom_search_results')) || []
         }
     }
 
@@ -33,10 +34,13 @@ class SearchResults extends Component {
     // call the custom search api
     getCustomResults = (term) => {
         API.getCustomArticles(term).then((res) => {
-            console.log(res.data);
+            // if we get a response, place it into local storage
+            localStorage.setItem('custom_search_results', JSON.stringify(res.data));
+            // console.log(res.data);
+            // set the state of the results from the local storage
             this.setState({
                 lastSearched: term,
-                results: res.data
+                results: JSON.parse(localStorage.getItem('custom_search_results'))
             });
         }).catch((err) => {
             console.log(err);
@@ -64,7 +68,7 @@ class SearchResults extends Component {
                         <CardTitle><h4>No results to display. Please try your search again.</h4></CardTitle>
                     </CardBody>
                 </Card>
-
+                
             </div>
         )
     }
@@ -73,11 +77,24 @@ class SearchResults extends Component {
 
         return (
             <div>
-                {this.state.lastSearched && (
-                    <div className="container">
+                {this.state.lastSearched ? (
+                    <div className="container results-container pb-3">
+                    {this.state.results.length > 0 && <h2 className="pb-3 pt-4 mb-0"><i className="fa fa-envelope-open-o"></i>{this.state.results.length} Results found online:</h2>}
                         {this.state.results.length > 0 ? this.showGoogleResults(this.state.results) : this.showNoResults()}
                     </div>
-                )}
+                ) : (
+                    <div>
+                      <div className="loading-div">
+                        <div className="loading-image-box mx-auto">
+                          <img
+                            src={loader}
+                            className="mx-auto img-fluid"
+                            alt="loader"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  )}
             </div>
         )
     }
