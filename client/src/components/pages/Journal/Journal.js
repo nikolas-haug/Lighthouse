@@ -3,10 +3,6 @@ import { Component } from 'react';
 import ShowUserJournals from './Show'
 import API from '../../../API/messenger';
 import Header from "../Sections/Header";
-import {
-    Card, CardBody,
-    CardSubtitle
-} from 'reactstrap';
 import Dashboard from "./Dashboard";
 
 class Journal extends Component {
