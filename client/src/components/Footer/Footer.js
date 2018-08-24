@@ -56,20 +56,16 @@ class Footer extends Component {
                             <div className="col-md-6">
                                 <ul className="list">
                                     <li>
-                                    <Link to={"/"} href="#top">About Us</Link>
-                                    {/* <a href="/">About Us</a> */}
+                                    <NavLink to={"/"} href="#top">About Us</NavLink>
                                     </li>
                                     <li>
                                     <NavLink to={"/services"}>Local Providers</NavLink>
-                                    {/* <a href="/services">Local Providers</a> */}
                                     </li>
                                     <li>
-                                    <Link to={"/assessment"} href="#top">Assessement Quiz</Link>
-                                    {/* <a href="/assessment">Assessement Quiz</a> */}
+                                    <NavLink to={"/assessment"} href="#top">Assessement Quiz</NavLink>
                                     </li>
                                     <li>
-                                    <Link to={"/entries"} href="#top">Forum</Link>
-                                    {/* <a href="/entries">Forum</a> */}
+                                    <NavLink to={"/entries"} href="#top">Forum</NavLink>
                                     </li>
                                     <li>
                                     <a target="_blank" href="/assets/privacypolicy/pplighthouse.pdf">Privacy Policy</a>
