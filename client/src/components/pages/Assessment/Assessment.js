@@ -49,8 +49,7 @@ class Assessment extends Component {
                     e.target.reset()
                 this.getQuestion()
             } else {
-                let assessmentScore = Result.generateResult(this.assessmentData)
-                let result = Result.getResultInfor(assessmentScore)
+                let result = Result.generateResult(this.assessmentData)
                 this.setState({
                     question: '',
                     loader: true,
