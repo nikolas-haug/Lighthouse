@@ -4,6 +4,7 @@
     padding: 6px 6px 3px;
     border: none;
     font-size: 13px;
+    box-shadow: 0px 10px 156px 10px rgba(0,0,0,0.75);
 }
 
 .btn-search {
@@ -17,6 +18,7 @@ label {
     display: inline-block;
     margin: .5rem;
 }
+
 .btn-back {
     border-radius: 50px;
     margin: 5px 0;

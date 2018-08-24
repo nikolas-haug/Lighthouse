@@ -60,7 +60,7 @@ class Services extends Component {
   // render the search form to the view
   renderForm = () => {
     return (
-      <div>
+      <div className="p-4">
         <h1>Services</h1>
         <p>search for providers in your area by keyword and specialty</p>
         <h5>{this.state.message}</h5>

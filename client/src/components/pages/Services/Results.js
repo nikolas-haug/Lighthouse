@@ -39,8 +39,8 @@ const Results = (props) => {
     return (
         <div>
             <div>
-                {props.results.length > 0 && <div><h1>Results!</h1>
-                    <button className="btn-back" onClick={props.handleButtonClick}>go back to search</button></div>}
+                {props.results.length > 0 && <div className="pl-3"><h2 className="mb-0 pt-3">{props.results.length} Providers found<i class="fa fa-user-md"></i></h2>
+                    <button className="btn-back my-2" onClick={props.handleButtonClick}>go back to search</button></div>}
                 {props.results.length > 0 && showResults(props.results)}
             </div>
         </div>
