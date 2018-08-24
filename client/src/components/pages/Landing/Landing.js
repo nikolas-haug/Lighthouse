@@ -32,7 +32,6 @@ class Landing extends Component {
       // Takes the submitted data and pass it over to the API module
       API.sendNewUserInfo(newUser)
         .then(res => {
-          console.log(res)
           if (res.data.username) {
             //If a valid user is return, save the user info to local storage
             localStorage.setItem("litH@user", res.data.username);
