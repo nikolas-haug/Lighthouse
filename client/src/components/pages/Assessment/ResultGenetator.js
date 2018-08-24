@@ -9,7 +9,7 @@ export default {
         })
 
         return getResultInfor(score);
-        //this function takes the total score and return the matching result.
+        //this function takes the total score and returns the matching result.
         function getResultInfor(score) {
             let result = {};
             switch (true) {

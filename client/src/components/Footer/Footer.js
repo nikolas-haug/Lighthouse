@@ -2,7 +2,10 @@ import React from "react";
 import { Component } from "react";
 import Input from "./Input";
 import Button from "./Button";
+import { Link } from "react-router-dom";
 import "./footer.css";
+
+import NavLink from "./NavLink";
 
 class Footer extends Component {
     constructor(props) {
@@ -53,16 +56,16 @@ class Footer extends Component {
                             <div className="col-md-6">
                                 <ul className="list">
                                     <li>
-                                    <a href="/">About Us</a>
+                                    <NavLink to={"/"}>About Us</NavLink>
                                     </li>
                                     <li>
-                                    <a href="/services">Local Providers</a>
+                                    <NavLink to={"/services"}>Local Providers</NavLink>
                                     </li>
                                     <li>
-                                    <a href="/assessment">Assessement Quiz</a>
+                                    <NavLink to={"/assessment"}>Assessement Quiz</NavLink>
                                     </li>
                                     <li>
-                                    <a href="/entries">Forum</a>
+                                    <NavLink to={"/entries"}>Forum</NavLink>
                                     </li>
                                     <li>
                                     <a target="_blank" href="/assets/privacypolicy/pplighthouse.pdf">Privacy Policy</a>
