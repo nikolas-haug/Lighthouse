@@ -9,7 +9,7 @@
     "start": "./node_modules/.bin/concurrently \"cd node_modules/.bin && npm run server\" \"cd ../client && npm run start\"",
     "start:prod": "node server.js",
     "build": "cd ../client && npm run build",
-    "deploy": "yarn build && git add . && git commit -m \"Building for production\" && git push heroku master",
+    "deploy": "npm build && git add . && git commit -m \"Building for production\" && git push heroku master",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
