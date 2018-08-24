@@ -77,11 +77,7 @@ class SearchResults extends Component {
 
         return (
             <div>
-<<<<<<< HEAD
                 {this.state.lastSearched ? (
-=======
-                {this.state.lastSearched && (
->>>>>>> a0d49d76ffcfc9a2452c9651e2edfe3fafeec15d
                     <div className="container results-container pb-3">
                     {this.state.results.length > 0 && <h2 className="pb-3 pt-4 mb-0"><i className="fa fa-envelope-open-o"></i>{this.state.results.length} Results found online:</h2>}
                         {this.state.results.length > 0 ? this.showGoogleResults(this.state.results) : this.showNoResults()}
