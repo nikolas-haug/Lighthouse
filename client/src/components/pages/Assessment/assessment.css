@@ -7,8 +7,10 @@
     transition: all 3s;
 }
 
+
 .diagnosis-div,
 .loading-div {
+    background: rgb(196, 221, 233);
     padding: 2rem;
     margin: 0.2rem 0;
     border-radius: 5px;
