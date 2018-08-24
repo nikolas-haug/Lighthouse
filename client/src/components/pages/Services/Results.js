@@ -1,10 +1,8 @@
 import React from "react";
-import {
-    Card, CardText, CardBody,
-    CardTitle, CardSubtitle
-} from 'reactstrap';
+import { Card, CardText, CardBody, CardTitle, CardSubtitle } from "reactstrap";
 
-const showResults = results => results.map((provider) => {
+const showResults = results =>
+  results.map(provider => {
     // loop through the array of returned results from the api and display it on the page
     return (
         <div key={provider.practices[0].uid}>
@@ -25,14 +23,14 @@ const showResults = results => results.map((provider) => {
                             }
                         </CardText>
 
-                    <CardText><div className="row">
-
-                        </div></CardText>
-                </CardBody>
-            </Card>
-        </div>
-    )
-});
+            <CardText>
+              <div className="row" />
+            </CardText>
+          </CardBody>
+        </Card>
+      </div>
+    );
+  });
 
 const Results = (props) => {
     // check that there are results returned to the array, otherwise display nothing

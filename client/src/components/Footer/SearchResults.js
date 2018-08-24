@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import API from "../../API/messenger";
+import loader from '../../Images/loader.gif'
 import {
     Card, CardBody,
     CardTitle, CardSubtitle
@@ -76,12 +77,24 @@ class SearchResults extends Component {
 
         return (
             <div>
-                {this.state.lastSearched && (
+                {this.state.lastSearched ? (
                     <div className="container results-container pb-3">
                     {this.state.results.length > 0 && <h2 className="pb-3 pt-4 mb-0"><i className="fa fa-envelope-open-o"></i>{this.state.results.length} Results found online:</h2>}
                         {this.state.results.length > 0 ? this.showGoogleResults(this.state.results) : this.showNoResults()}
                     </div>
-                )}
+                ) : (
+                    <div>
+                      <div className="loading-div">
+                        <div className="loading-image-box mx-auto">
+                          <img
+                            src={loader}
+                            className="mx-auto img-fluid"
+                            alt="loader"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  )}
             </div>
         )
     }

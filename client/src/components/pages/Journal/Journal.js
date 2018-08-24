@@ -3,10 +3,6 @@ import { Component } from 'react';
 import ShowUserJournals from './Show'
 import API from '../../../API/messenger';
 import Header from "../Sections/Header";
-import {
-    Card, CardBody,
-    CardSubtitle
-} from 'reactstrap';
 import Dashboard from "./Dashboard";
 
 class Journal extends Component {
@@ -59,25 +55,20 @@ class Journal extends Component {
                 <Header heading="My Journals" title="Track your routine" />
                 <div className="container">
                     <div className="row">
-                        <Card>
-                            <CardBody>
-                                <CardSubtitle className="text-justify">
-                                {this.state.assessmentData.length?
-                                <Dashboard
+                       
+                            {this.state.assessmentData.length?
+                            <Dashboard
+                            getAssessmentData={this.getAssessmentData}
+                            assessmentData={this.state.assessmentData}
+                            />:""}
+                            <ShowUserJournals
+                                handleDeleteEntry={this.handleDeleteEntry}
+                                getAllUserEntries={this.getAllUserEntries}
                                 getAssessmentData={this.getAssessmentData}
                                 assessmentData={this.state.assessmentData}
-                                />:""}
-                                <ShowUserJournals
-                                    handleDeleteEntry={this.handleDeleteEntry}
-                                    getAllUserEntries={this.getAllUserEntries}
-                                    getAssessmentData={this.getAssessmentData}
-                                    assessmentData={this.state.assessmentData}
-                                    entries={this.state.entries}
-                                    history={this.props.history}
-                                />                            
-                                </CardSubtitle>
-                            </CardBody>
-                        </Card>
+                                entries={this.state.entries}
+                                history={this.props.history}
+                            />                           
                     </div>
                 </div>
             </div>
