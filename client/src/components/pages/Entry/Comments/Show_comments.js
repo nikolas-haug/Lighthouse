@@ -14,6 +14,16 @@ class ShowComments extends Component {
             body:'',
             _id:''
         },
+        commentError:false,
+        commentBody:""
+    }
+
+    this.handleOnChange=(e)=>{
+        console.log(e.target.value)
+        this.setState({
+            commentBody:e.target.value,
+            commentError:this.state.commentBody.length?false:true,
+        })
     }
 
     this.handleAction = e => {
@@ -75,6 +85,10 @@ class ShowComments extends Component {
   
     this.handleSubmit = e => {
         e.preventDefault();
+        if(!this.state.commentBody.length){
+            this.setState({commentError:true})
+            return;
+        }
         let entry_id = e.target.getAttribute('data-id')
         let data = e.target;
         let newComment = {
@@ -89,23 +103,32 @@ class ShowComments extends Component {
   }
 
     render() {
+        console.log(this.state.commentError)
         return (
                 <div>
                     <div>
                         {this.props.comments && this.props.comments.length?this.props.comments.map((comment)=>
-                           this.state.comment.body === comment.body? 
+                           this.state.comment.body.length && this.state.comment.body === comment.body? 
                             <EditCommentForm  
                                 key={comment._id}
                                 comment={comment}
                                 getAllEntries={this.props.getAllEntries}
-                                handleCancelEdit={this.handleCancelEdit}/>:
+                                handleCancelEdit={this.handleCancelEdit}
+                            />:
                             <Comment 
                                 comment={comment} 
                                 key={comment._id} 
-                                handleAction={this.handleAction}/>
+                                handleAction={this.handleAction}
+                            /> 
                         ):''}
                     </div>
-                    <NewCommentForm entry_id={this.props.entry_id} onSubmit={this.handleSubmit}/>
+                        <NewCommentForm 
+                            entry_id={this.props.entry_id} 
+                            onSubmit={this.handleSubmit}
+                            handleOnChange={this.handleOnChange}
+                            commentError={this.state.commentError}
+                            commentBody={this.state.commentBody}
+                        />
                 </div>
             );
         }

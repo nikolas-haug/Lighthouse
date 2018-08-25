@@ -1,7 +1,11 @@
 import React from 'react';
 import './assessment.css'
 
+
+let visible = {visibility:'visible'}
+let hidden = {visibility:'hidden'}
 function QuestionDisplay(props) {
+ 
   return (
   <div>
     <div className="question-div">
@@ -19,6 +23,7 @@ function QuestionDisplay(props) {
              <label className="custom-control-label" htmlFor={"customRadio"+i}>{option}</label>
         </div>
        )}
+       <span id="error-text" style={props.error?visible:hidden}>Please select an option!</span> 
     </div>
   </div>
   );

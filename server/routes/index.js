@@ -12,9 +12,11 @@ router.post("/signup", (req, res) => {
     });
     User.register(newUser, req.body.password, (error, user) => {
         if (error) {
-            console.log(error)
+            res.json({
+                message: error.message
+            });
         } else {
-            passport.authenticate("local")(req, res,function(){
+            passport.authenticate("local")(req, res, function () {
                 res.json({
                     _id: req.user._id,
                     username: req.user.username
@@ -23,14 +25,16 @@ router.post("/signup", (req, res) => {
         }
     });
 });
-    
+
 
 //Login route
-router.post("/signin", passport.authenticate("local"), ( req, res) => {
+router.post("/signin", passport.authenticate("local"), (req, res) => {
     res.json({
         _id: req.user._id,
         username: req.user.username
     });
 });
+
+
 
 module.exports = router;

@@ -19,6 +19,7 @@ class Assessment extends Component {
             response: '',
             result: '',
             loader: false,
+            error: false,
         }
 
         this.assessmentData = [];
@@ -35,18 +36,24 @@ class Assessment extends Component {
 
         this.handleOnChange = (e) => {
             let option = e.target.getAttribute('data-id')
-            let response = Number(option)
             this.setState({
-                response: response,
+                response: Number(option),
+                error:false
             })
         }
 
         this.handleSubmit = (e) => {
-            this.assessmentData.push(this.state.response);
+            this.setState({error:false})
             e.preventDefault()
+            if(this.state.response === ''){
+                this.setState({error:true})
+                return;
+            }
+            this.assessmentData.push(this.state.response);
             if (this.assessmentData.length <= 8) {
                 this.tracker++
-                    e.target.reset()
+                e.target.reset()
+                this.setState({response:''})
                 this.getQuestion()
             } else {
                 let result = Result.generateResult(this.assessmentData)
@@ -80,7 +87,8 @@ class Assessment extends Component {
                                 options={this.responseOptions}
                                 handleOnChange={this.handleOnChange}
                                 question={this.state}
-                            /> 
+                                error={this.state.error}
+                            />
                             <div className="button-div">
                                 <button className="btn-light"><a href="/assessment">Cancel</a></button>
                                 {this.state.number===9?
