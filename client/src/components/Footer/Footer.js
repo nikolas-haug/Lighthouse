@@ -2,7 +2,7 @@ import React from "react";
 import { Component } from "react";
 import Input from "./Input";
 import Button from "./Button";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import "./footer.css";
 
 import NavLink from "./NavLink";

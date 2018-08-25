@@ -1,8 +1,8 @@
 export default {
     //this method get the sum of the responses greater than zero
     generateResult: (dataArr) => {
-        let score = 0; 
-        dataArr.forEach((response) => { 
+        let score = 0;
+        dataArr.forEach((response) => {
             if (response > 0) {
                 score = score + response
             }

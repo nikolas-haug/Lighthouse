@@ -100,3 +100,8 @@
     font-size: 1..1rem;
     margin-bottom: 2px;
 }
+
+#error-text{
+    color:red;
+    transition: all 0.5s;
+}

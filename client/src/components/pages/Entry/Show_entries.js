@@ -11,6 +11,8 @@ import { Card, CardSubtitle, CardText, CardBody, CardTitle } from "reactstrap";
 class ShowEntries extends Component {
   constructor(props) {
     super(props);
+
+    
     this.handleAction = e => {
       e.preventDefault();
       let entry_id = e.target.getAttribute("data-id");
