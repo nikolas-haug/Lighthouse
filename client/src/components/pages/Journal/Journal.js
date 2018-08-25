@@ -55,7 +55,6 @@ class Journal extends Component {
                 <Header heading="My Journals" title="Track your routine" />
                 <div className="container">
                     <div className="row">
-                       
                             {this.state.assessmentData.length?
                             <Dashboard
                             getAssessmentData={this.getAssessmentData}
