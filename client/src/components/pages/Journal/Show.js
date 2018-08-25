@@ -27,10 +27,12 @@ class ShowUserJournals extends Component {
     return (
           <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div className="accordion" id="accordionExample">
-              <i className="fa fa-file-text-o" aria-hidden="true" />
-              <a href="/assessment">Assessment Quiz</a>
+            <div className="assessment-link"><i className="fa fa-file-text-o" aria-hidden="true" />
+            <a href="/assessment">Assessment Quiz</a></div>  
+            <div className="assessment-link"> 
               <button className='btn' action='assessment-result' onClick={this.handleAction}>Assessment Dashboard</button>
-              {this.props.entries.map(entry => (
+            </div>  
+                {this.props.entries.map(entry => (
                 <Card key={entry._id}>
                   <CardBody>
                     <div id={entry._id} />

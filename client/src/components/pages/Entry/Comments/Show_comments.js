@@ -103,7 +103,6 @@ class ShowComments extends Component {
   }
 
     render() {
-        console.log(this.state.commentError)
         return (
                 <div>
                     <div>
