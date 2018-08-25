@@ -1,13 +1,7 @@
 import React from "react";
-// import {
-//     Card, CardBody, CardText, CardTitle,
-// } from 'reactstrap';
 import Moment from "moment";
 
-//temp veriables will be move to an analysis file.
-
 const all = {
-    // content : {
       width         : '15%',
       margin       : '0.5%',
       display      :'inline-block',
@@ -21,12 +15,11 @@ const all = {
   };
 
 const Dashboard = (props) => {
-    // console.log(props.assessmentData)
     return (
         <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div className="row">
                 <div className="col-lg-12 col-md-12 col-sm-12 col-xm-12">
-                    <h3 style={box.style}>Assessment Dashboard Still in progress</h3>
+                    <h3 style={box.style}>Assessment Dashboard</h3>
                 </div>
             </div>
             <div className="row">

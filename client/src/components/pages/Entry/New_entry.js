@@ -6,6 +6,8 @@ import Textarea from 'react-textarea-autosize';
 import './entry.css'
 let visible = {visibility:'visible'}
 let hidden = {visibility:'hidden'}
+let valid = "is-valid form-control ";
+let invalid = "is-invalid form-control";
 
 class NewEntry extends Component {
   constructor(props) {
@@ -44,9 +46,6 @@ class NewEntry extends Component {
     }
   }
   render() {
-    let valid = "is-valid form-control ";
-    let invalid = "is-invalid form-control";
-    console.log(this.state)
     return (<div className="entry-form">
       <Jumbotron>
         <Container>
