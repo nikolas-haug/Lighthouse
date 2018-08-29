@@ -84,7 +84,7 @@ class SearchResults extends Component {
                     </div>
                 ) : (
                     <div>
-                      <div className="loading-div">
+                      <div className="loading-div search-loader">
                         <div className="loading-image-box mx-auto">
                           <img
                             src={loader}
