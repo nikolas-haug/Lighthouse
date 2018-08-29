@@ -4,8 +4,7 @@ import './assessment.css'
 
 let visible = {visibility:'visible'}
 let hidden = {visibility:'hidden'}
-function QuestionDisplay(props) {
- 
+function QuestionDisplay(props) { 
   return (
   <div>
     <div className="question-div">
