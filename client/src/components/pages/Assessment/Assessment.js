@@ -34,22 +34,23 @@ class Assessment extends Component {
             })
         }
 
-        this.handleOnChange = (e) => {
+        this.handleOnClick = (e) => {
             let option = e.target.getAttribute('data-id')
             this.setState({
-                response: Number(option),
-                error:false
+                error:false,
+                response: option
+                
             })
         }
 
         this.handleSubmit = (e) => {
             this.setState({error:false})
             e.preventDefault()
-            if(this.state.response === ''){
+            if(!this.state.response.length){
                 this.setState({error:true})
                 return;
             }
-            this.assessmentData.push(this.state.response);
+            this.assessmentData.push(Number(this.state.response));
             if (this.assessmentData.length <= 8) {
                 this.tracker++
                 e.target.reset()
@@ -85,7 +86,7 @@ class Assessment extends Component {
                             <form onSubmit={this.handleSubmit}>
                             <QuestionDisplay 
                                 options={this.responseOptions}
-                                handleOnChange={this.handleOnChange}
+                                handleOnClick={this.handleOnClick}
                                 question={this.state}
                                 error={this.state.error}
                             />

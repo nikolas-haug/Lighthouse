@@ -4,7 +4,7 @@ import './assessment.css'
 
 let visible = {visibility:'visible'}
 let hidden = {visibility:'hidden'}
-function QuestionDisplay(props) { 
+function QuestionDisplay(props) {
   return (
   <div>
     <div className="question-div">
@@ -18,7 +18,7 @@ function QuestionDisplay(props) {
         <hr/>
        {props.options.map((option, i) => 
         <div className="custom-control custom-radio" key={i}>
-             <input onChange={props.handleOnChange} data-id={i} type="radio" id={"customRadio"+i} name="customRadio" className="custom-control-input"/>
+             <input onClick={props.handleOnClick} data-id={i} type="radio" id={"customRadio"+i} name="customRadio" className="custom-control-input"/>
              <label className="custom-control-label" htmlFor={"customRadio"+i}>{option}</label>
         </div>
        )}
