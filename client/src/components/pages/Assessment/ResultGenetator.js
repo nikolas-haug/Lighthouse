@@ -25,7 +25,8 @@ export default {
                         }
                     };
                     break;
-                case score >= 15 && score <= 19:
+                // case score >= 15 && score <= 19:
+                case score >= 15:
                     result = {
                         date: Date.now(),
                         score: score,
@@ -37,7 +38,7 @@ export default {
                         }
                     };
                     break;
-                case score >= 10 && score <= 14:
+                case score >= 10:
                     result = {
                         date: Date.now(),
                         score: score,
@@ -49,7 +50,7 @@ export default {
                         }
                     };
                     break;
-                case score >= 5 && score <= 9:
+                case score >= 5:
                     result = {
                         date: Date.now(),
                         score: score,
