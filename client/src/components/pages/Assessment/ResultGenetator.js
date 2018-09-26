@@ -25,7 +25,6 @@ export default {
                         }
                     };
                     break;
-                // case score >= 15 && score <= 19:
                 case score >= 15:
                     result = {
                         date: Date.now(),
