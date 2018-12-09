@@ -62,7 +62,7 @@ class Logout extends Component  {
         style={customStyles}
       >
         <h2 ref={subtitle => this.subtitle = subtitle}>Please Confirm!</h2>
-        <p>Are you really want to logout?</p>
+        <p>Do you really want to logout?</p>
 
          <button data-id="return" className="btn btn-primary" onClick={this.closeModal} >No! Return</button>
          <button data-id="logout" className="btn btn-primary" onClick={this.closeModal} >Yes! Logout</button>
